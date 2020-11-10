@@ -17,6 +17,9 @@ class ForgotPasswordController extends Controller
     | your application to your users. Feel free to explore this trait.
     |
     */
+    public function forgot_password(){
+        return view('auth.forgot-password');
+    }
 
     use SendsPasswordResetEmails;
 }

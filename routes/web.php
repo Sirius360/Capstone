@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\Auth\ForgotPasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,3 +40,4 @@ Route::group(['prefix'=>'users','middleware' => ['auth','role:users']], function
 //     return 'Quan ly admin';
 // });
 });
+Route::get("forgot",[ForgotPasswordController::class,'forgot_password']);
