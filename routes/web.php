@@ -1,5 +1,9 @@
 <?php
 use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Auth\LogoutController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +19,11 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get("logout",[LogoutController::class,'logout']);
+
+
+
 
 Auth::routes();
 
