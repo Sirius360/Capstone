@@ -37,4 +37,13 @@ class AdminController extends Controller
     
         return view('admin.home');
     }
+    
+
+    public function new_announcement(){
+        return view('admin.new-announcement');
+    }
+    public function manage_announcements(){
+        return view('admin.manage-announcements');
+    }
+
 }

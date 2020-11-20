@@ -34,7 +34,12 @@ Route::group(['prefix'=>'admin','middleware' => ['auth','role:admin']], function
     // Route::get('abc', function(){
     //     return 'Quan ly admin';
     // });
+
 });
+Route::get('new-announcement','AdminController@new_announcement');
+Route::get('manage-announcements','AdminController@manage_announcements');
+
+
 // Routes  for mentor
 Route::group(['prefix'=>'mentor','middleware' => ['auth','role:mentor']], function(){
     Route::get('/','MentorController@index');
