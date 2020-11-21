@@ -22,7 +22,7 @@
     <div class="layout layout-nav-side">
         <div class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
     
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="admin">
                 <img alt="dtu" src="assets/img/duytan-university.svg" />
             </a>
             <div class="d-flex align-items-center">
@@ -33,13 +33,13 @@
                 </button>
                 <div class="d-block d-lg-none ml-2">
                     <div class="dropdown">
-                        <a href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a href="admin" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img alt="Image" src="assets/img/avatar-man.png" class="avatar" />
                         </a>
                         <div class="dropdown-menu dropdown-menu-right text-center">
-                            <a href="account-settings.html" class="dropdown-item">Profile</a>
-                            <a href="control-panel.html" class="dropdown-item">Control Panel</a>
-                            <a href="portal.html" class="dropdown-item">Log Out</a>
+                            <a href="{{URL::to('/account-settings')}}"class="dropdown-item">Profile</a>
+                            <a href="{{URL::to('/control-panel')}}"class="dropdown-item">Control Panel</a>
+                            <a href="{{URL::to('/portal')}}"class="dropdown-item">Log Out</a>
                         </div>
                     </div>
                 </div>
@@ -90,11 +90,11 @@
                             <ul class="nav nav-small flex-column">
                 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="new-group.html">Tạo Nhóm</a>
+                                    <a class="nav-link" href="{{URL::to('/new-group')}}">Tạo Nhóm</a>
                                 </li>
                 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="manage-groups.html">Quản lí Nhóm</a>
+                                    <a class="nav-link" href="{{URL::to('/manage-groups')}}">Quản lí Nhóm</a>
                                 </li>
                 
                             </ul>
@@ -109,15 +109,15 @@
                             <ul class="nav nav-small flex-column">
                 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="new-topic.html">Tạo Đề tài</a>
+                                    <a class="nav-link" href="{{URL::to('/new-topic')}}">Tạo Đề tài</a>
                                 </li>
                 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="pending-topics.html">Phê duyệt Đề tài</a>
+                                    <a class="nav-link" href="{{URL::to('/pending-topics')}}">Phê duyệt Đề tài</a>
                                 </li>
                 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="manage-topics.html">Quản lí Đề tài</a>
+                                    <a class="nav-link" href="{{URL::to('/manage-topics')}}">Quản lí Đề tài</a>
                                 </li>
                 
                             </ul>
@@ -132,11 +132,11 @@
                             <ul class="nav nav-small flex-column">
                 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="new-task.html">Tạo Nhiệm vụ</a>
+                                    <a class="nav-link" href="{{URL::to('/new-task')}}">Tạo Nhiệm vụ</a>
                                 </li>
                 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="manage-tasks.html">Quản lí Nhiệm vụ</a>
+                                    <a class="nav-link" href="{{URL::to('/manage-tasks')}}">Quản lí Nhiệm vụ</a>
                                 </li>
                 
                             </ul>
@@ -151,11 +151,11 @@
                             <ul class="nav nav-small flex-column">
                 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="new-plan.html">Tạo Lịch trình</a>
+                                    <a class="nav-link" href="{{URL::to('/new-plan')}}">Tạo Lịch trình</a>
                                 </li>
                 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="manage-plans.html">Quản lí Lịch trình</a>
+                                    <a class="nav-link" href="{{URL::to('/manage-plans')}}">Quản lí Lịch trình</a>
                                 </li>
                 
                             </ul>
@@ -165,7 +165,7 @@
         
                     <li class="nav-item">
                         
-                        <a class="nav-link" href="statistics.html">Thống kê</a>
+                        <a class="nav-link" href="{{URL::to('/statistics')}}">Thống kê</a>
             
                     </li>
         
@@ -178,11 +178,11 @@
                             <ul class="nav nav-small flex-column">
                 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="new-faculty.html">Thêm Khoa</a>
+                                    <a class="nav-link" href="{{URL::to('/new-faculty')}}">Thêm Khoa</a>
                                 </li>
                 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="manage-faculties.html">Quản lí Khoa</a>
+                                    <a class="nav-link" href="{{URL::to('/manage-faculties')}}">Quản lí Khoa</a>
                                 </li>
                 
                             </ul>
@@ -197,11 +197,11 @@
                             <ul class="nav nav-small flex-column">
                 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="new-department.html">Thêm Bộ môn</a>
+                                    <a class="nav-link" href="{{URL::to('/new-department')}}">Thêm Bộ môn</a>
                                 </li>
                 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="manage-departments.html">Quản lí Bộ môn</a>
+                                    <a class="nav-link" href="{{URL::to('/manage-departments')}}">Quản lí Bộ môn</a>
                                 </li>
                 
                             </ul>
@@ -248,8 +248,8 @@
 
                     </span></p>
                     <div class="dropdown-menu text-center">
-                        <a href="account-settings.html" class="dropdown-item">Profile</a>
-                        <a href="control-panel.html" class="dropdown-item">Control Panel</a>
+                        <a href="{{URL::to('/account-settings')}}" class="dropdown-item">Profile</a>
+                        <a href="{{URL::to('/control-panel')}}"class="dropdown-item">Control Panel</a>
                         <a href="{{URL::to('/logout')}}" class="dropdown-item">Log Out</a>
                     </div>
                 </div>

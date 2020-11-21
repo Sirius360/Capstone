@@ -36,9 +36,34 @@ Route::group(['prefix'=>'admin','middleware' => ['auth','role:admin']], function
     // });
 
 });
+//========================================================================== test layout
 Route::get('new-announcement','AdminController@new_announcement');
 Route::get('manage-announcements','AdminController@manage_announcements');
 
+Route::get('account-settings','AdminController@account_settings');
+Route::get('control-panel','AdminController@control_panel');
+Route::get('edit-group','AdminController@edit_group');
+Route::get('edit-team','AdminController@edit_team');
+Route::get('group-details','AdminController@group_details');
+Route::get('manage-departments','AdminController@manage_departments');
+Route::get('manage-faculties','AdminController@manage_faculties');
+Route::get('manage-groups','AdminController@manage_groups');
+Route::get('manage-plans','AdminController@manage_plans');
+Route::get('manage-tasks','AdminController@manage_tasks');
+Route::get('manage-topics','AdminController@manage_topics');
+Route::get('new-department','AdminController@new_department');
+Route::get('new-faculty','AdminController@new_faculty');
+Route::get('new-group','AdminController@new_group');
+Route::get('new-task','AdminController@new_task');
+Route::get('new-plan','AdminController@new_plan');
+Route::get('new-topic','AdminController@new_topic');
+Route::get('pending-topics','AdminController@pending_topics');
+Route::get('statistics','AdminController@statistics');
+Route::get('team-details','AdminController@team_details');
+Route::get('template','AdminController@template');
+
+
+//==============================================================================
 
 // Routes  for mentor
 Route::group(['prefix'=>'mentor','middleware' => ['auth','role:mentor']], function(){
