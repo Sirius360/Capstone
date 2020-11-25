@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
 
-<a class="navbar-brand" href="{{ url('admin') }}">
-        <img alt="dtu" src="assets/img/duytan-university.svg" />
+<a class="navbar-brand" href="{{ url('admin/') }}">
+        <img alt="dtu" src="{{ url('assets/img/duytan-university.svg') }}"/>
     </a>
     <div class="d-flex align-items-center">
 
@@ -12,11 +12,11 @@
         <div class="d-block d-lg-none ml-2">
             <div class="dropdown">
                 <a href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img alt="Image" src="assets/img/avatar-man.png" class="avatar" />
+                    <img alt="Image" src="{{ url('assets/img/avatar-man.png') }}" class="avatar" />
                 </a>
                 <div class="dropdown-menu dropdown-menu-right text-center">
-                    <a href="{{ url('account-settings') }}" class="dropdown-item">Profile</a>
-                    <a href="{{ url('control-panel') }}" class="dropdown-item">Control Panel</a>
+                    <a href="{{ url('admin/account-settings') }}" class="dropdown-item">Profile</a>
+                    <a href="{{ url('admin/control-panel') }}" class="dropdown-item">Control Panel</a>
                 <a href="{{ url('logout') }}" class="dropdown-item">Log Out</a>
                 </div>
             </div>
@@ -35,11 +35,11 @@
                     <ul class="nav nav-small flex-column">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('new-announcement') }}">New Announcement</a>
+                            <a class="nav-link" href="{{ ('admin/new-announcement') }}">New Announcement</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('manage-announcements') }}">Manage Announcement</a>
+                            <a class="nav-link" href="{{ url('admin/manage-announcements') }}">Manage Announcement</a>
                         </li>
 
                     </ul>
@@ -54,11 +54,11 @@
                     <ul class="nav nav-small flex-column">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('new-group') }}">New Group</a>
+                            <a class="nav-link" href="{{ url('admin/new-group') }}">New Group</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('manage-groups') }}">Manage Groups</a>
+                            <a class="nav-link" href="{{ url('admin/manage-groups') }}">Manage Groups</a>
                         </li>
 
                     </ul>
@@ -73,15 +73,15 @@
                     <ul class="nav nav-small flex-column">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('new-topic') }}">New Topic</a>
+                            <a class="nav-link" href="{{ url('admin/new-topic') }}">New Topic</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('pending-topics') }}">Pending Topics</a>
+                            <a class="nav-link" href="{{ url('admin/pending-topics') }}">Pending Topics</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('manage-topics') }}">Manage Topics</a>
+                            <a class="nav-link" href="{{ url('admin/manage-topics') }}">Manage Topics</a>
                         </li>
 
                     </ul>
@@ -96,11 +96,11 @@
                     <ul class="nav nav-small flex-column">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('new-task') }}">New Assignment</a>
+                            <a class="nav-link" href="{{ url('admin/new-task') }}">New Assignment</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('manage-tasks') }}">Manage Assignments</a>
+                            <a class="nav-link" href="{{ url('admin/manage-tasks') }}">Manage Assignments</a>
                         </li>
 
                     </ul>
@@ -115,11 +115,11 @@
                     <ul class="nav nav-small flex-column">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('new-plan') }}">New Plan</a>
+                            <a class="nav-link" href="{{ url('admin/new-plan') }}">New Plan</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('manage-plans') }}">Manage Plans</a>
+                            <a class="nav-link" href="{{ url('admin/manage-plans') }}">Manage Plans</a>
                         </li>
 
                     </ul>
@@ -129,7 +129,7 @@
 
             <li class="nav-item">
 
-                <a class="nav-link" href="{{ url('statistics') }}">Statistics</a>
+                <a class="nav-link" href="{{ url('admin/statistics') }}">Statistics</a>
 
             </li>
 
@@ -142,11 +142,11 @@
                     <ul class="nav nav-small flex-column">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('new-faculty') }}">New Faculty</a>
+                            <a class="nav-link" href="{{ url('admin/new-faculty') }}">New Faculty</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('manage-faculties') }}">Manage Faculties</a>
+                            <a class="nav-link" href="{{ url('admin/manage-faculties') }}">Manage Faculties</a>
                         </li>
 
                     </ul>
@@ -161,11 +161,11 @@
                     <ul class="nav nav-small flex-column">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('new-department') }}">New Department</a>
+                            <a class="nav-link" href="{{ url('admin/new-department') }}">New Department</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('manage-departments') }}">Manage Departments</a>
+                            <a class="nav-link" href="{{ url('admin/manage-departments') }}">Manage Departments</a>
                         </li>
 
                     </ul>
@@ -195,7 +195,7 @@
         <!-- already Logged in -->
         <div class="dropup">
             <a href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img alt="avatar" src="assets/img/avatar-man.png" class="avatar" />
+                <img alt="avatar" src="{{ url('assets/img/avatar-man.png') }}" class="avatar" />
             </a>
             <p class="d-inline-block ml-1 text-light text-break">Welcome, <span class="text-warning">                    
                 <?php
@@ -208,8 +208,8 @@
                         }
                 ?> </span></p>
             <div class="dropdown-menu text-center">
-                <a href="{{ url('account-settings') }}" class="dropdown-item">Profile</a>
-                <a href="{{ url('control-panel') }}" class="dropdown-item">Control Panel</a>
+                <a href="{{ url('admin/account-settings') }}" class="dropdown-item">Profile</a>
+                <a href="{{ url('admin/control-panel') }}" class="dropdown-item">Control Panel</a>
                 <a href="{{ url('logout') }}" class="dropdown-item">Log Out</a>
             </div>
         </div>

@@ -48,7 +48,7 @@
                           <div class="tab-pane fade show active" role="tabpanel" id="profile">
 
                               <div class="media mb-4">
-                                  <img alt="Image" src="assets/img/avatar-man.png" class="avatar avatar-lg" />
+                                  <img alt="Image" src="{{ url('assets/img/avatar-man.png') }}"class="avatar avatar-lg" />
                                   <div class="media-body ml-3">
                                       <div class="custom-file custom-file-naked d-block mb-1">
                                           <input type="file" class="custom-file-input d-none" id="avatar-file">

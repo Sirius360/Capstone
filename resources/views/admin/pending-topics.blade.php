@@ -53,7 +53,7 @@
                                 <div class="card-meta">
                                     <ul class="avatars">
                                         <li>
-                                            <img alt="Tống Uy Long" class="avatar" src="assets/img/avatar-tong-uy-long.jpg" />
+                                            <img alt="Tống Uy Long" class="avatar" src="{{ url('assets/img/avatar-tong-uy-long.jpg') }}" />
                                         </li>
                                     </ul>
                                     <div class="d-flex align-items-center">
@@ -89,7 +89,7 @@
                                 <div class="card-meta">
                                     <ul class="avatars">
                                         <li>
-                                            <img alt="Ngọc Trinh" class="avatar" src="assets/img/avatar-ngoc-trinh.jpg" />
+                                            <img alt="Ngọc Trinh" class="avatar" src="{{ url('assets/img/avatar-ngoc-trinh.jpg') }}"/>
                                         </li>
                                         
                                     </ul>
@@ -148,7 +148,7 @@
                                                         </div>
                                                     </li>
                                                     <li>
-                                                        <img alt="David Whittaker" src="assets/img/avatar-male-4.jpg" class="avatar" data-title="David Whittaker" data-toggle="tooltip" />
+                                                        <img alt="David Whittaker" src="{{ url('assets/img/avatar-male-4.jpg') }}"class="avatar" data-title="David Whittaker" data-toggle="tooltip" />
                                                     </li>
                                                 </ul>
 
@@ -160,7 +160,7 @@
                                                         <br>
                                                         <span class="text-small dz-size" data-dz-size></span>
                                                     </div>
-                                                    <img alt="Loader" src="assets/img/loader.svg" class="dz-loading" />
+                                                    <img alt="Loader" src="{{ url('assets/img/loader.svg') }}"class="dz-loading" />
                                                     <div class="dropdown">
                                                         <button class="btn-options" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                             <i class="material-icons">more_vert</i>
@@ -198,7 +198,7 @@
                                                 </div>
                                                 </li>
                                                 <li>
-                                                <img alt="Peggy Brown" src="assets/img/avatar-female-2.jpg" class="avatar" data-title="Peggy Brown" data-toggle="tooltip" data-filter-by="data-title" />
+                                                <img alt="Peggy Brown" src="{{ url('assets/img/avatar-female-2.jpg') }}"class="avatar" data-title="Peggy Brown" data-toggle="tooltip" data-filter-by="data-title" />
                                                 </li>
                                             </ul>
                                             <div class="media-body d-flex justify-content-between align-items-center">
@@ -231,7 +231,7 @@
                                                 </div>
                                                 </li>
                                                 <li>
-                                                <img alt="Harry Xai" src="assets/img/avatar-male-2.jpg" class="avatar" data-title="Harry Xai" data-toggle="tooltip" data-filter-by="data-title" />
+                                                <img alt="Harry Xai" src="{{ url('assets/img/avatar-male-2.jpg') }}" class="avatar" data-title="Harry Xai" data-toggle="tooltip" data-filter-by="data-title" />
                                                 </li>
                                             </ul>
                                             <div class="media-body d-flex justify-content-between align-items-center">
@@ -264,7 +264,7 @@
                                                 </div>
                                                 </li>
                                                 <li>
-                                                <img alt="Ravi Singh" src="assets/img/avatar-male-3.jpg" class="avatar" data-title="Ravi Singh" data-toggle="tooltip" data-filter-by="data-title" />
+                                                <img alt="Ravi Singh" src="{{ url('assets/img/avatar-male-3.jpg') }}" class="avatar" data-title="Ravi Singh" data-toggle="tooltip" data-filter-by="data-title" />
                                                 </li>
                                             </ul>
                                             <div class="media-body d-flex justify-content-between align-items-center">
@@ -297,7 +297,7 @@
                                                 </div>
                                                 </li>
                                                 <li>
-                                                <img alt="Claire Connors" src="assets/img/avatar-female-1.jpg" class="avatar" data-title="Claire Connors" data-toggle="tooltip" data-filter-by="data-title" />
+                                                <img alt="Claire Connors" src="{{ url('assets/img/avatar-female-1.jpg') }}" class="avatar" data-title="Claire Connors" data-toggle="tooltip" data-filter-by="data-title" />
                                                 </li>
                                             </ul>
                                             <div class="media-body d-flex justify-content-between align-items-center">
@@ -330,7 +330,7 @@
                                                 </div>
                                                 </li>
                                                 <li>
-                                                <img alt="David Whittaker" src="assets/img/avatar-male-4.jpg" class="avatar" data-title="David Whittaker" data-toggle="tooltip" data-filter-by="data-title" />
+                                                <img alt="David Whittaker" src="{{ url('assets/img/avatar-male-4.jpg') }}" class="avatar" data-title="David Whittaker" data-toggle="tooltip" data-filter-by="data-title" />
                                                 </li>
                                             </ul>
                                             <div class="media-body d-flex justify-content-between align-items-center">
@@ -392,7 +392,7 @@
                                                     </div>
                                                 </li>
                                                 <li>
-                                                    <img alt="Claire" src="assets/img/avatar-female-1.jpg" class="avatar" data-filter-by="alt" />
+                                                    <img alt="Claire" src="{{ url('assets/img/avatar-female-1.jpg') }}" class="avatar" data-filter-by="alt" />
                                                 </li>
                                             </ul>
                                             <div class="media-body">
@@ -414,7 +414,7 @@
                                                     </div>
                                                 </li>
                                                 <li>
-                                                    <img alt="Ravi" src="assets/img/avatar-male-3.jpg" class="avatar" data-filter-by="alt" />
+                                                    <img alt="Ravi" src="{{ url('assets/img/avatar-male-3.jpg') }}" class="avatar" data-filter-by="alt" />
                                                 </li>
                                             </ul>
                                             <div class="media-body">
@@ -436,7 +436,7 @@
                                                 </div>
                                             </li>
                                             <li>
-                                                <img alt="Kristina" src="assets/img/avatar-female-4.jpg" class="avatar" data-filter-by="alt" />
+                                                <img alt="Kristina" src="{{ url('assets/img/avatar-female-4.jpg') }}"class="avatar" data-filter-by="alt" />
                                             </li>
                                             </ul>
                                             <div class="media-body">
@@ -458,7 +458,7 @@
                                                     </div>
                                                 </li>
                                                 <li>
-                                                    <img alt="Marcus" src="assets/img/avatar-male-1.jpg" class="avatar" data-filter-by="alt" />
+                                                    <img alt="Marcus" src="{{ url('assets/img/avatar-male-1.jpg') }}" class="avatar" data-filter-by="alt" />
                                                 </li>
                                             </ul>
                                             <div class="media-body">
@@ -480,7 +480,7 @@
                                                 </div>
                                             </li>
                                             <li>
-                                                <img alt="Sally" src="assets/img/avatar-female-3.jpg" class="avatar" data-filter-by="alt" />
+                                                <img alt="Sally" src="{{ url('assets/img/avatar-female-3.jpg') }}" class="avatar" data-filter-by="alt" />
                                             </li>
                                             </ul>
                                             <div class="media-body">
@@ -502,7 +502,7 @@
                                                     </div>
                                                 </li>
                                                 <li>
-                                                    <img alt="Claire" src="assets/img/avatar-female-1.jpg" class="avatar" data-filter-by="alt" />
+                                                    <img alt="Claire" src="{{ url('assets/img/avatar-female-1.jpg') }}""" class="avatar" data-filter-by="alt" />
                                                 </li>
                                             </ul>
                                             <div class="media-body">
@@ -524,7 +524,7 @@
                                                     </div>
                                                 </li>
                                                 <li>
-                                                    <img alt="David" src="assets/img/avatar-male-4.jpg" class="avatar" data-filter-by="alt" />
+                                                    <img alt="David" src="{{ url('assets/img/avatar-male-4.jpg') }}"class="avatar" data-filter-by="alt" />
                                                 </li>
                                             </ul>
                                             <div class="media-body">

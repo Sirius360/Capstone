@@ -43,7 +43,7 @@
                                 </div>
                             </div>
                             <div class="card-title">
-                                <a href="{{ url('group-details') }}">
+                                <a href="{{ url('admin/group-details') }}">
                                     <h5>Đợt Capstone 1 MIS 2020</h5>
                                 </a>
                                 <span>37 Teams, 148 Members</span>
@@ -51,27 +51,27 @@
                             <ul class="avatars">
                                 <li>
                                     <a href="#" data-toggle="tooltip" data-placement="top" title="Lý Hiện">
-                                        <img alt="Lý Hiện" class="avatar" src="assets/img/avatar-gun.jpg" />
+                                        <img alt="Lý Hiện" class="avatar" src="{{ url('assets/img/avatar-gun.jpg') }}" />
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" data-toggle="tooltip" data-placement="top" title="Ngọc Trinh">
-                                        <img alt="Ngọc Trinh" class="avatar" src="assets/img/avatar-ngoc-trinh.jpg" />
+                                        <img alt="Ngọc Trinh" class="avatar" src="{{ url('assets/img/avatar-ngoc-trinh.jpg') }}" />
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" data-toggle="tooltip" data-placement="top" title="Tống Uy Long">
-                                        <img alt="Tống Uy Long" class="avatar" src="assets/img/avatar-tong-uy-long.jpg" />
+                                        <img alt="Tống Uy Long" class="avatar" src="{{ url('assets/img/avatar-tong-uy-long.jpg') }}" />
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" data-toggle="tooltip" data-placement="top" title="Lý Hiện">
-                                        <img alt="Lý Hiện" class="avatar" src="assets/img/avatar-gun.jpg" />
+                                        <img alt="Lý Hiện" class="avatar" src="{{ url('assets/img/avatar-gun.jpg') }}" />
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" data-toggle="tooltip" data-placement="top" title="Sơn Tùng MTP">
-                                        <img alt="Sơn Tùng MTP" class="avatar" src="assets/img/avatar-sontung-mtp.jpg" />
+                                        <img alt="Sơn Tùng MTP" class="avatar" src="{{ url('assets/img/avatar-sontung-mtp.jpg') }}" />
                                     </a>
                                 </li>
                                 
@@ -113,27 +113,27 @@
                             <ul class="avatars">
                                 <li>
                                     <a href="#" data-toggle="tooltip" data-placement="top" title="Lý Hiện">
-                                        <img alt="Lý Hiện" class="avatar" src="assets/img/avatar-gun.jpg" />
+                                        <img alt="Lý Hiện" class="avatar" src="{{ url('assets/img/avatar-gun.jpg') }}" />
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" data-toggle="tooltip" data-placement="top" title="Ngọc Trinh">
-                                        <img alt="Ngọc Trinh" class="avatar" src="assets/img/avatar-ngoc-trinh.jpg" />
+                                        <img alt="Ngọc Trinh" class="avatar" src="{{ url('assets/img/avatar-ngoc-trinh.jpg') }}"/>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" data-toggle="tooltip" data-placement="top" title="Tống Uy Long">
-                                        <img alt="Tống Uy Long" class="avatar" src="assets/img/avatar-tong-uy-long.jpg" />
+                                        <img alt="Tống Uy Long" class="avatar" src="{{ url('assets/img/avatar-tong-uy-long.jpg') }}" />
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" data-toggle="tooltip" data-placement="top" title="Lý Hiện">
-                                        <img alt="Lý Hiện" class="avatar" src="assets/img/avatar-gun.jpg" />
+                                        <img alt="Lý Hiện" class="avatar" src="{{ url('assets/img/avatar-gun.jpg') }}" />
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" data-toggle="tooltip" data-placement="top" title="Sơn Tùng MTP">
-                                        <img alt="Sơn Tùng MTP" class="avatar" src="assets/img/avatar-sontung-mtp.jpg" />
+                                        <img alt="Sơn Tùng MTP" class="avatar" src="{{ url('assets/img/avatar-sontung-mtp.jpg') }}" />
                                     </a>
                                 </li>
                                 
@@ -173,27 +173,27 @@
                             <ul class="avatars">
                                 <li>
                                     <a href="#" data-toggle="tooltip" data-placement="top" title="Lý Hiện">
-                                        <img alt="Lý Hiện" class="avatar" src="assets/img/avatar-gun.jpg" />
+                                        <img alt="Lý Hiện" class="avatar" src="{{ url('assets/img/avatar-gun.jpg') }}" />
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" data-toggle="tooltip" data-placement="top" title="Ngọc Trinh">
-                                        <img alt="Ngọc Trinh" class="avatar" src="assets/img/avatar-ngoc-trinh.jpg" />
+                                        <img alt="Ngọc Trinh" class="avatar" src="{{ url('assets/img/avatar-gun.jpg') }}"/>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" data-toggle="tooltip" data-placement="top" title="Tống Uy Long">
-                                        <img alt="Tống Uy Long" class="avatar" src="assets/img/avatar-tong-uy-long.jpg" />
+                                        <img alt="Tống Uy Long" class="avatar" src="{{ url('assets/img/avatar-gun.jpg') }}"/>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" data-toggle="tooltip" data-placement="top" title="Lý Hiện">
-                                        <img alt="Lý Hiện" class="avatar" src="assets/img/avatar-gun.jpg" />
+                                        <img alt="Lý Hiện" class="avatar" src="{{ url('assets/img/avatar-gun.jpg') }}"/>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" data-toggle="tooltip" data-placement="top" title="Sơn Tùng MTP">
-                                        <img alt="Sơn Tùng MTP" class="avatar" src="assets/img/avatar-sontung-mtp.jpg" />
+                                        <img alt="Sơn Tùng MTP" class="avatar" src="{{ url('assets/img/avatar-gun.jpg') }}"/>
                                     </a>
                                 </li>
                                 
@@ -377,7 +377,7 @@
                                                     <input type="checkbox" class="custom-control-input" id="project-user-11" checked>
                                                     <label class="custom-control-label" for="project-user-11">
                                                     <span class="d-flex align-items-center">
-                                                        <img alt="Nguyễn Đức Mận" src="assets/img/avatar-man.png" class="avatar mr-2" />
+                                                        <img alt="Nguyễn Đức Mận" src="{{ url('assets/img/avatar-man.png') }}" class="avatar mr-2" />
                                                         <span class="h6 mb-0 mr-1" data-filter-by="text">Nguyễn Đức Mận</span>
                                                         <span class="h6 mb-0 text-secondary" data-filter-by="text">(mannd@duytan.edu.vn)</span>
 
@@ -389,7 +389,7 @@
                                                     <input type="checkbox" class="custom-control-input" id="project-user-12" checked>
                                                     <label class="custom-control-label" for="project-user-12">
                                                     <span class="d-flex align-items-center">
-                                                        <img alt="Nguyễn Văn Quỳnh" src="assets/img/avatar-tong-uy-long.jpg" class="avatar mr-2" />
+                                                        <img alt="Nguyễn Văn Quỳnh" src="{{ url('assets/img/avatar-tong-uy-long.jpg') }}"class="avatar mr-2" />
                                                         <span class="h6 mb-0 mr-1" data-filter-by="text">Nguyễn Văn Quỳnh</span>
                                                         <span class="h6 mb-0 text-secondary" data-filter-by="text">(qnv164@gmail.com)</span>
                                                     </span>
