@@ -1,4 +1,4 @@
-@extends('layouts.layouts')
+@extends('layouts.master')
 
 @section('content')
 <div class="main-container">
@@ -6,9 +6,9 @@
     <div class="breadcrumb-bar navbar bg-white sticky-top">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a>
+                <li class="breadcrumb-item"><a href="{{ url('admin') }}">Home</a>
                 </li>
-                <li class="breadcrumb-item"><a href="manage-groups.html">Groups</a>
+                <li class="breadcrumb-item"><a href="{{ url('manage-groups') }}">Groups</a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">Đợt Capstone 1 MIS 2020</li>
             </ol>
@@ -20,7 +20,7 @@
             </button>
             <div class="dropdown-menu dropdown-menu-right">
 
-                <a class="dropdown-item" href="edit-group.html">Edit Group</a>
+                <a class="dropdown-item" href="{{ url('edit-group') }}">Edit Group</a>
                 <a class="dropdown-item" href="#">Share</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item text-chartjs" href="#"><i class="fas fa-lock-alt"></i>Close Group</a>
@@ -667,54 +667,30 @@
     <!-- end div container -->
 
 </div>
-</div>
-
-
-<!-- Required vendor scripts (Do not remove) -->
-<script type="text/javascript" src="assets/js/jquery.min.js"></script>
-<script type="text/javascript" src="assets/js/popper.min.js"></script>
-<script type="text/javascript" src="assets/js/bootstrap.js"></script>
-
-<!-- Optional Vendor Scripts (Remove the plugin script here and comment initializer script out of index.js if site does not use that feature) -->
-
-<!-- Autosize - resizes textarea inputs as user types -->
-<script type="text/javascript" src="assets/js/autosize.min.js"></script>
-<!-- Flatpickr (calendar/date/time picker UI) -->
-<script type="text/javascript" src="assets/js/flatpickr.min.js"></script>
-<!-- Prism - displays formatted code boxes -->
-<script type="text/javascript" src="assets/js/prism.js"></script>
-<!-- Shopify Draggable - drag, drop and sort items on page -->
-<script type="text/javascript" src="assets/js/draggable.bundle.legacy.js"></script>
-<script type="text/javascript" src="assets/js/swap-animation.js"></script>
-<!-- Dropzone - drag and drop files onto the page for uploading -->
-<script type="text/javascript" src="assets/js/dropzone.min.js"></script>
-<!-- List.js - filter list elements -->
-<script type="text/javascript" src="assets/js/list.min.js"></script>
-
-<!-- Required theme scripts (Do not remove) -->
-<script type="text/javascript" src="assets/js/theme.js"></script>
+@endsection
+@section('script')
 
 <script>
-$("#startDate").flatpickr({
-    defaultDate: "today",
-});
+        $("#startDate").flatpickr({
+            defaultDate: "today",
+        });
 
-$("#dueDate").flatpickr({
-    defaultDate: new Date().fp_incr(91)
-});
+        $("#dueDate").flatpickr({
+            defaultDate: new Date().fp_incr(91)
+        });
 
-</script>
+    </script>
 
-<script>
-$(document).ready(function(){
-    $(".check").click(function(){
-        $(".custom-control-input").prop("checked", true);
-    });
-    $(".uncheck").click(function(){
-        $(".custom-control-input").prop("checked", false);
-    });
-});
-</script>
+    <script>
+        $(document).ready(function(){
+            $(".check").click(function(){
+                $(".custom-control-input").prop("checked", true);
+            });
+            $(".uncheck").click(function(){
+                $(".custom-control-input").prop("checked", false);
+            });
+        });
+    </script>
 
 
 

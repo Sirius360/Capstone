@@ -1,4 +1,4 @@
-@extends('layouts.layouts')
+@extends('layouts.master')
 
 @section('content')
 <div class="main-container">
@@ -6,9 +6,9 @@
     <div class="breadcrumb-bar navbar bg-white sticky-top">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Home</a>
+            <li class="breadcrumb-item"><a href="{{ url('admin') }}">Home</a>
             </li>
-            <li class="breadcrumb-item"><a href="index.html">Topics</a>
+            <li class="breadcrumb-item"><a href="{{ url('admin') }}">Topics</a>
             </li>
             <li class="breadcrumb-item active" aria-current="page">Pending Topics</li>
             </ol>
@@ -613,87 +613,62 @@
     <!-- end div container -->
 
 </div>
-</div>
+@endsection
 
-
-<!-- Required vendor scripts (Do not remove) -->
-<script type="text/javascript" src="assets/js/jquery.min.js"></script>
-<script type="text/javascript" src="assets/js/popper.min.js"></script>
-<script type="text/javascript" src="assets/js/bootstrap.js"></script>
-
-<!-- Optional Vendor Scripts (Remove the plugin script here and comment initializer script out of index.js if site does not use that feature) -->
-
-<!-- Autosize - resizes textarea inputs as user types -->
-<script type="text/javascript" src="assets/js/autosize.min.js"></script>
-<!-- Flatpickr (calendar/date/time picker UI) -->
-<script type="text/javascript" src="assets/js/flatpickr.min.js"></script>
-<!-- Prism - displays formatted code boxes -->
-<script type="text/javascript" src="assets/js/prism.js"></script>
-<!-- Shopify Draggable - drag, drop and sort items on page -->
-<script type="text/javascript" src="assets/js/draggable.bundle.legacy.js"></script>
-<script type="text/javascript" src="assets/js/swap-animation.js"></script>
-<!-- Dropzone - drag and drop files onto the page for uploading -->
-<script type="text/javascript" src="assets/js/dropzone.min.js"></script>
-<!-- List.js - filter list elements -->
-<script type="text/javascript" src="assets/js/list.min.js"></script>
-
-<!-- Required theme scripts (Do not remove) -->
-<script type="text/javascript" src="assets/js/theme.js"></script>
-
+@section('script')
 <script>
-;(function($) {
-$.fn.fixMe = function() {
-    return this.each(function() {
-        var $this = $(this),
-            $t_fixed;
-        function init() {
-            $this.wrap('<div class="container" />');
-            $t_fixed = $this.clone();
-            $t_fixed.find("tbody").remove().end().addClass("fixed").insertAfter($this);
-            resizeFixed();
-        }
-        function resizeFixed() {
-            $t_fixed.find("th").each(function(index) {
-            $(this).css("width",$this.find("th").eq(index).outerWidth()+"px");
+        ;(function($) {
+        $.fn.fixMe = function() {
+            return this.each(function() {
+                var $this = $(this),
+                    $t_fixed;
+                function init() {
+                    $this.wrap('<div class="container" />');
+                    $t_fixed = $this.clone();
+                    $t_fixed.find("tbody").remove().end().addClass("fixed").insertAfter($this);
+                    resizeFixed();
+                }
+                function resizeFixed() {
+                    $t_fixed.find("th").each(function(index) {
+                    $(this).css("width",$this.find("th").eq(index).outerWidth()+"px");
+                    });
+                }
+                function scrollFixed() {
+                    var offset = $(this).scrollTop(),
+                    tableOffsetTop = $this.offset().top,
+                    tableOffsetBottom = tableOffsetTop + $this.height() - $this.find("thead").height();
+                    if(offset < tableOffsetTop || offset > tableOffsetBottom)
+                    $t_fixed.hide();
+                    else if(offset >= tableOffsetTop && offset <= tableOffsetBottom && $t_fixed.is(":hidden"))
+                    $t_fixed.show();
+                }
+                $(window).resize(resizeFixed);
+                $(window).scroll(scrollFixed);
+                init();
             });
-        }
-        function scrollFixed() {
-            var offset = $(this).scrollTop(),
-            tableOffsetTop = $this.offset().top,
-            tableOffsetBottom = tableOffsetTop + $this.height() - $this.find("thead").height();
-            if(offset < tableOffsetTop || offset > tableOffsetBottom)
-            $t_fixed.hide();
-            else if(offset >= tableOffsetTop && offset <= tableOffsetBottom && $t_fixed.is(":hidden"))
-            $t_fixed.show();
-        }
-        $(window).resize(resizeFixed);
-        $(window).scroll(scrollFixed);
-        init();
-    });
-};
-})(jQuery);
+        };
+        })(jQuery);
 
-$(document).ready(function(){
-    $("table").fixMe();
-    $(".up").click(function() {
-        $('html, body').animate({
-        scrollTop: 0
-    }, 2000);
-    });
-});
-</script>
+        $(document).ready(function(){
+            $("table").fixMe();
+            $(".up").click(function() {
+                $('html, body').animate({
+                scrollTop: 0
+            }, 2000);
+            });
+        });
+    </script>
 
-<script>
-$(document).ready(function(){
-    $(".check").click(function(){
-        $(".custom-control-input").prop("checked", true);
-    });
-    $(".uncheck").click(function(){
-        $(".custom-control-input").prop("checked", false);
-    });
-});
-</script>
-
+    <script>
+        $(document).ready(function(){
+            $(".check").click(function(){
+                $(".custom-control-input").prop("checked", true);
+            });
+            $(".uncheck").click(function(){
+                $(".custom-control-input").prop("checked", false);
+            });
+        });
+    </script>
 
 
 @endsection

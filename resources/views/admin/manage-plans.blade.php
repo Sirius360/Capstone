@@ -1,4 +1,4 @@
-@extends('layouts.layouts')
+@extends('layouts.master')
 
 @section('content')
 <div class="main-container">
@@ -6,9 +6,9 @@
     <div class="breadcrumb-bar navbar bg-white sticky-top">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a>
+                <li class="breadcrumb-item"><a href="{{ url('admin') }}">Home</a>
                 </li>
-                <li class="breadcrumb-item"><a href="index.html">Plans</a>
+                <li class="breadcrumb-item"><a href="{{ url('admin') }}">Plans</a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">Manage Plans</li>
             </ol>

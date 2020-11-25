@@ -24,21 +24,22 @@
         <!-- navbar here -->
         @include('components.navbar')
 
-        <div class="main-container">
-            <!-- breadcrumb here -->
+        <!-- <div class="main-container">
+            
             @include('components.breadcrumb')
 
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-11 col-xl-10">
 
-                        <!-- content layer -->
-                        @yield('content')
+                        
+                        
 
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
+        @yield('content')
     </div>
 
 
@@ -66,13 +67,7 @@
     <!-- Required theme scripts (Do not remove) -->
     <script type="text/javascript" src="{{asset('assets/js/theme.js')}}"></script>
 
-    <!-- <script>
-        $(document).ready(function(){
-            $(".nav-link").hover(function(){
-                $(this).toggleClass("active");
-            });
-        });
-    </script> -->
+ 
     @yield('script')
 
 </body>
