@@ -123,51 +123,42 @@
                                         <hr>
                                         <h6>Member info</h6>
                                         <div class="row justify-content-center">
-                                            <div class="col mt-2">
-                                                <ul class="list-inline custom-pointer mb-0">
-                                                    <li><span class="badge badge-primary check"><i class="fad fa-check"></i>All</span></li>
-                                                    <li><span class="badge badge-warning uncheck">None</span></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-5">
-                                                <div class="input-group input-group-round">
-                                                    <div class="input-group-prepend">
+                                            <div class="table-responsive mt-3">
 
-                                                        <span class="input-group-text">
-                                                            <i class="material-icons">filter_list</i>
-                                                        </span>
-                                                    </div>
-                                                    <input type="search" class="form-control filter-list-input" placeholder="Filter members" aria-label="Filter Members">
-                                                </div>
+                                                <table id="example" class="stripe" style="width:100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th></th>
+                                                            <th class="text-left">Full name</th>
+                                                            <th class="text-left">Email</th>
+                                                            <th>Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                        <tr>
+                                                            <td></td>
+                                                            <td class="text-left">Nguyễn Văn Quỳnh</td>
+                                                            <td class="text-left">qnv164@gmail.com</td>
+                                                            <td>
+                                                                <a href="#"><span class="ic-dark"><i class="fad fa-trash-alt"></i></span></a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <th></th>
+                                                            <th class="text-left">Full name</th>
+                                                            <th class="text-left">Email</th>
+                                                            <th>Action</th>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+
                                             </div>
+                                            <!-- end div table responsive -->
                                         </div>
-
-                                        <div class="form-group-users">
-
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="user-1" checked>
-                                                <label class="custom-control-label" for="user-12">
-                                                    <span class="d-flex align-items-center">
-                                                        <img alt="Tống Uy Long" src="assets/img/avatar-tong-uy-long.jpg" class="avatar mr-2" />
-                                                        <span class="h6 mb-0 mr-1" data-filter-by="text">Tống Uy Long</span>
-                                                        <span class="h6 mb-0 text-secondary" data-filter-by="text">(tonguylong@duytan.edu.vn)</span>
-                                                    </span>
-                                                </label>
-                                            </div>
-
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="user-2" checked>
-                                                <label class="custom-control-label" for="user-11">
-                                                    <span class="d-flex align-items-center">
-                                                        <img alt="Lý Hiện" src="assets/img/avatar-gun.jpg" class="avatar mr-2" />
-                                                        <span class="h6 mb-0 mr-1" data-filter-by="text">Lý Hiện</span>
-                                                        <span class="h6 mb-0 text-secondary" data-filter-by="text">(lyhien@gmail.com)</span>
-
-                                                    </span>
-                                                </label>
-                                            </div>
-
-                                        </div>
+                                        <!-- end div row -->
 
                                     </div>
                                 </div>
@@ -203,13 +194,28 @@
     </script>
 
     <script>
-        $(document).ready(function(){
-            $(".check").click(function(){
-                $(".custom-control-input").prop("checked", true);
+        // $(document).ready(function() {
+        //     $('#example').DataTable({
+
+        //     });
+        // });
+
+        $(document).ready(function() {
+            var table = $('#example').DataTable({
+                'columnDefs': [
+                    {
+                        'targets': 0,
+                        'checkboxes': {
+                            'selectRow': true
+                        }
+                    }
+                ],
+                'select': {
+                    'style': 'multi'
+                },
+                'order': [[1, 'asc']]
             });
-            $(".uncheck").click(function(){
-                $(".custom-control-input").prop("checked", false);
-            });
+
         });
     </script>
 

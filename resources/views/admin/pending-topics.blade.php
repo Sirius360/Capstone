@@ -18,530 +18,65 @@
     <!-- begin a container -->
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-11 col-xl-10">
-
+            <div class="col">
                 <div class="tab-content mt-3">
                     <div class="tab-pane fade show active" id="tasks" role="tabpanel" data-filter-list="card-list-body">
                         <div class="row content-list-head">
                             <div class="col-auto">
                                 <h3>Pending Topics</h3>
                             </div>
-                            <form class="col-md-auto">
-                                <div class="input-group input-group-round">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                            <i class="material-icons">filter_list</i>
-                                        </span>
-                                    </div>
-                                    <input type="search" class="form-control filter-list-input" placeholder="Filter topics" aria-label="Filter Topics">
-                                </div>
-                            </form>
+
                         </div>
                         <!--end of content list head-->
 
-                        <div class="card card-task">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-title">
-                                    <a href="#"><h5>Capstone Tracking Project</h5></a>
-                                    <span class="badge badge-primary">Group: 2</span>
-                                    <span class="badge badge-warning">Team: -/-</span>
-                                </div>
-                                <div class="card-meta">
-                                    <ul class="avatars">
-                                        <li>
-                                            <img alt="Tống Uy Long" class="avatar" src="{{ url('assets/img/avatar-tong-uy-long.jpg') }}" />
-                                        </li>
-                                    </ul>
-                                    <div class="d-flex align-items-center">
-                                        <button type="button" class="btn btn-success btn-sm">Approve</button>
-                                        <button type="button" class="btn btn-danger btn-sm ml-2">Decline</button>
-                                    </div>
-                                    <div class="dropdown card-options">
-                                        <button class="btn-options" type="button" id="task-dropdown-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="material-icons">more_vert</i>
-                                        </button>
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#topic-edit-modal">Edit</a>
-                                            <a class="dropdown-item" href="#">Share</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item text-chartjs" href="#" data-dz-remove>Delete</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="table-responsive mt-3">
+
+                            <table id="example" class="stripe" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th class="text-left">Topic Name</th>
+                                        <th>Group</th>
+                                        <th>Team</th>
+                                        <th>Confirm</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td class="text-left">Almost before we knew it, we had left the ground.</td>
+                                        <td>2</td>
+                                        <td>15</td>
+                                        <td>
+                                            <a href="#"><span class="text-success"><i class="fad fa-check"></i></span></a>
+                                            <a href="#"><span class="text-danger"><i class="fad fa-times"></i></span></a>
+                                        </td>
+                                        <td>
+                                            <a href="#" data-toggle="modal" data-target="#topic-edit-modal"><span class="ic-dark"><i class="fad fa-pencil"></i></span></a>
+                                            <a href="#"><span class="ic-dark"><i class="fad fa-trash-alt"></i></span></a>
+                                            <a href="#"><span class="ic-dark"><i class="fad fa-eye"></i></span></a>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th></th>
+                                        <th class="text-left">Topic Name</th>
+                                        <th>Start Date</th>
+                                        <th>Due Date</th>
+                                        <th>Confirm</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+
                         </div>
-                        <!--end of content list-->
-
-                        <div class="card card-task">
-                            <div class="progress">
-                                <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <div class="card-body">
-                                <div class="card-title">
-                                    <a href="#"><h5>Capstone Tracking Project</h5></a>
-                                    <span class="badge badge-primary">Group: 2</span>
-                                    <span class="badge badge-warning">Team: 10</span>
-                                </div>
-                                <div class="card-meta">
-                                    <ul class="avatars">
-                                        <li>
-                                            <img alt="Ngọc Trinh" class="avatar" src="{{ url('assets/img/avatar-ngoc-trinh.jpg') }}"/>
-                                        </li>
-
-                                    </ul>
-                                    <div class="d-flex align-items-center">
-                                        <button type="button" class="btn btn-success btn-sm">Approve</button>
-                                        <button type="button" class="btn btn-danger btn-sm ml-2">Decline</button>
-                                    </div>
-                                    <div class="dropdown card-options">
-                                        <button class="btn-options" type="button" id="task-dropdown-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="material-icons">more_vert</i>
-                                        </button>
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#topic-edit-modal">Edit</a>
-                                            <a class="dropdown-item" href="#">Share</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item text-chartjs" href="#" data-dz-remove>Delete</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--end of content list-->
-
+                        <!-- end div table responsive -->
 
                     </div>
                     <!--end of tab-->
-
-                    <!-- Upload -->
-                    <div class="tab-pane fade" id="files" role="tabpanel" data-filter-list="dropzone-previews">
-                        <div class="content-list">
-                            <div class="row content-list-head">
-                                <div class="col-auto">
-                                    <h3>Files</h3>
-                                </div>
-                                <form class="col-md-auto">
-                                    <div class="input-group input-group-round">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">
-                                                <i class="material-icons">filter_list</i>
-                                            </span>
-                                        </div>
-                                        <input type="search" class="form-control filter-list-input" placeholder="Filter files" aria-label="Filter Tasks">
-                                    </div>
-                                </form>
-                            </div>
-                            <!--end of content list head-->
-                            <div class="content-list-body row">
-                                <div class="col">
-                                    <ul class="d-none dz-template">
-                                        <li class="list-group-item dz-preview dz-file-preview">
-                                            <div class="media align-items-center dz-details">
-                                                <ul class="avatars">
-                                                    <li>
-                                                        <div class="avatar bg-primary dz-file-representation">
-                                                            <i class="material-icons">attach_file</i>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <img alt="David Whittaker" src="{{ url('assets/img/avatar-male-4.jpg') }}"class="avatar" data-title="David Whittaker" data-toggle="tooltip" />
-                                                    </li>
-                                                </ul>
-
-                                                <div class="media-body d-flex justify-content-between align-items-center">
-                                                    <div class="dz-file-details">
-                                                        <a href="#" class="dz-filename">
-                                                            <span data-dz-name></span>
-                                                        </a>
-                                                        <br>
-                                                        <span class="text-small dz-size" data-dz-size></span>
-                                                    </div>
-                                                    <img alt="Loader" src="{{ url('assets/img/loader.svg') }}"class="dz-loading" />
-                                                    <div class="dropdown">
-                                                        <button class="btn-options" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            <i class="material-icons">more_vert</i>
-                                                        </button>
-                                                        <div class="dropdown-menu dropdown-menu-right">
-                                                            <a class="dropdown-item" href="#">Download</a>
-                                                            <a class="dropdown-item" href="#">Share</a>
-                                                            <div class="dropdown-divider"></div>
-                                                            <a class="dropdown-item text-danger" href="#" data-dz-remove>Delete</a>
-                                                        </div>
-                                                    </div>
-                                                    <button class="btn btn-danger btn-sm dz-remove" data-dz-remove>
-                                                    Cancel
-                                                    </button>
-                                                </div>
-                                            </div>
-                                            <div class="progress dz-progress">
-                                                <div class="progress-bar dz-upload" data-dz-uploadprogress></div>
-                                            </div>
-                                        </li>
-                                    </ul>
-
-                                    <form class="dropzone" action="upload.php">
-                                        <span class="dz-message">Drop files here or click here to upload</span>
-                                    </form>
-
-                                    <ul class="list-group list-group-activity dropzone-previews flex-column-reverse">
-
-                                        <li class="list-group-item">
-                                            <div class="media align-items-center">
-                                            <ul class="avatars">
-                                                <li>
-                                                <div class="avatar bg-primary">
-                                                    <i class="material-icons">insert_drive_file</i>
-                                                </div>
-                                                </li>
-                                                <li>
-                                                <img alt="Peggy Brown" src="{{ url('assets/img/avatar-female-2.jpg') }}"class="avatar" data-title="Peggy Brown" data-toggle="tooltip" data-filter-by="data-title" />
-                                                </li>
-                                            </ul>
-                                            <div class="media-body d-flex justify-content-between align-items-center">
-                                                <div>
-                                                <a href="#" data-filter-by="text">client-questionnaire</a>
-                                                <br>
-                                                <span class="text-small" data-filter-by="text">48kb Text Doc</span>
-                                                </div>
-                                                <div class="dropdown">
-                                                <button class="btn-options" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <i class="material-icons">more_vert</i>
-                                                </button>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="#">Download</a>
-                                                    <a class="dropdown-item" href="#">Share</a>
-                                                    <div class="dropdown-divider"></div>
-                                                    <a class="dropdown-item text-danger" href="#">Delete</a>
-                                                </div>
-                                                </div>
-                                            </div>
-                                            </div>
-                                        </li>
-
-                                        <li class="list-group-item">
-                                            <div class="media align-items-center">
-                                            <ul class="avatars">
-                                                <li>
-                                                <div class="avatar bg-primary">
-                                                    <i class="material-icons">folder</i>
-                                                </div>
-                                                </li>
-                                                <li>
-                                                <img alt="Harry Xai" src="{{ url('assets/img/avatar-male-2.jpg') }}" class="avatar" data-title="Harry Xai" data-toggle="tooltip" data-filter-by="data-title" />
-                                                </li>
-                                            </ul>
-                                            <div class="media-body d-flex justify-content-between align-items-center">
-                                                <div>
-                                                <a href="#" data-filter-by="text">moodboard_images</a>
-                                                <br>
-                                                <span class="text-small" data-filter-by="text">748kb ZIP</span>
-                                                </div>
-                                                <div class="dropdown">
-                                                <button class="btn-options" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <i class="material-icons">more_vert</i>
-                                                </button>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="#">Download</a>
-                                                    <a class="dropdown-item" href="#">Share</a>
-                                                    <div class="dropdown-divider"></div>
-                                                    <a class="dropdown-item text-danger" href="#">Delete</a>
-                                                </div>
-                                                </div>
-                                            </div>
-                                            </div>
-                                        </li>
-
-                                        <li class="list-group-item">
-                                            <div class="media align-items-center">
-                                            <ul class="avatars">
-                                                <li>
-                                                <div class="avatar bg-primary">
-                                                    <i class="material-icons">image</i>
-                                                </div>
-                                                </li>
-                                                <li>
-                                                <img alt="Ravi Singh" src="{{ url('assets/img/avatar-male-3.jpg') }}" class="avatar" data-title="Ravi Singh" data-toggle="tooltip" data-filter-by="data-title" />
-                                                </li>
-                                            </ul>
-                                            <div class="media-body d-flex justify-content-between align-items-center">
-                                                <div>
-                                                <a href="#" data-filter-by="text">possible-hero-image</a>
-                                                <br>
-                                                <span class="text-small" data-filter-by="text">1.2mb JPEG image</span>
-                                                </div>
-                                                <div class="dropdown">
-                                                <button class="btn-options" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <i class="material-icons">more_vert</i>
-                                                </button>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="#">Download</a>
-                                                    <a class="dropdown-item" href="#">Share</a>
-                                                    <div class="dropdown-divider"></div>
-                                                    <a class="dropdown-item text-danger" href="#">Delete</a>
-                                                </div>
-                                                </div>
-                                            </div>
-                                            </div>
-                                        </li>
-
-                                        <li class="list-group-item">
-                                            <div class="media align-items-center">
-                                            <ul class="avatars">
-                                                <li>
-                                                <div class="avatar bg-primary">
-                                                    <i class="material-icons">insert_drive_file</i>
-                                                </div>
-                                                </li>
-                                                <li>
-                                                <img alt="Claire Connors" src="{{ url('assets/img/avatar-female-1.jpg') }}" class="avatar" data-title="Claire Connors" data-toggle="tooltip" data-filter-by="data-title" />
-                                                </li>
-                                            </ul>
-                                            <div class="media-body d-flex justify-content-between align-items-center">
-                                                <div>
-                                                <a href="#" data-filter-by="text">LandingPrototypes</a>
-                                                <br>
-                                                <span class="text-small" data-filter-by="text">415kb Sketch Doc</span>
-                                                </div>
-                                                <div class="dropdown">
-                                                <button class="btn-options" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <i class="material-icons">more_vert</i>
-                                                </button>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="#">Download</a>
-                                                    <a class="dropdown-item" href="#">Share</a>
-                                                    <div class="dropdown-divider"></div>
-                                                    <a class="dropdown-item text-danger" href="#">Delete</a>
-                                                </div>
-                                                </div>
-                                            </div>
-                                            </div>
-                                        </li>
-
-                                        <li class="list-group-item">
-                                            <div class="media align-items-center">
-                                            <ul class="avatars">
-                                                <li>
-                                                <div class="avatar bg-primary">
-                                                    <i class="material-icons">insert_drive_file</i>
-                                                </div>
-                                                </li>
-                                                <li>
-                                                <img alt="David Whittaker" src="{{ url('assets/img/avatar-male-4.jpg') }}" class="avatar" data-title="David Whittaker" data-toggle="tooltip" data-filter-by="data-title" />
-                                                </li>
-                                            </ul>
-                                            <div class="media-body d-flex justify-content-between align-items-center">
-                                                <div>
-                                                <a href="#" data-filter-by="text">Branding-Proforma</a>
-                                                <br>
-                                                <span class="text-small" data-filter-by="text">15kb Text Document</span>
-                                                </div>
-                                                <div class="dropdown">
-                                                <button class="btn-options" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <i class="material-icons">more_vert</i>
-                                                </button>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="#">Download</a>
-                                                    <a class="dropdown-item" href="#">Share</a>
-                                                    <div class="dropdown-divider"></div>
-                                                    <a class="dropdown-item text-danger" href="#">Delete</a>
-                                                </div>
-                                                </div>
-                                            </div>
-                                            </div>
-                                        </li>
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                      <!--end of content list-->
-                    </div>
-
-                    <!-- History -->
-                    <div class="tab-pane fade" id="activity" role="tabpanel" data-filter-list="list-group-activity">
-                        <div class="content-list">
-                            <div class="row content-list-head">
-                                <div class="col-auto">
-                                    <h3>Activity</h3>
-                                </div>
-                                <form class="col-md-auto">
-                                    <div class="input-group input-group-round">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                        <i class="material-icons">filter_list</i>
-                                        </span>
-                                    </div>
-                                    <input type="search" class="form-control filter-list-input" placeholder="Filter activity" aria-label="Filter activity">
-                                    </div>
-                                </form>
-                            </div>
-                            <!--end of content list head-->
-                            <div class="content-list-body">
-                                <ol class="list-group list-group-activity">
-
-                                    <li class="list-group-item">
-                                        <div class="media align-items-center">
-                                            <ul class="avatars">
-                                                <li>
-                                                    <div class="avatar bg-primary">
-                                                    <i class="material-icons">playlist_add_check</i>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <img alt="Claire" src="{{ url('assets/img/avatar-female-1.jpg') }}" class="avatar" data-filter-by="alt" />
-                                                </li>
-                                            </ul>
-                                            <div class="media-body">
-                                                <div>
-                                                    <span class="h6" data-filter-by="text">Claire</span>
-                                                    <span data-filter-by="text">completed the task</span><a href="#" data-filter-by="text">Set up client chat channel</a>
-                                                </div>
-                                                <span class="text-small" data-filter-by="text">Just now</span>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <div class="media align-items-center">
-                                            <ul class="avatars">
-                                                <li>
-                                                    <div class="avatar bg-primary">
-                                                    <i class="material-icons">person_add</i>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <img alt="Ravi" src="{{ url('assets/img/avatar-male-3.jpg') }}" class="avatar" data-filter-by="alt" />
-                                                </li>
-                                            </ul>
-                                            <div class="media-body">
-                                                <div>
-                                                    <span class="h6" data-filter-by="text">Ravi</span>
-                                                    <span data-filter-by="text">joined the project</span>
-                                                </div>
-                                                <span class="text-small" data-filter-by="text">5 hours ago</span>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <div class="media align-items-center">
-                                            <ul class="avatars">
-                                            <li>
-                                                <div class="avatar bg-primary">
-                                                <i class="material-icons">playlist_add</i>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <img alt="Kristina" src="{{ url('assets/img/avatar-female-4.jpg') }}"class="avatar" data-filter-by="alt" />
-                                            </li>
-                                            </ul>
-                                            <div class="media-body">
-                                            <div>
-                                                <span class="h6" data-filter-by="text">Kristina</span>
-                                                <span data-filter-by="text">added the task</span><a href="#" data-filter-by="text">Produce broad concept directions</a>
-                                            </div>
-                                            <span class="text-small" data-filter-by="text">Yesterday</span>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <div class="media align-items-center">
-                                            <ul class="avatars">
-                                                <li>
-                                                    <div class="avatar bg-primary">
-                                                    <i class="material-icons">playlist_add</i>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <img alt="Marcus" src="{{ url('assets/img/avatar-male-1.jpg') }}" class="avatar" data-filter-by="alt" />
-                                                </li>
-                                            </ul>
-                                            <div class="media-body">
-                                                <div>
-                                                    <span class="h6" data-filter-by="text">Marcus</span>
-                                                    <span data-filter-by="text">added the task</span><a href="#" data-filter-by="text">Present concepts and establish direction</a>
-                                                </div>
-                                                <span class="text-small" data-filter-by="text">Yesterday</span>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <div class="media align-items-center">
-                                            <ul class="avatars">
-                                            <li>
-                                                <div class="avatar bg-primary">
-                                                <i class="material-icons">person_add</i>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <img alt="Sally" src="{{ url('assets/img/avatar-female-3.jpg') }}" class="avatar" data-filter-by="alt" />
-                                            </li>
-                                            </ul>
-                                            <div class="media-body">
-                                            <div>
-                                                <span class="h6" data-filter-by="text">Sally</span>
-                                                <span data-filter-by="text">joined the project</span>
-                                            </div>
-                                            <span class="text-small" data-filter-by="text">2 days ago</span>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <div class="media align-items-center">
-                                            <ul class="avatars">
-                                                <li>
-                                                    <div class="avatar bg-primary">
-                                                    <i class="material-icons">date_range</i>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <img alt="Claire" src="{{ url('assets/img/avatar-female-1.jpg') }}""" class="avatar" data-filter-by="alt" />
-                                                </li>
-                                            </ul>
-                                            <div class="media-body">
-                                                <div>
-                                                    <span class="h6" data-filter-by="text">Claire</span>
-                                                    <span data-filter-by="text">rescheduled the task</span><a href="#" data-filter-by="text">Target market trend analysis</a>
-                                                </div>
-                                                <span class="text-small" data-filter-by="text">2 days ago</span>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <div class="media align-items-center">
-                                            <ul class="avatars">
-                                                <li>
-                                                    <div class="avatar bg-primary">
-                                                        <i class="material-icons">add</i>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <img alt="David" src="{{ url('assets/img/avatar-male-4.jpg') }}"class="avatar" data-filter-by="alt" />
-                                                </li>
-                                            </ul>
-                                            <div class="media-body">
-                                                <div>
-                                                    <span class="h6" data-filter-by="text">David</span>
-                                                    <span data-filter-by="text">started the project</span>
-                                                </div>
-                                                <span class="text-small" data-filter-by="text">12 days ago</span>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                </ol>
-                            </div>
-                        </div>
-                      <!--end of content list-->
-                    </div>
-                    <!-- End History -->
 
                 </div>
                 <!-- End tab content -->
@@ -603,8 +138,6 @@
                 </form>
                 <!-- End Edit Topic -->
 
-
-
             </div>
         </div>
         <!-- end div row -->
@@ -614,60 +147,43 @@
 @endsection
 
 @section('script')
-<script>
-        ;(function($) {
-        $.fn.fixMe = function() {
-            return this.each(function() {
-                var $this = $(this),
-                    $t_fixed;
-                function init() {
-                    $this.wrap('<div class="container" />');
-                    $t_fixed = $this.clone();
-                    $t_fixed.find("tbody").remove().end().addClass("fixed").insertAfter($this);
-                    resizeFixed();
-                }
-                function resizeFixed() {
-                    $t_fixed.find("th").each(function(index) {
-                    $(this).css("width",$this.find("th").eq(index).outerWidth()+"px");
-                    });
-                }
-                function scrollFixed() {
-                    var offset = $(this).scrollTop(),
-                    tableOffsetTop = $this.offset().top,
-                    tableOffsetBottom = tableOffsetTop + $this.height() - $this.find("thead").height();
-                    if(offset < tableOffsetTop || offset > tableOffsetBottom)
-                    $t_fixed.hide();
-                    else if(offset >= tableOffsetTop && offset <= tableOffsetBottom && $t_fixed.is(":hidden"))
-                    $t_fixed.show();
-                }
-                $(window).resize(resizeFixed);
-                $(window).scroll(scrollFixed);
-                init();
-            });
-        };
-        })(jQuery);
 
-        $(document).ready(function(){
-            $("table").fixMe();
-            $(".up").click(function() {
-                $('html, body').animate({
-                scrollTop: 0
-            }, 2000);
-            });
+    <script>
+        $("#startDate").flatpickr({
+            defaultDate: "today",
         });
+
+        $("#dueDate").flatpickr({
+            defaultDate: new Date().fp_incr(91)
+        });
+
     </script>
 
     <script>
-        $(document).ready(function(){
-            $(".check").click(function(){
-                $(".custom-control-input").prop("checked", true);
+        // $(document).ready(function() {
+        //     $('#example').DataTable({
+
+        //     });
+        // });
+
+        $(document).ready(function() {
+            var table = $('#example').DataTable({
+                'columnDefs': [
+                    {
+                        'targets': 0,
+                        'checkboxes': {
+                            'selectRow': true
+                        }
+                    }
+                ],
+                'select': {
+                    'style': 'multi'
+                },
+                'order': [[1, 'asc']]
             });
-            $(".uncheck").click(function(){
-                $(".custom-control-input").prop("checked", false);
-            });
+
         });
     </script>
-
 
 @endsection
 

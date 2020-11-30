@@ -91,27 +91,8 @@
 
             <li class="nav-item">
 
-                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4">Documents</a>
+                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4">Plans</a>
                 <div id="submenu-4" class="collapse" data-parent="#navbar-collapse">
-                    <ul class="nav nav-small flex-column">
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('admin/new-task') }}">New Assignment</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('admin/manage-tasks') }}">Manage Assignments</a>
-                        </li>
-
-                    </ul>
-                </div>
-
-            </li>
-
-            <li class="nav-item">
-
-                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5">Plans</a>
-                <div id="submenu-5" class="collapse" data-parent="#navbar-collapse">
                     <ul class="nav nav-small flex-column">
 
                         <li class="nav-item">
