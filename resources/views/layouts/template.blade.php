@@ -45,9 +45,9 @@
     <!-- List.js - filter list elements -->
     <script type="text/javascript" src="{{asset('assets/js/list.min.js')}}"></script>
     <!-- DataTables.js - sort, seach, pagination -->
-    <script type="text/javascript" src="assets/js/datatables.min.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="assets/js/dataTables.checkboxes.min.js"></script>
+    <script type="text/javascript" src="{{asset('assets/js/datatables.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/js/jquery.dataTables.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/js/dataTables.checkboxes.min.js"')}}"></script>
 
     <!-- Required theme scripts (Do not remove) -->
     <script type="text/javascript" src="{{asset('assets/js/theme.js')}}"></script>
