@@ -2,8 +2,6 @@
 
 @section('content')
 
-<div class="main-container">
-    
     <div class="breadcrumb-bar navbar bg-white sticky-top">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -19,11 +17,11 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-11 col-xl-10">
-    
+
                 <form class="mt-3">
                     <div class="modal-content">
                         <div class="modal-header bg-primary">
-                            <h5 class="modal-title">Create a Faculty</h5> 
+                            <h5 class="modal-title">Create a Faculty</h5>
                         </div>
                         <!--end of modal head-->
                         <div class="modal-body">
@@ -35,7 +33,7 @@
                                 <label class="col-2">Description</label>
                                 <textarea class="form-control col" rows="10" placeholder="Write something here..." name="note-description" required ></textarea>
                             </div>
-                        
+
                         </div>
                         <!--end of modal body-->
                         <div class="modal-footer">
@@ -45,16 +43,10 @@
                         </div>
                     </div>
                 </form>
-            
+
             </div>
         </div>
     </div>
-
-</div>
-</div>
-
-
-
 
 
 @endsection

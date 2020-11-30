@@ -1,8 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="main-container">
-    
+
     <div class="breadcrumb-bar navbar bg-white sticky-top">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -65,11 +64,10 @@
                     </div>
                 </div>
             </form>
-           
+
           </div>
         </div>
     </div>
     <!-- end div container -->
 
-</div>
 @endsection

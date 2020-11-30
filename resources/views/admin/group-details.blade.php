@@ -1,8 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="main-container">
-    
+
     <div class="breadcrumb-bar navbar bg-white sticky-top">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -65,7 +64,7 @@
                                     <img alt="Sơn Tùng MTP" class="avatar" src="assets/img/avatar-sontung-mtp.jpg" />
                                 </a>
                             </li>
-                            
+
                         </ul>
                         <button class="btn btn-round" data-toggle="modal" data-target="#member-add-modal">
                             <i class="material-icons">add</i>
@@ -107,14 +106,14 @@
                             </div>
                             <!-- end of content list head -->
                             <div class="content-list-body row">
-        
+
                                 <div class="col-lg-6">
                                     <div class="card card-project">
-            
+
                                         <div class="progress">
                                             <div class="progress-bar bg-danger" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
-            
+
                                         <div class="card-body">
 
                                             <div class="dropdown card-options">
@@ -154,13 +153,13 @@
                                                         <img alt="Tống Uy Long" class="avatar" src="assets/img/avatar-tong-uy-long.jpg" />
                                                     </a>
                                                 </li>
-                                                
+
                                                 <li>
                                                     <a href="#" data-toggle="tooltip" data-placement="top" title="Sơn Tùng MTP">
                                                         <img alt="Sơn Tùng MTP" class="avatar" src="assets/img/avatar-sontung-mtp.jpg" />
                                                     </a>
                                                 </li>
-                                                
+
                                             </ul>
 
                                             <div class="card-meta d-flex justify-content-between">
@@ -211,7 +210,7 @@
                             </div>
                             <!--end of content list head-->
                             <div class="content-list-body row">
-        
+
                                 <div class="col-6">
                                     <a class="media media-member" href="#">
                                         <img alt="Tống Uy Long" src="assets/img/avatar-tong-uy-long.jpg" class="avatar avatar-lg" />
@@ -221,7 +220,7 @@
                                         </div>
                                     </a>
                                 </div>
-            
+
                                 <div class="col-6">
                                     <a class="media media-member" href="#">
                                         <img alt="Lý Hiện" src="assets/img/avatar-gun.jpg" class="avatar avatar-lg" />
@@ -231,15 +230,15 @@
                                         </div>
                                     </a>
                                 </div>
-        
-                            
-        
+
+
+
                             </div>
                         </div>
                         <!--end of content list-->
                     </div>
                 </div>
-                
+
                 <!-- Add Member -->
                 <form class="modal fade" id="member-add-modal" tabindex="-1" aria-hidden="true">
                     <div class="modal-dialog modal-lg" role="document">
@@ -282,7 +281,7 @@
                                     <div class="col-5">
                                         <div class="input-group input-group-round">
                                             <div class="input-group-prepend">
-                                                
+
                                                 <span class="input-group-text">
                                                     <i class="material-icons">filter_list</i>
                                                 </span>
@@ -293,7 +292,7 @@
                                 </div>
 
                                 <div class="form-group-users">
-        
+
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="user-1" checked>
                                         <label class="custom-control-label" for="user-12">
@@ -354,7 +353,7 @@
                             <div class="modal-body">
                                 <div class="tab-content">
                                     <div class="tab-pane fade show active" id="team-add-details" role="tabpanel">
-                                        
+
                                         <h6>General Details</h6>
                                         <div class="form-group row align-items-center">
                                             <label class="col-3">Name</label>
@@ -365,7 +364,7 @@
                                             <label class="col-3">Description</label>
                                             <textarea class="form-control col" rows="3" placeholder="Write something here..." name="team-description"></textarea>
                                         </div>
-    
+
                                         <hr>
 
                                         <h6>Visibility</h6>
@@ -442,7 +441,7 @@
                                                         <img alt="Sơn Tùng MTP" class="avatar" src="assets/img/avatar-sontung-mtp.jpg" />
                                                     </a>
                                                 </li>
-                                                
+
                                             </ul>
                                         </div>
 
@@ -466,7 +465,7 @@
                                                     </span>
                                                 </label>
                                             </div>
-        
+
                                             <div class="custom-control custom-checkbox">
                                                 <input type="checkbox" class="custom-control-input" id="team-user-12" checked>
                                                 <label class="custom-control-label" for="team-user-12">
@@ -477,7 +476,7 @@
                                                     </span>
                                                 </label>
                                             </div>
-                                        
+
                                         </div>
                                     </div>
                                     </div>
@@ -518,7 +517,7 @@
                             <div class="modal-body">
                                 <div class="tab-content">
                                     <div class="tab-pane fade show active" id="team-edit-details" role="tabpanel">
-                                        
+
                                         <h6>General Details</h6>
                                         <div class="form-group row align-items-center">
                                             <label class="col-3">Name</label>
@@ -529,7 +528,7 @@
                                             <label class="col-3">Description</label>
                                             <textarea class="form-control col" rows="3" placeholder="Write something here..." name="team-description"></textarea>
                                         </div>
-    
+
                                         <hr>
 
                                         <h6>Visibility</h6>
@@ -606,7 +605,7 @@
                                                             <img alt="Sơn Tùng MTP" class="avatar" src="assets/img/avatar-sontung-mtp.jpg" />
                                                         </a>
                                                     </li>
-                                                    
+
                                                 </ul>
                                             </div>
 
@@ -630,7 +629,7 @@
                                                         </span>
                                                     </label>
                                                 </div>
-            
+
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input" id="team-edit-user-12" checked>
                                                     <label class="custom-control-label" for="team-edit-user-12">
@@ -641,7 +640,7 @@
                                                         </span>
                                                     </label>
                                                 </div>
-                                            
+
                                             </div>
                                         </div>
                                     </div>
@@ -668,6 +667,7 @@
 
 </div>
 @endsection
+
 @section('script')
 
 <script>

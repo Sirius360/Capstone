@@ -2,8 +2,6 @@
 
 @section('content')
 
-<div class="main-container">
-    
     <div class="breadcrumb-bar navbar bg-white sticky-top">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -66,7 +64,7 @@
                                     <img alt="Sơn Tùng MTP" class="avatar" src="assets/img/avatar-sontung-mtp.jpg" />
                                 </a>
                             </li>
-                            
+
                         </ul>
                         <button class="btn btn-round" data-toggle="modal" data-target="#member-add-modal">
                             <i class="material-icons">add</i>
@@ -108,14 +106,14 @@
                             </div>
                             <!-- end of content list head -->
                             <div class="content-list-body row">
-        
+
                                 <div class="col-lg-6">
                                     <div class="card card-project">
-            
+
                                         <div class="progress">
                                             <div class="progress-bar bg-danger" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
-            
+
                                         <div class="card-body">
 
                                             <div class="dropdown card-options">
@@ -155,13 +153,13 @@
                                                         <img alt="Tống Uy Long" class="avatar" src="assets/img/avatar-tong-uy-long.jpg" />
                                                     </a>
                                                 </li>
-                                                
+
                                                 <li>
                                                     <a href="#" data-toggle="tooltip" data-placement="top" title="Sơn Tùng MTP">
                                                         <img alt="Sơn Tùng MTP" class="avatar" src="assets/img/avatar-sontung-mtp.jpg" />
                                                     </a>
                                                 </li>
-                                                
+
                                             </ul>
 
                                             <p>Thống kê sẽ đặt chỗ này</p>
@@ -206,7 +204,7 @@
                             </div>
                             <!--end of content list head-->
                             <div class="content-list-body row">
-        
+
                                 <div class="col-6">
                                     <a class="media media-member" href="#">
                                         <img alt="Tống Uy Long" src="assets/img/avatar-tong-uy-long.jpg" class="avatar avatar-lg" />
@@ -216,7 +214,7 @@
                                         </div>
                                     </a>
                                 </div>
-            
+
                                 <div class="col-6">
                                     <a class="media media-member" href="#">
                                         <img alt="Lý Hiện" src="assets/img/avatar-gun.jpg" class="avatar avatar-lg" />
@@ -226,15 +224,15 @@
                                         </div>
                                     </a>
                                 </div>
-        
-                            
-        
+
+
+
                             </div>
                         </div>
                         <!--end of content list-->
                     </div>
                 </div>
-                
+
                 <!-- Add Member -->
                 <form class="modal fade" id="member-add-modal" tabindex="-1" aria-hidden="true">
                     <div class="modal-dialog modal-lg" role="document">
@@ -277,7 +275,7 @@
                                     <div class="col-5">
                                         <div class="input-group input-group-round">
                                             <div class="input-group-prepend">
-                                                
+
                                                 <span class="input-group-text">
                                                     <i class="material-icons">filter_list</i>
                                                 </span>
@@ -288,7 +286,7 @@
                                 </div>
 
                                 <div class="form-group-users">
-        
+
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="user-1" checked>
                                         <label class="custom-control-label" for="user-12">
@@ -349,7 +347,7 @@
                             <div class="modal-body">
                                 <div class="tab-content">
                                     <div class="tab-pane fade show active" id="team-add-details" role="tabpanel">
-                                        
+
                                         <h6>General Details</h6>
                                         <div class="form-group row align-items-center">
                                             <label class="col-3">Name</label>
@@ -405,23 +403,23 @@
                                         <div class="users-manage" data-filter-list="form-group-users">
                                             <div class="mb-3">
                                                 <ul class="avatars text-center">
-                    
+
                                                     <li>
                                                     <img alt="Claire Connors" src="assets/img/avatar-female-1.jpg" class="avatar" data-toggle="tooltip" data-title="Claire Connors" />
                                                     </li>
-                    
+
                                                     <li>
                                                     <img alt="Marcus Simmons" src="assets/img/avatar-male-1.jpg" class="avatar" data-toggle="tooltip" data-title="Marcus Simmons" />
                                                     </li>
-                    
+
                                                     <li>
                                                     <img alt="Peggy Brown" src="assets/img/avatar-female-2.jpg" class="avatar" data-toggle="tooltip" data-title="Peggy Brown" />
                                                     </li>
-                    
+
                                                     <li>
                                                     <img alt="Harry Xai" src="assets/img/avatar-male-2.jpg" class="avatar" data-toggle="tooltip" data-title="Harry Xai" />
                                                     </li>
-                    
+
                                                 </ul>
                                             </div>
                                             <div class="input-group input-group-round">
@@ -433,7 +431,7 @@
                                             <input type="search" class="form-control filter-list-input" placeholder="Filter members" aria-label="Filter Members">
                                             </div>
                                             <div class="form-group-users">
-                
+
                                             <div class="custom-control custom-checkbox">
                                                 <input type="checkbox" class="custom-control-input" id="project-user-1" checked>
                                                 <label class="custom-control-label" for="project-user-1">
@@ -443,7 +441,7 @@
                                                 </span>
                                                 </label>
                                             </div>
-                
+
                                             <div class="custom-control custom-checkbox">
                                                 <input type="checkbox" class="custom-control-input" id="project-user-2" checked>
                                                 <label class="custom-control-label" for="project-user-2">
@@ -453,7 +451,7 @@
                                                 </span>
                                                 </label>
                                             </div>
-                
+
                                             <div class="custom-control custom-checkbox">
                                                 <input type="checkbox" class="custom-control-input" id="project-user-3" checked>
                                                 <label class="custom-control-label" for="project-user-3">
@@ -463,7 +461,7 @@
                                                 </span>
                                                 </label>
                                             </div>
-                
+
                                             <div class="custom-control custom-checkbox">
                                                 <input type="checkbox" class="custom-control-input" id="project-user-4" checked>
                                                 <label class="custom-control-label" for="project-user-4">
@@ -473,7 +471,7 @@
                                                 </span>
                                                 </label>
                                             </div>
-                
+
                                             <div class="custom-control custom-checkbox">
                                                 <input type="checkbox" class="custom-control-input" id="project-user-5">
                                                 <label class="custom-control-label" for="project-user-5">
@@ -483,7 +481,7 @@
                                                 </span>
                                                 </label>
                                             </div>
-                
+
                                             <div class="custom-control custom-checkbox">
                                                 <input type="checkbox" class="custom-control-input" id="project-user-6">
                                                 <label class="custom-control-label" for="project-user-6">
@@ -493,7 +491,7 @@
                                                 </span>
                                                 </label>
                                             </div>
-                
+
                                             <div class="custom-control custom-checkbox">
                                                 <input type="checkbox" class="custom-control-input" id="project-user-7">
                                                 <label class="custom-control-label" for="project-user-7">
@@ -503,7 +501,7 @@
                                                 </span>
                                                 </label>
                                             </div>
-                
+
                                             <div class="custom-control custom-checkbox">
                                                 <input type="checkbox" class="custom-control-input" id="project-user-8">
                                                 <label class="custom-control-label" for="project-user-8">
@@ -513,7 +511,7 @@
                                                 </span>
                                                 </label>
                                             </div>
-                
+
                                             <div class="custom-control custom-checkbox">
                                                 <input type="checkbox" class="custom-control-input" id="project-user-9">
                                                 <label class="custom-control-label" for="project-user-9">
@@ -523,7 +521,7 @@
                                                 </span>
                                                 </label>
                                             </div>
-                
+
                                             <div class="custom-control custom-checkbox">
                                                 <input type="checkbox" class="custom-control-input" id="project-user-10">
                                                 <label class="custom-control-label" for="project-user-10">
@@ -533,7 +531,7 @@
                                                 </span>
                                                 </label>
                                             </div>
-                
+
                                             <div class="custom-control custom-checkbox">
                                                 <input type="checkbox" class="custom-control-input" id="project-user-11">
                                                 <label class="custom-control-label" for="project-user-11">
@@ -543,7 +541,7 @@
                                                 </span>
                                                 </label>
                                             </div>
-                
+
                                             <div class="custom-control custom-checkbox">
                                                 <input type="checkbox" class="custom-control-input" id="project-user-12">
                                                 <label class="custom-control-label" for="project-user-12">
@@ -553,7 +551,7 @@
                                                 </span>
                                                 </label>
                                             </div>
-                
+
                                             </div>
                                         </div>
                                     </div>
@@ -574,35 +572,33 @@
         </div>
     </div>
     <!-- end div container -->
-
-</div>
 @endsection
 
 @section('script')
 
 
 
-<script>
-$("#startDate").flatpickr({
-    defaultDate: "today",
-});
+    <script>
+        $("#startDate").flatpickr({
+            defaultDate: "today",
+        });
 
-$("#dueDate").flatpickr({
-    defaultDate: new Date().fp_incr(91)
-});
+        $("#dueDate").flatpickr({
+            defaultDate: new Date().fp_incr(91)
+        });
 
-</script>
+    </script>
 
-<script>
-$(document).ready(function(){
-    $(".check").click(function(){
-        $(".custom-control-input").prop("checked", true);
-    });
-    $(".uncheck").click(function(){
-        $(".custom-control-input").prop("checked", false);
-    });
-});
-</script>
+    <script>
+        $(document).ready(function(){
+            $(".check").click(function(){
+                $(".custom-control-input").prop("checked", true);
+            });
+            $(".uncheck").click(function(){
+                $(".custom-control-input").prop("checked", false);
+            });
+        });
+    </script>
 
 
 @endsection

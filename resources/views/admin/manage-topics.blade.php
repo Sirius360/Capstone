@@ -2,8 +2,6 @@
 
 @section('content')
 
-<div class="main-container">
-    
     <div class="breadcrumb-bar navbar bg-white sticky-top">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -43,7 +41,7 @@
                             </form>
                         </div>
                         <!--end of content list head-->
-                        
+
                         <div class="card card-task">
                             <div class="progress">
                                 <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
@@ -187,9 +185,9 @@
                                     <form class="dropzone" action="upload.php">
                                         <span class="dz-message">Drop files here or click here to upload</span>
                                     </form>
-            
+
                                     <ul class="list-group list-group-activity dropzone-previews flex-column-reverse">
-            
+
                                         <li class="list-group-item">
                                             <div class="media align-items-center">
                                             <ul class="avatars">
@@ -222,7 +220,7 @@
                                             </div>
                                             </div>
                                         </li>
-            
+
                                         <li class="list-group-item">
                                             <div class="media align-items-center">
                                             <ul class="avatars">
@@ -255,7 +253,7 @@
                                             </div>
                                             </div>
                                         </li>
-            
+
                                         <li class="list-group-item">
                                             <div class="media align-items-center">
                                             <ul class="avatars">
@@ -288,7 +286,7 @@
                                             </div>
                                             </div>
                                         </li>
-            
+
                                         <li class="list-group-item">
                                             <div class="media align-items-center">
                                             <ul class="avatars">
@@ -321,7 +319,7 @@
                                             </div>
                                             </div>
                                         </li>
-            
+
                                         <li class="list-group-item">
                                             <div class="media align-items-center">
                                             <ul class="avatars">
@@ -354,7 +352,7 @@
                                             </div>
                                             </div>
                                         </li>
-            
+
                                     </ul>
                                 </div>
                             </div>
@@ -383,7 +381,7 @@
                             <!--end of content list head-->
                             <div class="content-list-body">
                                 <ol class="list-group list-group-activity">
-            
+
                                     <li class="list-group-item">
                                         <div class="media align-items-center">
                                             <ul class="avatars">
@@ -405,7 +403,7 @@
                                             </div>
                                         </div>
                                     </li>
-            
+
                                     <li class="list-group-item">
                                         <div class="media align-items-center">
                                             <ul class="avatars">
@@ -427,7 +425,7 @@
                                             </div>
                                         </div>
                                     </li>
-            
+
                                     <li class="list-group-item">
                                         <div class="media align-items-center">
                                             <ul class="avatars">
@@ -449,7 +447,7 @@
                                             </div>
                                         </div>
                                     </li>
-            
+
                                     <li class="list-group-item">
                                         <div class="media align-items-center">
                                             <ul class="avatars">
@@ -471,7 +469,7 @@
                                             </div>
                                         </div>
                                     </li>
-            
+
                                     <li class="list-group-item">
                                         <div class="media align-items-center">
                                             <ul class="avatars">
@@ -493,7 +491,7 @@
                                             </div>
                                         </div>
                                     </li>
-            
+
                                     <li class="list-group-item">
                                         <div class="media align-items-center">
                                             <ul class="avatars">
@@ -515,7 +513,7 @@
                                             </div>
                                         </div>
                                     </li>
-            
+
                                     <li class="list-group-item">
                                         <div class="media align-items-center">
                                             <ul class="avatars">
@@ -537,7 +535,7 @@
                                             </div>
                                         </div>
                                     </li>
-            
+
                                 </ol>
                             </div>
                         </div>
@@ -592,7 +590,7 @@
                                         <option>Team 9</option>
                                     </select>
                                 </div>
-                                
+
                             </div>
                             <!--end of modal body-->
                             <div class="modal-footer">
@@ -649,7 +647,7 @@
                                         <option>Team 9</option>
                                     </select>
                                 </div>
-                                
+
                             </div>
                             <!--end of modal body-->
                             <div class="modal-footer">
@@ -698,10 +696,10 @@
                                         She nervously peered over the edge. She understood in her mind that the view was supposed to be beautiful, but all she felt was fear. There had always been something about heights that disturbed her, and now she could feel the full force of this unease. She reluctantly crept a little closer with the encouragement of her friends as the fear continued to build. She couldn't help but feel that something horrible was about to happen.
                                         The young man wanted a role model. He looked long and hard in his youth, but that role model never materialized. His only choice was to embrace all the people in his life he didn't want to be like.</span>
                                 </div>
-                                
+
                             </div>
                             <!--end of modal body-->
-                            
+
                         </div>
                     </div>
                 </form>
@@ -714,8 +712,6 @@
         <!-- end div row -->
     </div>
     <!-- end div container -->
-
-</div>
 
 @endsection
 @section('script')

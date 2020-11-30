@@ -1,8 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="main-container">
-    
+
     <div class="breadcrumb-bar navbar bg-white sticky-top">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -22,7 +21,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-11 col-xl-10">
-                
+
                 <form class="mt-3">
                     <div class="modal-content">
 
@@ -43,7 +42,7 @@
                         <div class="modal-body">
                             <div class="tab-content">
                                 <div class="tab-pane fade show active" id="group-edit-details" role="tabpanel">
-                                    
+
                                     <h6>General Details</h6>
                                     <div class="form-group row align-items-center">
                                         <label class="col-3">Name</label>
@@ -120,9 +119,9 @@
 
                                 <div class="tab-pane fade" id="group-edit-members" role="tabpanel">
                                     <div class="users-manage" data-filter-list="form-group-users">
-                                        
+
                                         <div class="mb-3">
-                                            
+
                                             <div class="form-group row">
                                                 <textarea class="form-control col" rows="3" placeholder="Add users by email, each email separated by commas&#10;e.g: matt@example.com, joe@sample.com" name="group-description"></textarea>
                                             </div>
@@ -154,7 +153,7 @@
                                             <div class="col-5">
                                                 <div class="input-group input-group-round">
                                                     <div class="input-group-prepend">
-                                                        
+
                                                         <span class="input-group-text">
                                                             <i class="material-icons">filter_list</i>
                                                         </span>
@@ -163,10 +162,10 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
 
                                         <div class="form-group-users">
-        
+
                                             <div class="custom-control custom-checkbox">
                                                 <input type="checkbox" class="custom-control-input" id="project-user-11" checked>
                                                 <label class="custom-control-label" for="project-user-11">
@@ -178,7 +177,7 @@
                                                 </span>
                                                 </label>
                                             </div>
-        
+
                                             <div class="custom-control custom-checkbox">
                                                 <input type="checkbox" class="custom-control-input" id="project-user-12" checked>
                                                 <label class="custom-control-label" for="project-user-12">
@@ -189,7 +188,7 @@
                                                 </span>
                                                 </label>
                                             </div>
-        
+
                                         </div>
                                     </div>
                                 </div>
@@ -212,32 +211,32 @@
     </div>
     <!-- end div container -->
 
-</div>
 @endsection
-@section('scrip')
+
+@section('script')
 
 
-<script>
-$("#startDate").flatpickr({
-    defaultDate: "today",
-});
-
-$("#dueDate").flatpickr({
-    defaultDate: new Date().fp_incr(91)
-});
-
-</script>
-
-<script>
-$(document).ready(function(){
-    $(".check").click(function(){
-        $(".custom-control-input").prop("checked", true);
+    <script>
+    $("#startDate").flatpickr({
+        defaultDate: "today",
     });
-    $(".uncheck").click(function(){
-        $(".custom-control-input").prop("checked", false);
+
+    $("#dueDate").flatpickr({
+        defaultDate: new Date().fp_incr(91)
     });
-});
-</script>
+
+    </script>
+
+    <script>
+    $(document).ready(function(){
+        $(".check").click(function(){
+            $(".custom-control-input").prop("checked", true);
+        });
+        $(".uncheck").click(function(){
+            $(".custom-control-input").prop("checked", false);
+        });
+    });
+    </script>
 
 
 

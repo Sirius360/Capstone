@@ -1,8 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="main-container">
-            <!-- 
+        <!--
             <div class="navbar bg-white breadcrumb-bar">
                 <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
@@ -13,31 +12,31 @@
                     <li class="breadcrumb-item active" aria-current="page">Task</li>
                 </ol>
                 </nav>
-        
+
                 <div class="dropdown">
                     <button class="btn btn-round" role="button" data-toggle="dropdown" aria-expanded="false">
                         <i class="material-icons">settings</i>
                     </button>
                     <div class="dropdown-menu dropdown-menu-right">
-            
+
                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#task-edit-modal">Edit</a>
                         <a class="dropdown-item" href="#">Mark as Complete</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item text-danger" href="#">Archive</a>
-            
+
                     </div>
                 </div>
-        
+
             </div>
-            -->
-    
+        -->
+
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-11 col-xl-10">
-            
+
                         <div class="tab-content mt-3">
                             <div class="tab-pane fade show active" id="task" role="tabpanel">
-                                
+
                                 <div class="content-list" data-filter-list="content-list-body">
                                     <div class="row content-list-head">
                                         <div class="col-auto">
@@ -59,7 +58,7 @@
                                     </div>
                                     <!--end of content list head-->
                                     <div class="content-list-body">
-                    
+
                                         <div class="card card-note">
                                             <div class="card-header">
                                                 <div class="media align-items-center text-break">
@@ -99,7 +98,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                    
+
                                         <div class="card card-note">
                                             <div class="card-header">
                                                 <div class="media align-items-center text-break">
@@ -140,7 +139,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                    
+
                                         <div class="card card-note">
                                             <div class="card-header">
                                                 <div class="media align-items-center text-break">
@@ -172,7 +171,7 @@
                                                 <p>BM CMU</p>
                                             </div>
                                         </div>
-                    
+
                                         <div class="card card-note">
                                             <div class="card-header">
                                                 <div class="media align-items-center text-break">
@@ -220,14 +219,14 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    
-                    
+
+
                                     </div>
                                 </div>
                             </div>
                             <!--end of tab-->
                         </div>
-                        
+
                         <!-- Tạo Thông báo -->
                         <form class="modal fade" id="note-add-modal" tabindex="-1" aria-hidden="true">
                             <div class="modal-dialog modal-lg" role="document">
@@ -279,7 +278,7 @@
                             </div>
                         </form>
                         <!-- End Tạo Thông báo -->
-            
+
                         <!-- Chỉnh sửa Thông báo -->
                         <form class="modal fade" id="note-edit-modal" tabindex="-1" aria-hidden="true">
                             <div class="modal-dialog" role="document">
@@ -312,5 +311,5 @@
                     </div>
                 </div>
             </div>
-        </div>            
+
 @endsection

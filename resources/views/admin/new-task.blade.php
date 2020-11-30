@@ -2,8 +2,6 @@
 
 @section('content')
 
-<div class="main-container">
-    
     <div class="breadcrumb-bar navbar bg-white sticky-top">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -21,18 +19,18 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-11 col-xl-10">
-                
+
                 <form class="mt-3">
                     <div class="modal-content">
 
                         <div class="modal-header">
                             <h5 class="modal-title">New Assignment</h5>
                         </div>
-                    
+
                         <div class="modal-body">
                             <div class="tab-content">
                                 <div class="tab-pane fade show active" id="document-request" role="tabpanel">
-                                    
+
                                     <h6>General Details</h6>
                                     <div class="form-group row align-items-center">
                                         <label class="col-3">Title</label>
@@ -108,10 +106,10 @@
                                         <span class="dz-message">Drop files or click here to upload</span>
                                     </form>
                                     <ul class="list-group list-group-activity dropzone-previews flex-column-reverse">
-                                        
+
                                     </ul>
 
-                                   
+
                                 </div>
                             </div>
                         </div>
@@ -129,57 +127,33 @@
     </div>
     <!-- end div container -->
 
-</div>
-
 @endsection
+
 @section('script')
 
 
-<style type="text/css">
-.layout-switcher{ position: fixed; bottom: 0; left: 50%; transform: translateX(-50%) translateY(73px); color: #fff; transition: all .35s ease; background: #343a40; border-radius: .25rem .25rem 0 0; padding: .75rem; z-index: 999; }
-      .layout-switcher:not(:hover){ opacity: .95; }
-      .layout-switcher:not(:focus){ cursor: pointer; }
-      .layout-switcher-head{ font-size: .75rem; font-weight: 600; text-transform: uppercase; }
-      .layout-switcher-head i{ font-size: 1.25rem; transition: all .35s ease; }
-      .layout-switcher-body{ transition: all .55s ease; opacity: 0; padding-top: .75rem; transform: translateY(24px); text-align: center; }
-      .layout-switcher:focus{ opacity: 1; outline: none; transform: translateX(-50%) translateY(0); }
-      .layout-switcher:focus .layout-switcher-head i{ transform: rotateZ(180deg); opacity: 0; }
-      .layout-switcher:focus .layout-switcher-body{ opacity: 1; transform: translateY(0); }
-      .layout-switcher-option{ width: 72px; padding: .25rem; border: 2px solid rgba(255,255,255,0); display: inline-block; border-radius: 4px; transition: all .35s ease; }
-      .layout-switcher-option.active{ border-color: #007bff; }
-      .layout-switcher-icon{ width: 100%; border-radius: 4px; }
-      .layout-switcher-body:hover .layout-switcher-option:not(:hover){ opacity: .5; transform: scale(0.9); }
-      @media all and (max-width: 990px){ .layout-switcher{ min-width: 250px; } }
-      @media all and (max-width: 767px){ .layout-switcher{ display: none; } }
-</style>
+    <script>
 
-<script>
+        $("#startDate").flatpickr({
+            defaultDate: "today",
+            time_24hr: true
+        });
 
+        $("#dueDate").flatpickr({
+            defaultDate: new Date().fp_incr(7)
+        });
 
-$("#startDate").flatpickr({
-    defaultDate: "today",
-    time_24hr: true
-});
+    </script>
 
-$("#dueDate").flatpickr({
-    defaultDate: new Date().fp_incr(7)
-});
-
-
-
-</script>
-
-<script>
-$(document).ready(function(){
-    $(".check").click(function(){
-        $(".custom-control-input").prop("checked", true);
-    });
-    $(".uncheck").click(function(){
-        $(".custom-control-input").prop("checked", false);
-    });
-});
-</script>
-
-
+    <script>
+        $(document).ready(function(){
+            $(".check").click(function(){
+                $(".custom-control-input").prop("checked", true);
+            });
+            $(".uncheck").click(function(){
+                $(".custom-control-input").prop("checked", false);
+            });
+        });
+    </script>
 
 @endsection

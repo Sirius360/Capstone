@@ -2,8 +2,6 @@
 
 @section('content')
 
-<div class="main-container">
-    
     <div class="breadcrumb-bar navbar bg-white sticky-top">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -21,11 +19,11 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-11 col-xl-10">
-                
+
                 <form class="mt-3">
                     <div class="modal-content">
                         <div class="modal-header bg-primary">
-                            <h5 class="modal-title">Create a Topic</h5> 
+                            <h5 class="modal-title">Create a Topic</h5>
                         </div>
                         <!--end of modal head-->
                         <div class="modal-body">
@@ -61,7 +59,7 @@
                                     <option>Team 9</option>
                                 </select>
                             </div>
-                            
+
                         </div>
                         <!--end of modal body-->
                         <div class="modal-footer">
@@ -71,13 +69,11 @@
                         </div>
                     </div>
                 </form>
-            
+
             </div>
         </div>
     </div>
     <!-- end div container -->
-
-</div>
 
 @endsection
 

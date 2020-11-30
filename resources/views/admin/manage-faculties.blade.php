@@ -2,8 +2,6 @@
 
 @section('content')
 
-<div class="main-container">
-
     <div class="breadcrumb-bar navbar bg-white sticky-top">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -18,7 +16,7 @@
     <!-- begin a container -->
     <div class="container">
         <div class="row justify-content-center">
-            <div class="table-responsive mt-3"> 
+            <div class="table-responsive mt-3">
                 <table class="custom-table bg-purple">
 
                     <thead>
@@ -55,7 +53,7 @@
                             <td class="col-5 text-truncate text-left">Mô tả khoa đào tạo quốc tế một vài dòng</td>
                             <td class="col-3 text-truncate"><a href="#"><span class="text-primary"><i class="fad fa-pencil"></i></span></a>&ensp;<a href="#"><span class="text-danger"><i class="fad fa-trash-alt"></i></span></a></td>
                         </tr>
-                        
+
                     </tbody>
 
                 </table>
@@ -77,7 +75,7 @@
         <!-- end div row -->
     </div>
     <!-- end div container -->
-</div>
+
 
 @endsection
 @section('script')

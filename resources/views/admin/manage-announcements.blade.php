@@ -1,8 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="main-container">
-    
+
     <div class="breadcrumb-bar navbar bg-white sticky-top">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -20,9 +19,9 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="table-responsive mt-3">
-                
+
                 <table class="custom-table bg-purple">
-                
+
                     <thead>
                         <tr class="d-flex">
                         <th class="col-1"><div class="custom-control-inline-only custom-checkbox"><input type="checkbox" class="custom-control-input" id="announcement-id-0"><label class="custom-only custom-control-label" for="announcement-id-0"></label></div></th>
@@ -31,7 +30,7 @@
                         <th class="col-3">Action</th>
                         </tr>
                     </thead>
-    
+
                     <tbody>
                         <tr class="d-flex">
                             <td class="col-1"><div class="custom-control-inline-only custom-checkbox"><input type="checkbox" class="custom-control-input" id="announcement-id-1"><label class="custom-only custom-control-label" for="announcement-id-1"></label></div></td>
@@ -39,7 +38,7 @@
                             <td class="col-2 text-truncate"><img src="assets/img/mode/public.svg" alt="Public" width="16" /></td>
                             <td class="col-3"><a href="#"><span class="text-primary"><i class="fad fa-pencil"></i></span></a>&ensp;<a href="#"><span class="text-danger"><i class="fad fa-trash-alt"></i></span></a></td>
                         </tr>
-                        
+
                         <tr class="d-flex">
                             <td class="col-1"><div class="custom-control-inline-only custom-checkbox"><input type="checkbox" class="custom-control-input" id="announcement-id-2" ><label class="custom-only custom-control-label" for="announcement-id-2"></label></div></td>
                             <td class="col-6 text-truncate text-left">Members là chế độ cho người dùng đã active tài khoản</td>
@@ -88,7 +87,7 @@
                             <td class="col-2 text-truncate"><img src="assets/img/mode/public.svg" alt="Public" width="16" /></td>
                             <td class="col-3"><a href="#"><span class="text-primary"><i class="fad fa-pencil"></i></span></a>&ensp;<a href="#"><span class="text-danger"><i class="fad fa-trash-alt"></i></span></a></td>
                         </tr>
-                        
+
                         <tr class="d-flex">
                             <td class="col-1"><div class="custom-control-inline-only custom-checkbox"><input type="checkbox" class="custom-control-input" id="announcement-id-10" ><label class="custom-only custom-control-label" for="announcement-id-10"></label></div></td>
                             <td class="col-6 text-truncate text-left">Members là chế độ cho người dùng đã active tài khoản</td>
@@ -107,12 +106,12 @@
                             <td class="col-2 text-truncate"><img src="assets/img/mode/public.svg" alt="Public" width="16"></td>
                             <td class="col-3"><a href="#"><span class="text-primary"><i class="fad fa-pencil"></i></span></a>&ensp;<a href="#"><span class="text-danger"><i class="fad fa-trash-alt"></i></span></a></td>
                         </tr>
-                        
-                        
+
+
                     </tbody>
-    
+
                 </table>
-    
+
                 <div class="col-11 mt-3">
                     <ul class="list-inline custom-pointer">
                         <li><span class="badge badge-primary check"><i class="fad fa-check"></i>All</span></li>
@@ -120,7 +119,7 @@
                         <li><span class="badge badge-danger"><i class="fad fa-times"></i>Delete</span></li>
                     </ul>
                 </div>
-    
+
             </div>
             <!-- end div table responsive -->
             <div class="scrollMore">
@@ -131,7 +130,6 @@
     </div>
     <!-- end div container -->
 
-</div>
 @endsection
 
 @section('script')

@@ -2,8 +2,6 @@
 
 @section('content')
 
-<div class="main-container">
-    
     <div class="breadcrumb-bar navbar bg-white sticky-top">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -27,16 +25,11 @@
                     <p class="text-center">Coming soon!</p>
                 </div>
             </div>
-           
+
           </div>
         </div>
     </div>
     <!-- end div container -->
-
-</div>
-
-
-
 
 @endsection
 

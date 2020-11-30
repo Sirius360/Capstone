@@ -2,8 +2,6 @@
 
 @section('content')
 
-<div class="main-container">
-    
     <div class="breadcrumb-bar navbar bg-white sticky-top">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -23,7 +21,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-11 col-xl-10">
-                
+
                 <div class="mt-3">
                     <!--  -->
                     <div class="card card-team mb-2">
@@ -74,7 +72,7 @@
                                         <img alt="Sơn Tùng MTP" class="avatar" src="{{ url('assets/img/avatar-sontung-mtp.jpg') }}" />
                                     </a>
                                 </li>
-                                
+
                             </ul>
                             <div class="card-meta d-flex justify-content-between mt-2">
                                 <div class="d-flex align-self-end">
@@ -108,7 +106,7 @@
                                     <h5>Đợt Capstone 1 MIS 2020</h5>
                                 </a>
                                 <span>37 Teams, 148 Members</span>
-                                
+
                             </div>
                             <ul class="avatars">
                                 <li>
@@ -136,7 +134,7 @@
                                         <img alt="Sơn Tùng MTP" class="avatar" src="{{ url('assets/img/avatar-sontung-mtp.jpg') }}" />
                                     </a>
                                 </li>
-                                
+
                             </ul>
                             <div class="card-meta d-flex justify-content-between mt-2">
                                 <div class="d-flex align-self-end">
@@ -196,7 +194,7 @@
                                         <img alt="Sơn Tùng MTP" class="avatar" src="{{ url('assets/img/avatar-gun.jpg') }}"/>
                                     </a>
                                 </li>
-                                
+
                             </ul>
                             <div class="card-meta d-flex justify-content-between mt-2">
                                 <div class="d-flex align-self-end">
@@ -211,7 +209,7 @@
 
                 </div>
                 <!-- out of content -->
-                
+
                 <!-- pagination put here -->
                 <div class="row justify-content-center">
                     <ul class="pagination">
@@ -249,7 +247,7 @@
                             <div class="modal-body">
                                 <div class="tab-content">
                                     <div class="tab-pane fade show active" id="group-create-details" role="tabpanel">
-                                        
+
                                         <h6>General Details</h6>
                                         <div class="form-group row align-items-center">
                                             <label class="col-3">Name</label>
@@ -326,9 +324,9 @@
 
                                     <div class="tab-pane fade" id="group-add-members" role="tabpanel">
                                         <div class="users-manage" data-filter-list="form-group-users">
-                                            
+
                                             <div class="mb-3">
-                                                
+
                                                 <div class="form-group row">
                                                     <textarea class="form-control col" rows="3" placeholder="Add users by email, each email separated by commas&#10;e.g: matt@example.com, joe@sample.com" name="group-description"></textarea>
                                                 </div>
@@ -360,7 +358,7 @@
                                                 <div class="col-5">
                                                     <div class="input-group input-group-round">
                                                         <div class="input-group-prepend">
-                                                            
+
                                                             <span class="input-group-text">
                                                                 <i class="material-icons">filter_list</i>
                                                             </span>
@@ -369,10 +367,10 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
 
                                             <div class="form-group-users">
-            
+
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input" id="project-user-11" checked>
                                                     <label class="custom-control-label" for="project-user-11">
@@ -384,7 +382,7 @@
                                                     </span>
                                                     </label>
                                                 </div>
-            
+
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input" id="project-user-12" checked>
                                                     <label class="custom-control-label" for="project-user-12">
@@ -395,7 +393,7 @@
                                                     </span>
                                                     </label>
                                                 </div>
-            
+
                                             </div>
                                         </div>
                                     </div>
@@ -418,8 +416,6 @@
         </div>
     </div>
     <!-- end div container -->
-
-</div>
 
 @endsection
 
