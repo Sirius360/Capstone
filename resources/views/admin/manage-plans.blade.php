@@ -24,9 +24,6 @@
                         <div class="row content-list-head">
                             <div class="col-auto">
                                 <h3>Manage Plans</h3>
-                                <button class="btn btn-round" data-toggle="modal" data-target="#topic-add-modal">
-                                    <i class="material-icons">add</i>
-                                </button>
                             </div>
 
                         </div>
@@ -39,9 +36,9 @@
                                     <tr>
                                         <th></th>
                                         <th class="text-left">Title</th>
-                                        <th>Group</th>
-                                        <th>Team</th>
-                                        <th>Status</th>
+                                        <th>Start Date</th>
+                                        <th>Due Date</th>
+                                        <th>Progress</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -49,10 +46,10 @@
                                     <tr>
                                         <td></td>
                                         <td class="text-left">Almost before we knew it, we had left the ground.</td>
-                                        <td>2</td>
-                                        <td>15</td>
+                                        <td>23/11/2020</td>
+                                        <td>25/11/2020</td>
                                         <td>
-                                            <a href="#"><span class="text-success"><i class="fad fa-check"></i></span></a>
+                                            <span class="text-success">37/37</span>
                                         </td>
                                         <td>
                                             <a href="#" data-toggle="modal" data-target="#topic-edit-modal"><span class="ic-dark"><i class="fad fa-pencil"></i></span></a>
@@ -63,10 +60,10 @@
                                     <tr>
                                         <td></td>
                                         <td class="text-left">Almost before we knew it, we had left the ground.</td>
-                                        <td>2</td>
-                                        <td>15</td>
+                                        <td>23/11/2020</td>
+                                        <td>25/11/2020</td>
                                         <td>
-                                            <a href="#"><span class="text-danger"><i class="fad fa-times"></i></span></a>
+                                            <span class="text-danger">12/37</span>
                                         </td>
                                         <td>
                                             <a href="#" data-toggle="modal" data-target="#topic-edit-modal"><span class="ic-dark"><i class="fad fa-pencil"></i></span></a>
@@ -79,10 +76,10 @@
                                 <tfoot>
                                     <tr>
                                         <th></th>
-                                        <th class="text-left">Topic Name</th>
+                                        <th class="text-left">Title</th>
                                         <th>Start Date</th>
                                         <th>Due Date</th>
-                                        <th>Status</th>
+                                        <th>Progress</th>
                                         <th>Action</th>
                                     </tr>
                                 </tfoot>
@@ -90,7 +87,6 @@
 
                         </div>
                         <!-- end div table responsive -->
-
                     </div>
                     <!--end of tab-->
 
