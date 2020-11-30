@@ -14,6 +14,9 @@
     <link href="{{asset('assets/css/all.min.css')}}" rel="stylesheet" type="text/css" media="all" />
     <link href="{{asset('assets/css/theme.css')}}" rel="stylesheet" type="text/css" media="all" />
     <link href="{{asset('assets/css/custom.css')}}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{{asset('assets/css/datatables.min.css')}}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{{asset('assets/css/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{{asset('assets/css/dataTables.checkboxes.css')}}" rel="stylesheet" type="text/css" media="all" />
     @yield('css')
 
 </head>
@@ -24,22 +27,10 @@
         <!-- navbar here -->
         @include('components.navbar')
 
-        <!-- <div class="main-container">
-            
-            @include('components.breadcrumb')
+        <div class="main-container">
+            @yield('content')
+        </div>
 
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-11 col-xl-10">
-
-                        
-                        
-
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        @yield('content')
     </div>
 
 
@@ -63,11 +54,15 @@
     <script type="text/javascript" src="{{asset('assets/js/dropzone.min.js')}}"></script>
     <!-- List.js - filter list elements -->
     <script type="text/javascript" src="{{asset('assets/js/list.min.js')}}"></script>
+    <!-- DataTables.js - sort, seach, pagination -->
+    <script type="text/javascript" src="assets/js/datatables.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="assets/js/dataTables.checkboxes.min.js"></script>
 
     <!-- Required theme scripts (Do not remove) -->
     <script type="text/javascript" src="{{asset('assets/js/theme.js')}}"></script>
 
- 
+
     @yield('script')
 
 </body>

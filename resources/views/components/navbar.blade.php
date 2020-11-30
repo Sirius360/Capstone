@@ -35,7 +35,7 @@
                     <ul class="nav nav-small flex-column">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ ('admin/new-announcement') }}">New Announcement</a>
+                            <a class="nav-link" href="{{ url('admin/new-announcement') }}">New Announcement</a>
                         </li>
 
                         <li class="nav-item">
@@ -197,7 +197,7 @@
             <a href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <img alt="avatar" src="{{ url('assets/img/avatar-man.png') }}" class="avatar" />
             </a>
-            <p class="d-inline-block ml-1 text-light text-break">Welcome, <span class="text-warning">                    
+            <p class="d-inline-block ml-1 text-light text-break">Welcome, <span class="text-warning">
                 <?php
                         // $last_name = Session::get('last_name');
                         // if($last_name){
