@@ -62,7 +62,43 @@ Route::group(['prefix'=>'admin','middleware' => ['auth','role:admin']], function
     Route::get('statistics','AdminController@statistics');
     Route::get('team-details','AdminController@team_details');
     Route::get('template','AdminController@template');
-    
+    //POST=================================================================
+    Route::POST('save-announcement','AdminController@save_announcement');
+    Route::POST('save-new-announcement','AdminController@save_new_announcement');
+    Route::POST('save-new-faculty','AdminController@save_new_faculty');
+    Route::POST('save-new-department','AdminController@save_new_department');
+    Route::POST('save-new-topic','AdminController@save_new_topic');
+
+//======================================================================================= announcement_visibility 
+// Dẹp, khỏi làm 
+    // Route::get('/admin/public-announcement/{announcement_visibility_id}','AdminController@public_announcements');
+    // Route::get('/admin/members-announcement/{announcement_visibility_id}','AdminController@members_announcements');
+    // Route::get('/admin/lock-announcement/{announcement_visibility_id}','AdminController@lock_announcements');
+
+//============================================================================== edit & delete & update
+Route::get('edit-announcement/{id}','AdminController@edit_announcement');
+Route::get('edit-announcementt/{id}','AdminController@edit_announcementt');
+Route::get('delete-announcement/{id}','AdminController@delete_announcement');
+
+Route::get('delete-home-announcement/{id}','AdminController@delete_home_announcement');
+
+Route::post('update-announcement/{id}','AdminController@update_announcement');
+Route::post('update-announcementt/{id}','AdminController@update_announcementt');
+
+// ===
+Route::get('edit-faculties/{id}','AdminController@edit_faculties');
+Route::get('delete-faculties/{id}','AdminController@delete_faculties');
+
+Route::post('update-faculty/{id}','AdminController@update_faculties');
+//======department
+
+Route::get('edit-department/{id}','AdminController@edit_department');
+Route::get('delete-department/{id}','AdminController@delete_department');
+
+Route::post('update-department/{id}','AdminController@update_department');
+//======
+
+
 
 });
 //========================================================================== test layout

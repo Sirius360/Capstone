@@ -10,7 +10,7 @@
                 </li>
                 <li class="breadcrumb-item"><a href="#">Departments</a>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page">New Department</li>
+                <li class="breadcrumb-item active" aria-current="page">Edit Department</li>
             </ol>
         </nav>
     </div>
@@ -18,26 +18,30 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-11 col-xl-10">
-    
-                <form class="mt-3"method="post" action="{{ url('admin/save-new-department') }}">
+            @foreach($edit_new_department as $key => $cate_pro)
+                <form class="mt-3"method="post" action="{{ url('admin/update-department/'.$cate_pro->id) }}">
                 {{csrf_field()}}
+                @endforeach
                     <div class="modal-content">
                         <div class="modal-header bg-primary">
-                            <h5 class="modal-title">Create a Department</h5> 
+                            <h5 class="modal-title">Edit a Department</h5> 
                         </div>
                         <!--end of modal head-->
                         <div class="modal-body">
                             
                             <div class="form-group row align-items-center">
                                 <label class="col-2">Department</label>
-                                <input class="form-control col" type="text" placeholder="Department name" name="department_name" required />
+                                @foreach($edit_new_department as $key => $cate_pro)
+                               
+                                <input class="form-control col" type="text" value="{{$cate_pro->name}}" name="department_name" required />
+                                @endforeach
                             </div>
                            
                             <div class="form-group row align-items-center">
                                 <label class="col-2">Faculty</label>
                                 <select  name="abc" class="form-control col" required>
-                                @foreach($manage_faculties as $key => $cate_pro)
-                                    <option value="{{$cate_pro->id}}" name="faculty" selected>{{$cate_pro->name}}</option>
+                               @foreach($manage_faculties as $key => $cate_pro)
+                                    <option value="{{$cate_pro->id}}" selected>{{$cate_pro->name}}</option>
                                     @endforeach
                                     
                                 </select>
@@ -46,14 +50,17 @@
                             
                             <div class="form-group row">
                                 <label class="col-2">Description</label>
-                                <textarea class="form-control col" rows="10" placeholder="Write something here..." name="note_description" required ></textarea>
+                                @foreach($edit_new_department as $key => $cate_pro)
+
+                                <textarea class="form-control col" rows="10" name="note_description" required >{{$cate_pro->description}}</textarea>
+                                @endforeach
                             </div>
                         
                         </div>
                         <!--end of modal body-->
                         <div class="modal-footer">
                             <button role="button" class="btn btn-primary" type="submit">
-                                Post
+                                Done
                             </button>
                         </div>
                     </div>

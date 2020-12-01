@@ -82,10 +82,7 @@
         <div class="main-container fullscreen">
             <div class="container">
                 <div class="row justify-content-center mt-2">
-                    <div class="col-lg-9 col-xl-8 text-center">
-                        <h2>Create Account &#x1F325;</h2>
-                        <p class="lead">Continue your journey with Capstone Tracking</p>
-                    </div>
+@yield('content2')
                     <div class="col-xl-5 col-lg-6 col-md-7 col-sm-8">
                         <div class="text-center mt-3">
 

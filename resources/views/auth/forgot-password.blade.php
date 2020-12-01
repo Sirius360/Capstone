@@ -1,5 +1,13 @@
 @extends('layouts.app')
 
+@section('content2')
+
+<div class="col-lg-9 col-xl-8 text-center">
+<h2>Forgot password &#x1f62B;</h2>
+ <p class="lead">Enter your email address to reset</p>
+ </div>
+ @endsection
+
 @section('content')
 <div class="container">
                             <form>

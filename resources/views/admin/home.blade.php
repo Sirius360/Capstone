@@ -56,38 +56,46 @@
                                                 <input type="search" class="form-control filter-list-input" placeholder="Filter notes" aria-label="Filter notes">
                                             </div>
                                         </form>
+
                                     </div>
+                                    <!-- thong bao  -->
+                                    <?php
+                                        $message= Session ::get('message');
+                                        if($message){
+                                            echo '<span class="test-alert">'.$message.'</span>';
+                                            Session::put('message',null);
+
+                                        }
+                                    ?>
                                     <!--end of content list head-->
+
                                     <div class="content-list-body">
-                    
+                                    @foreach($manage_announcements as $key => $cate_pro)
+
                                         <div class="card card-note">
                                             <div class="card-header">
                                                 <div class="media align-items-center text-break">
                                                     <img alt="Peggy Brown" src="assets/img/avatar-man.png" class="avatar" data-toggle="tooltip" data-title="Nguyễn Đức Mận" data-filter-by="alt" />
                                                     <div class="media-body">
-                                                        <h6 class="mb-0 text-danger" data-filter-by="text">Thông báo nộp lại proposal bản final!</h6>
+                                                        <h6 class="mb-0 text-danger" data-filter-by="text">{{$cate_pro->title}}</h6>
                                                     </div>
                                                 </div>
                                                 <div class="d-flex align-items-center flex-shrink-0">
-                                                    <span data-filter-by="text">Just now</span>
+                                                    <span data-filter-by="text">{{$cate_pro->created_at}}</span>
                                                     <div class="ml-1 dropdown card-options">
                                                         <button class="btn-options" type="button" id="note-dropdown-button-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                             <i class="material-icons">more_vert</i>
                                                         </button>
                                                         <div class="dropdown-menu dropdown-menu-right">
-                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#note-edit-modal">Edit</a>
-                                                            <a class="dropdown-item text-danger" href="#">Delete</a>
+                                                            <a class="dropdown-item" href="{{URL::to('/admin/edit-announcementt/'.$cate_pro->id)}}">Edit</a>
+                                                            <a class="dropdown-item text-danger" onclick="return confirm('Are you sure to delete?')"href="{{URL::to('/admin/delete-home-announcement/'.$cate_pro->id)}}">Delete</a>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="card-body" data-filter-by="text">
-                                                <p>Chào các Bạn,</p>
-                                                <p>Thầy đã tạo mục nộp bản final proposal trên e-learning, yêu cầu các bạn hoàn thiện và nộp lên lại để thầy xác nhận tên đề tài.</p>
-                                                <p>Cần chú ý là tên đề tài phải chuẩn và sau khi nộp lên là KHÔNG thay đổi được nữa.</p>
-                                                <p>Các bạn nghiêm túc chỉnh sửa, tôi sẽ tự review lại toàn bộ - nếu phát hiện các bạn ko chỉnh sửa gì sẽ bị xử lý!</p>
-                                                <p>Hạn cuối là cuối tuần này. Capstone 2 gửi qua email.</p>
-                                                <p>M.</p>
+                                                <p>{{$cate_pro->content}}</p>
+
                                                 <div class="media media-attachment">
                                                     <div class="text-primary">
                                                         <i class="material-icons">attach_file</i>
@@ -99,7 +107,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                    
+<!--                     
                                         <div class="card card-note">
                                             <div class="card-header">
                                                 <div class="media align-items-center text-break">
@@ -218,10 +226,10 @@
                                                     <span data-filter-by="text">24kb Document</span>
                                                 </div>
                                                 </div>
-                                            </div>
-                                        </div>
+                                            </div> -->
+                                        <!-- </div> -->
                                     
-                    
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
@@ -229,7 +237,8 @@
                         </div>
                         
                         <!-- Tạo Thông báo -->
-                        <form class="modal fade" id="note-add-modal" tabindex="-1" aria-hidden="true">
+                        <form class="modal fade" id="note-add-modal" tabindex="-1" aria-hidden="true" method="POST" action="{{ url('admin/save-announcement') }}">
+                           {{csrf_field()}}
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -242,30 +251,30 @@
                                     <div class="modal-body">
                                         <div class="form-group row align-items-center">
                                             <label class="col-3">Title</label>
-                                            <input class="form-control col" type="text" placeholder="Title" name="note-name" />
+                                            <input class="form-control col" type="text" placeholder="Title" name="note_name" />
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-3">Content</label>
-                                            <textarea class="form-control col" rows="10" placeholder="Write something here..." name="note-description"></textarea>
+                                            <textarea class="form-control col" rows="10" placeholder="Write something here..." name="note_description"></textarea>
                                         </div>
                                         <hr>
                                         <h6>Visibility</h6>
                                         <div class="row">
                                             <div class="col">
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" id="visibility-everyone" name="visibility" class="custom-control-input" checked>
-                                                    <label class="custom-control-label" for="visibility-everyone">Everyone</label>
+                                                    <input type="radio" id="visibility-everyone" name="visibility" class="custom-control-input" checked value="1">
+                                                    <label class="custom-control-label" for="visibility-everyone" >Everyone</label>
                                                 </div>
                                             </div>
                                             <div class="col">
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" id="visibility-members" name="visibility" class="custom-control-input">
-                                                    <label class="custom-control-label" for="visibility-members">Members</label>
+                                                    <input type="radio" id="visibility-members" name="visibility" class="custom-control-input" value="2">
+                                                    <label class="custom-control-label" for="visibility-members"value="2">Members</label>
                                                 </div>
                                             </div>
                                             <div class="col">
                                                 <div class="custom-control custom-radio">
-                                                    <input type="radio" id="visibility-me" name="visibility" class="custom-control-input">
+                                                    <input type="radio" id="visibility-me" name="visibility" class="custom-control-input"value="3">
                                                     <label class="custom-control-label" for="visibility-me">Just me</label>
                                                 </div>
                                             </div>
@@ -281,7 +290,11 @@
                         <!-- End Tạo Thông báo -->
             
                         <!-- Chỉnh sửa Thông báo -->
-                        <form class="modal fade" id="note-edit-modal" tabindex="-1" aria-hidden="true">
+                       
+                        @foreach($manage_announcements as $key => $update_pop)
+
+                        <form class="modal fade" id="note_edit_modal" tabindex="-1" aria-hidden="true" method="POST" action="{{ url('admin/edit-pop-announcement/'.$update_pop->id) }}">
+                        {{csrf_field()}}
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -294,11 +307,11 @@
                                     <div class="modal-body">
                                         <div class="form-group row align-items-center">
                                             <label class="col-3">Tiêu đề</label>
-                                            <input class="form-control col" type="text" placeholder="Note title" name="note-name" />
+                                            <input class="form-control col" type="text"  name="note-name" data-mytitle="{{$update_pop->title}}" />
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-3">Nội dung</label>
-                                            <textarea class="form-control col" rows="6" placeholder="Body text for note" name="note-description"></textarea>
+                                            <textarea class="form-control col" rows="6"  name="note-description">{{$update_pop->content}}</textarea>
                                         </div>
                                     </div>
                                     <!--end of modal body-->
@@ -308,6 +321,7 @@
                                 </div>
                             </div>
                         </form>
+                       @endforeach
                         <!-- End Chỉnh sửa Thông báo -->
                     </div>
                 </div>

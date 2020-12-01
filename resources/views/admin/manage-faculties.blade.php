@@ -31,13 +31,17 @@
                     </thead>
 
                     <tbody>
+                    @foreach($manage_faculties as $key => $cate_pro)
+
                         <tr class="d-flex">
                             <td class="col-1 text-truncate"><input type="checkbox"></td>
-                            <td class="col-3 text-truncate text-left">International School</td>
-                            <td class="col-5 text-truncate text-left">Mô tả khoa đào tạo quốc tế một vài dòng</td>
-                            <td class="col-3 text-truncate"><a href="#"><span class="text-primary"><i class="fad fa-pencil"></i></span></a>&ensp;<a href="#"><span class="text-danger"><i class="fad fa-trash-alt"></i></span></a></td>
+                            <td class="col-3 text-truncate text-left">{{$cate_pro->name}}</td>
+                            <td class="col-5 text-truncate text-left">{{$cate_pro->description}}</td>
+                            <td class="col-3 text-truncate">
+                            <a href="{{URL::to('/admin/edit-faculties/'.$cate_pro->id)}}"><span class="text-primary"><i class="fad fa-pencil"></i></span></a>&ensp;
+                            <a onclick="return confirm('Are you sure to delete?')"href="{{URL::to('/admin/delete-faculties/'.$cate_pro->id)}}"><span class="text-danger"><i class="fad fa-trash-alt"></i></span></a></td>
                         </tr>
-                        <tr class="d-flex">
+                        <!-- <tr class="d-flex">
                             <td class="col-1 text-truncate"><input type="checkbox"></td>
                             <td class="col-3 text-truncate text-left">International School</td>
                             <td class="col-5 text-truncate text-left">Mô tả khoa đào tạo quốc tế không bắt buộc</td>
@@ -54,8 +58,9 @@
                             <td class="col-3 text-truncate text-left">International School</td>
                             <td class="col-5 text-truncate text-left">Mô tả khoa đào tạo quốc tế một vài dòng</td>
                             <td class="col-3 text-truncate"><a href="#"><span class="text-primary"><i class="fad fa-pencil"></i></span></a>&ensp;<a href="#"><span class="text-danger"><i class="fad fa-trash-alt"></i></span></a></td>
-                        </tr>
+                        </tr> -->
                         
+                        @endforeach
                     </tbody>
 
                 </table>

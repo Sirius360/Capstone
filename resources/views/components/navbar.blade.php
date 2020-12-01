@@ -35,7 +35,7 @@
                     <ul class="nav nav-small flex-column">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ ('admin/new-announcement') }}">New Announcement</a>
+                            <a class="nav-link" href="{{ url('admin/new-announcement') }}">New Announcement</a>
                         </li>
 
                         <li class="nav-item">

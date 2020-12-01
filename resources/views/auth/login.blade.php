@@ -1,5 +1,11 @@
 @extends('layouts.app')
+@section('content2')
 
+<div class="col-lg-9 col-xl-8 text-center">
+                            <h2>Welcome Back &#x1f44b;</h2>
+                            <p class="lead">Log in to your account to continue</p>
+                    </div>
+ @endsection
 @section('content')
 <div class="container">
 

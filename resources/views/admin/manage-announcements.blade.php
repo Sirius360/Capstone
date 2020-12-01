@@ -14,6 +14,15 @@
             </ol>
         </nav>
     </div>
+    <!-- Thông báo -->
+    <?php
+         $message= Session ::get('message');
+         if($message){
+             echo '<span class="test-alert">'.$message.'</span>';
+             Session::put('message',null);
+
+            }
+    ?>
     <!-- end breadcrumb -->
 
     <!-- begin a container -->
@@ -33,82 +42,49 @@
                     </thead>
     
                     <tbody>
-                        <tr class="d-flex">
-                            <td class="col-1"><div class="custom-control-inline-only custom-checkbox"><input type="checkbox" class="custom-control-input" id="announcement-id-1"><label class="custom-only custom-control-label" for="announcement-id-1"></label></div></td>
-                            <td class="col-6 text-truncate text-left">Public là chế độ công khai, bao gồm cả khách (Guest)</td>
-                            <td class="col-2 text-truncate"><img src="assets/img/mode/public.svg" alt="Public" width="16" /></td>
-                            <td class="col-3"><a href="#"><span class="text-primary"><i class="fad fa-pencil"></i></span></a>&ensp;<a href="#"><span class="text-danger"><i class="fad fa-trash-alt"></i></span></a></td>
-                        </tr>
-                        
-                        <tr class="d-flex">
-                            <td class="col-1"><div class="custom-control-inline-only custom-checkbox"><input type="checkbox" class="custom-control-input" id="announcement-id-2" ><label class="custom-only custom-control-label" for="announcement-id-2"></label></div></td>
-                            <td class="col-6 text-truncate text-left">Members là chế độ cho người dùng đã active tài khoản</td>
-                            <td class="col-2 text-truncate"><img src="assets/img/mode/members.svg" alt="Members" width="16" /></td>
-                            <td class="col-3"><a href="#"><span class="text-primary"><i class="fad fa-pencil"></i></span></a>&ensp;<a href="#"><span class="text-danger"><i class="fad fa-trash-alt"></i></span></a></td>
-                        </tr>
-                        <tr class="d-flex">
-                            <td class="col-1"><div class="custom-control-inline-only custom-checkbox"><input type="checkbox" class="custom-control-input" id="announcement-id-3" checked><label class="custom-only custom-control-label" for="announcement-id-3"></label></div></td>
-                            <td class="col-6 text-truncate text-left">Only me là chỉ mình admin thấy được</td>
-                            <td class="col-2 text-truncate"><img src="assets/img/mode/only-me.svg" alt="Only me" width="16"></td>
-                            <td class="col-3"><a href="#"><span class="text-primary"><i class="fad fa-pencil"></i></span></a>&ensp;<a href="#"><span class="text-danger"><i class="fad fa-trash-alt"></i></span></a></td>
-                        </tr>
-                        <tr class="d-flex">
-                            <td class="col-1"><div class="custom-control-inline-only custom-checkbox"><input type="checkbox" class="custom-control-input" id="announcement-id-4" ><label class="custom-only custom-control-label" for="announcement-id-4"></label></div></td>
-                            <td class="col-6 text-truncate text-left">Thử độ dài của dòng này là bao nhiêu xem đã vừa vặn chưa nè, vẫn chưa đủ dài nên sẽ cố viết thêm một chút xíu nữa, chắc ok rồi đó</td>
-                            <td class="col-2 text-truncate"><img src="assets/img/mode/public.svg" alt="Public" width="16"></td>
-                            <td class="col-3"><a href="#"><span class="text-primary"><i class="fad fa-pencil"></i></span></a>&ensp;<a href="#"><span class="text-danger"><i class="fad fa-trash-alt"></i></span></a></td>
-                        </tr>
-                        <tr class="d-flex">
-                            <td class="col-1"><div class="custom-control-inline-only custom-checkbox"><input type="checkbox" class="custom-control-input" id="announcement-id-5" ><label class="custom-only custom-control-label" for="announcement-id-5"></label></div></td>
-                            <td class="col-6 text-truncate text-left">Public là chế độ công khai, bao gồm cả khách (Guest)</td>
-                            <td class="col-2 text-truncate"><img src="assets/img/mode/public.svg" alt="Public" width="16" /></td>
-                            <td class="col-3"><a href="#"><span class="text-primary"><i class="fad fa-pencil"></i></span></a>&ensp;<a href="#"><span class="text-danger"><i class="fad fa-trash-alt"></i></span></a></td>
-                        </tr>
-                        <tr class="d-flex">
-                            <td class="col-1"><div class="custom-control-inline-only custom-checkbox"><input type="checkbox" class="custom-control-input" id="announcement-id-6" ><label class="custom-only custom-control-label" for="announcement-id-6"></label></div></td>
-                            <td class="col-6 text-truncate text-left">Members là chế độ cho người dùng đã active tài khoản</td>
-                            <td class="col-2 text-truncate"><img src="assets/img/mode/members.svg" alt="Members" width="16" /></td>
-                            <td class="col-3"><a href="#"><span class="text-primary"><i class="fad fa-pencil"></i></span></a>&ensp;<a href="#"><span class="text-danger"><i class="fad fa-trash-alt"></i></span></a></td>
-                        </tr>
-                        <tr class="d-flex">
-                            <td class="col-1"><div class="custom-control-inline-only custom-checkbox"><input type="checkbox" class="custom-control-input" id="announcement-id-7" ><label class="custom-only custom-control-label" for="announcement-id-7"></label></div></td>
-                            <td class="col-6 text-truncate text-left">Only me là chỉ mình admin thấy được</td>
-                            <td class="col-2 text-truncate"><img src="assets/img/mode/only-me.svg" alt="Only me" width="16"></td>
-                            <td class="col-3"><a href="#"><span class="text-primary"><i class="fad fa-pencil"></i></span></a>&ensp;<a href="#"><span class="text-danger"><i class="fad fa-trash-alt"></i></span></a></td>
-                        </tr>
-                        <tr class="d-flex">
-                            <td class="col-1"><div class="custom-control-inline-only custom-checkbox"><input type="checkbox" class="custom-control-input" id="announcement-id-8" ><label class="custom-only custom-control-label" for="announcement-id-8"></label></div></td>
-                            <td class="col-6 text-truncate text-left test">Thử độ dài của dòng này là bao nhiêu xem đã vừa vặn chưa nè, vẫn chưa đủ dài nên sẽ cố viết thêm một chút xíu nữa, chắc ok rồi đó</td>
-                            <td class="col-2 text-truncate"><img src="assets/img/mode/public.svg" alt="Public" width="16"></td>
-                            <td class="col-3"><a href="#"><span class="text-primary"><i class="fad fa-pencil"></i></span></a>&ensp;<a href="#"><span class="text-danger"><i class="fad fa-trash-alt"></i></span></a></td>
-                        </tr>
+                    @foreach($manage_announcements as $key => $cate_pro)
+
                         <tr class="d-flex">
                             <td class="col-1"><div class="custom-control-inline-only custom-checkbox"><input type="checkbox" class="custom-control-input" id="announcement-id-9" ><label class="custom-only custom-control-label" for="announcement-id-9"></label></div></td>
-                            <td class="col-6 text-truncate text-left">Public là chế độ công khai, bao gồm cả khách (Guest)</td>
-                            <td class="col-2 text-truncate"><img src="assets/img/mode/public.svg" alt="Public" width="16" /></td>
-                            <td class="col-3"><a href="#"><span class="text-primary"><i class="fad fa-pencil"></i></span></a>&ensp;<a href="#"><span class="text-danger"><i class="fad fa-trash-alt"></i></span></a></td>
+                            <td class="col-6 text-truncate text-left">{{$cate_pro->title}}</td>
+                            <td class="col-2 text-truncate">
+                                <?php
+                                if($cate_pro-> announcement_visibility==1){
+                                    echo '<a href="#"><span class="fa fa-globe" aria-hidden="true" ></span></a>';
+                                    // echo '<p>Public</p>';
+
+                                    // <img src="{{ url('assets/img/mode/public.svg') }}" alt="Public" width="16" />;
+                                }
+                                else if($cate_pro-> announcement_visibility==2){
+                                    echo '<a href="#"><span class="fa fa-users" aria-hidden="true" ></span></a>';
+                                   // echo '<p>Members</p>';
+                                }
+                                else if($cate_pro-> announcement_visibility==3){
+                                    echo '<a href="#"><span class="fa fa-lock-alt" aria-hidden="true" ></span></a>';
+                                }
+                                
+                                ?>
+                            </td>
+                            <td class="col-3">
+                            <a href="{{URL::to('/admin/edit-announcement/'.$cate_pro->id)}}"><span class="text-primary"><i class="fad fa-pencil"></i></span></a>&ensp;
+                            <a onclick="return confirm('Are you sure to delete?')"href="{{URL::to('/admin/delete-announcement/'.$cate_pro->id)}}"><span class="text-danger"><i class="fad fa-trash-alt"></i></span></a></td>
                         </tr>
                         
-                        <tr class="d-flex">
+                        <!-- <tr class="d-flex">
                             <td class="col-1"><div class="custom-control-inline-only custom-checkbox"><input type="checkbox" class="custom-control-input" id="announcement-id-10" ><label class="custom-only custom-control-label" for="announcement-id-10"></label></div></td>
                             <td class="col-6 text-truncate text-left">Members là chế độ cho người dùng đã active tài khoản</td>
-                            <td class="col-2 text-truncate"><img src="assets/img/mode/members.svg" alt="Members" width="16" /></td>
+                            <td class="col-2 text-truncate"><img src="{{ url('assets/img/mode/members.svg') }}" alt="Members" width="16" /></td>
                             <td class="col-3"><a href="#"><span class="text-primary"><i class="fad fa-pencil"></i></span></a>&ensp;<a href="#"><span class="text-danger"><i class="fad fa-trash-alt"></i></span></a></td>
                         </tr>
                         <tr class="d-flex">
                             <td class="col-1"><div class="custom-control-inline-only custom-checkbox"><input type="checkbox" class="custom-control-input" id="announcement-id-11" ><label class="custom-only custom-control-label" for="announcement-id-11"></label></div></td>
                             <td class="col-6 text-truncate text-left">Only me là chỉ mình admin thấy được</td>
-                            <td class="col-2 text-truncate"><img src="assets/img/mode/only-me.svg" alt="Only me" width="16"></td>
+                            <td class="col-2 text-truncate"><img src="{{ url('assets/img/mode/only-me.svg') }}"alt="Only me" width="16"></td>
                             <td class="col-3"><a href="#"><span class="text-primary"><i class="fad fa-pencil"></i></span></a>&ensp;<a href="#"><span class="text-danger"><i class="fad fa-trash-alt"></i></span></a></td>
-                        </tr>
-                        <tr class="d-flex">
-                            <td class="col-1"><div class="custom-control-inline-only custom-checkbox"><input type="checkbox" class="custom-control-input" id="announcement-id-12" ><label class="custom-only custom-control-label" for="announcement-id-12"></label></div></td>
-                            <td class="col-6 text-truncate text-left test">Thử độ dài của dòng này là bao nhiêu xem đã vừa vặn chưa nè, vẫn chưa đủ dài nên sẽ cố viết thêm một chút xíu nữa, chắc ok rồi đó</td>
-                            <td class="col-2 text-truncate"><img src="assets/img/mode/public.svg" alt="Public" width="16"></td>
-                            <td class="col-3"><a href="#"><span class="text-primary"><i class="fad fa-pencil"></i></span></a>&ensp;<a href="#"><span class="text-danger"><i class="fad fa-trash-alt"></i></span></a></td>
-                        </tr>
+                        </tr> -->
+
                         
-                        
+                    @endforeach
                     </tbody>
     
                 </table>

@@ -10,7 +10,7 @@
                 </li>
                 <li class="breadcrumb-item"><a href="{{ url('admin') }}">Announcements</a>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page">New Announcement</li>
+                <li class="breadcrumb-item active" aria-current="page">Edit Announcement</li>
             </ol>
         </nav>
     </div>
@@ -26,24 +26,25 @@
     <!-- begin a container -->
     <div class="container">
         <div class="row justify-content-center">
+        @foreach($edit_new_announcement as $key => $edit_value)
           <div class="col-lg-11 col-xl-10">
 
-            <form class="mt-3" method="POST" action="{{ url('admin/save-new-announcement') }}">
+            <form class="mt-3" method="POST" action="{{ url('admin/update-announcement/'.$edit_value->id) }}">
             {{csrf_field()}}
 
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Create an Announcement</h5>
+                        <h5 class="modal-title">Edit an Announcement</h5>
                     </div>
                     <!--end of modal head-->
                     <div class="modal-body">
                         <div class="form-group row align-items-center">
                             <label class="col-3">Title</label>
-                            <input class="form-control col" type="text" placeholder="Title" name="name" />
+                            <input class="form-control col" type="text" value="{{$edit_value->title}}" placeholder="Title" name="name" />
                         </div>
                         <div class="form-group row">
                             <label class="col-3">Content</label>
-                            <textarea class="form-control col" rows="10" placeholder="Write something here..." name="description"></textarea>
+                            <textarea class="form-control col" rows="10"  name="description">{{$edit_value->content}}</textarea>
                         </div>
                         <hr>
                         <h6>Visibility</h6>
@@ -70,13 +71,14 @@
                     </div>
                     <!--end of modal body-->
                     <div class="modal-footer">
-                        <button role="button" class="btn btn-primary" type="submit">Post</button>
+                        <button role="button" class="btn btn-primary" type="submit">Update</button>
                     </div>
                 </div>
             </form>
            
           </div>
         </div>
+        @endforeach
     </div>
     <!-- end div container -->
 

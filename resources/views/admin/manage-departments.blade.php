@@ -30,12 +30,23 @@
                     </thead>
 
                     <tbody>
+                    @foreach($edit_new_department as $key => $cate_pro)
+
                         <tr class="d-flex">
                             <td class="col-1 text-truncate"><input type="checkbox"></td>
-                            <td class="col-4 text-truncate text-left">CMU</td>
-                            <td class="col-4 text-truncate text-left">International School</td>
-                            <td class="col-3 text-truncate"><a href="#"><span class="text-primary"><i class="fad fa-pencil"></i></span></a>&ensp;<a href="#"><span class="text-danger"><i class="fad fa-trash-alt"></i></span></a></td>
+                            
+                            <td class="col-4 text-truncate text-left">{{$cate_pro->name}}</td>
+                            
+
+                            <td class="col-4 text-truncate text-left" value="{{$cate_pro->faculty_id}}">{{$cate_pro->faculty}}</td>
+                            
+
+                            <td class="col-3 text-truncate">
+                                <a  href="{{URL::to('/admin/edit-department/'.$cate_pro->id)}}"><span class="text-primary"><i class="fad fa-pencil"></i></span></a>&ensp;
+                                <a onclick="return confirm('Are you sure to delete?')"href="{{URL::to('/admin/delete-department/'.$cate_pro->id)}}"><span class="text-danger"><i class="fad fa-trash-alt"></i></span></a></td>
                         </tr>
+                        @endforeach
+
                         
                     </tbody>
 

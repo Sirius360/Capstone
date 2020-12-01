@@ -1,5 +1,11 @@
 @extends('layouts.app')
+@section('content2')
 
+<div class="col-lg-9 col-xl-8 text-center">
+                        <h2>Create Account &#x1F325;</h2>
+                        <p class="lead">Continue your journey with Capstone Tracking</p>
+                    </div>
+ @endsection
 @section('content')
 
            
