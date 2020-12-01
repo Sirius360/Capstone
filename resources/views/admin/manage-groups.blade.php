@@ -26,9 +26,6 @@
                         <div class="row content-list-head">
                             <div class="col-auto">
                                 <h3>Group Management</h3>
-                                <button class="btn btn-round" data-toggle="modal" data-target="#topic-add-modal">
-                                    <i class="material-icons">add</i>
-                                </button>
                             </div>
                         </div>
                         <!--end of content list head-->
@@ -353,11 +350,6 @@
     </script>
 
     <script>
-        // $(document).ready(function() {
-        //     $('#example').DataTable({
-
-        //     });
-        // });
 
         $(document).ready(function() {
             var table = $('#example').DataTable({
@@ -367,7 +359,15 @@
                         'checkboxes': {
                             'selectRow': true
                         }
-                    }
+                    },
+                    {
+                        'targets': 4,
+                        'orderable': false
+                    },
+                    {
+                        'targets': 5,
+                        'orderable': false
+                    },
                 ],
                 'select': {
                     'style': 'multi'
@@ -379,11 +379,6 @@
     </script>
 
     <script>
-        // $(document).ready(function() {
-        //     $('#example').DataTable({
-
-        //     });
-        // });
 
         $(document).ready(function() {
             var table = $('#popup').DataTable({

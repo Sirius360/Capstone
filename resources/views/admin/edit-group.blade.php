@@ -218,11 +218,6 @@
     </script>
 
     <script>
-        // $(document).ready(function() {
-        //     $('#example').DataTable({
-
-        //     });
-        // });
 
         $(document).ready(function() {
             var table = $('#example').DataTable({

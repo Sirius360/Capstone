@@ -174,15 +174,25 @@
                         'checkboxes': {
                             'selectRow': true
                         }
+                    },
+                    {
+                        'targets': 4,
+                        'orderable': false
+                    },
+                    {
+                        'targets': 5,
+                        'orderable': false
                     }
                 ],
                 'select': {
                     'style': 'multi'
                 },
                 'order': [[1, 'asc']]
+
             });
 
         });
+
     </script>
 
 @endsection

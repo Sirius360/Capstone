@@ -24,9 +24,6 @@
                         <div class="row content-list-head">
                             <div class="col-auto">
                                 <h3>Announcement Management</h3>
-                                <button class="btn btn-round" data-toggle="modal" data-target="#department-add-modal">
-                                    <i class="material-icons">add</i>
-                                </button>
                             </div>
                         </div>
                         <!--end of content list head-->
@@ -52,116 +49,7 @@
                                             <a href="#"><span class="ic-dark"><i class="fad fa-eye"></i></span></a>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td class="text-left">Almost before we knew it, we had left the ground.</td>
-                                        <td><a href="#"><span class="ic-dark"><i class="fad fa-user-friends"></i></span></a></td>
-                                        <td>
-                                            <a href="#"><span class="ic-dark"><i class="fad fa-pencil"></i></span></a>
-                                            <a href="#"><span class="ic-dark"><i class="fad fa-trash-alt"></i></span></a>
-                                            <a href="#"><span class="ic-dark"><i class="fad fa-eye"></i></span></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td class="text-left">Almost before we knew it, we had left the ground.</td>
-                                        <td><a href="#"><span class="ic-dark"><i class="fad fa-user-friends"></i></span></a></td>
-                                        <td>
-                                            <a href="#"><span class="ic-dark"><i class="fad fa-pencil"></i></span></a>
-                                            <a href="#"><span class="ic-dark"><i class="fad fa-trash-alt"></i></span></a>
-                                            <a href="#"><span class="ic-dark"><i class="fad fa-eye"></i></span></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td class="text-left">Almost before we knew it, we had left the ground.</td>
-                                        <td><a href="#"><span class="ic-dark"><i class="fad fa-user-friends"></i></span></a></td>
-                                        <td>
-                                            <a href="#"><span class="ic-dark"><i class="fad fa-pencil"></i></span></a>
-                                            <a href="#"><span class="ic-dark"><i class="fad fa-trash-alt"></i></span></a>
-                                            <a href="#"><span class="ic-dark"><i class="fad fa-eye"></i></span></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td class="text-left">Almost before we knew it, we had left the ground.</td>
-                                        <td><a href="#"><span class="ic-dark"><i class="fad fa-user-friends"></i></span></a></td>
-                                        <td>
-                                            <a href="#"><span class="ic-dark"><i class="fad fa-pencil"></i></span></a>
-                                            <a href="#"><span class="ic-dark"><i class="fad fa-trash-alt"></i></span></a>
-                                            <a href="#"><span class="ic-dark"><i class="fad fa-eye"></i></span></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td class="text-left">Almost before we knew it, we had left the ground.</td>
-                                        <td><a href="#"><span class="ic-dark"><i class="fad fa-user-friends"></i></span></a></td>
-                                        <td>
-                                            <a href="#"><span class="ic-dark"><i class="fad fa-pencil"></i></span></a>
-                                            <a href="#"><span class="ic-dark"><i class="fad fa-trash-alt"></i></span></a>
-                                            <a href="#"><span class="ic-dark"><i class="fad fa-eye"></i></span></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td class="text-left">Almost before we knew it, we had left the ground.</td>
-                                        <td><a href="#"><span class="ic-dark"><i class="fad fa-user-friends"></i></span></a></td>
-                                        <td>
-                                            <a href="#"><span class="ic-dark"><i class="fad fa-pencil"></i></span></a>
-                                            <a href="#"><span class="ic-dark"><i class="fad fa-trash-alt"></i></span></a>
-                                            <a href="#"><span class="ic-dark"><i class="fad fa-eye"></i></span></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td class="text-left">Almost before we knew it, we had left the ground.</td>
-                                        <td><a href="#"><span class="ic-dark"><i class="fad fa-user-friends"></i></span></a></td>
-                                        <td>
-                                            <a href="#"><span class="ic-dark"><i class="fad fa-pencil"></i></span></a>
-                                            <a href="#"><span class="ic-dark"><i class="fad fa-trash-alt"></i></span></a>
-                                            <a href="#"><span class="ic-dark"><i class="fad fa-eye"></i></span></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td class="text-left">Almost before we knew it, we had left the ground.</td>
-                                        <td><a href="#"><span class="ic-dark"><i class="fad fa-user-friends"></i></span></a></td>
-                                        <td>
-                                            <a href="#"><span class="ic-dark"><i class="fad fa-pencil"></i></span></a>
-                                            <a href="#"><span class="ic-dark"><i class="fad fa-trash-alt"></i></span></a>
-                                            <a href="#"><span class="ic-dark"><i class="fad fa-eye"></i></span></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td class="text-left">Almost before we knew it, we had left the ground.</td>
-                                        <td><a href="#"><span class="ic-dark"><i class="fad fa-user-friends"></i></span></a></td>
-                                        <td>
-                                            <a href="#"><span class="ic-dark"><i class="fad fa-pencil"></i></span></a>
-                                            <a href="#"><span class="ic-dark"><i class="fad fa-trash-alt"></i></span></a>
-                                            <a href="#"><span class="ic-dark"><i class="fad fa-eye"></i></span></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td class="text-left">Almost before we knew it, we had left the ground.</td>
-                                        <td><a href="#"><span class="ic-dark"><i class="fad fa-user-friends"></i></span></a></td>
-                                        <td>
-                                            <a href="#"><span class="ic-dark"><i class="fad fa-pencil"></i></span></a>
-                                            <a href="#"><span class="ic-dark"><i class="fad fa-trash-alt"></i></span></a>
-                                            <a href="#"><span class="ic-dark"><i class="fad fa-eye"></i></span></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td class="text-left">Almost before we knew it, we had left the ground.</td>
-                                        <td><a href="#"><span class="ic-dark"><i class="fad fa-user-friends"></i></span></a></td>
-                                        <td>
-                                            <a href="#"><span class="ic-dark"><i class="fad fa-pencil"></i></span></a>
-                                            <a href="#"><span class="ic-dark"><i class="fad fa-trash-alt"></i></span></a>
-                                            <a href="#"><span class="ic-dark"><i class="fad fa-eye"></i></span></a>
-                                        </td>
-                                    </tr>
+
                                 </tbody>
                                 <tfoot>
                                     <tr>
@@ -187,11 +75,6 @@
 
 @section('script')
     <script>
-        // $(document).ready(function() {
-        //     $('#example').DataTable({
-
-        //     });
-        // });
 
         $(document).ready(function() {
             var table = $('#example').DataTable({
@@ -201,7 +84,15 @@
                         'checkboxes': {
                             'selectRow': true
                         }
-                    }
+                    },
+                    {
+                        'targets': 2,
+                        'orderable': false
+                    },
+                    {
+                        'targets': 3,
+                        'orderable': false
+                    },
                 ],
                 'select': {
                     'style': 'multi'

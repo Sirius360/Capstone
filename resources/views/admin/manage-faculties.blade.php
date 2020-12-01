@@ -22,9 +22,6 @@
                         <div class="row content-list-head">
                             <div class="col-auto">
                                 <h3>Faculty Management</h3>
-                                <button class="btn btn-round" data-toggle="modal" data-target="#faculty-add-modal">
-                                    <i class="material-icons">add</i>
-                                </button>
                             </div>
 
                         </div>
@@ -164,7 +161,11 @@
                         'checkboxes': {
                             'selectRow': true
                         }
-                    }
+                    },
+                    {
+                        'targets': 2,
+                        'orderable': false
+                    },
                 ],
                 'select': {
                     'style': 'multi'

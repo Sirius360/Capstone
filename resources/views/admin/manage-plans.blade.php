@@ -187,7 +187,11 @@
                         'checkboxes': {
                             'selectRow': true
                         }
-                    }
+                    },
+                    {
+                        'targets': 5,
+                        'orderable': false
+                    },
                 ],
                 'select': {
                     'style': 'multi'
