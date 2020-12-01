@@ -1,5 +1,5 @@
 @extends('layouts.master')
-
+@section('title', 'Topic Management')
 @section('content')
 
     <div class="breadcrumb-bar navbar bg-white sticky-top">
@@ -9,7 +9,7 @@
             </li>
             <li class="breadcrumb-item"><a href="{{ url('admin') }}">Topics</a>
             </li>
-            <li class="breadcrumb-item active" aria-current="page">Manage Topic</li>
+            <li class="breadcrumb-item active" aria-current="page">Topic Management</li>
             </ol>
         </nav>
     </div>
@@ -23,7 +23,7 @@
                     <div class="tab-pane fade show active" id="tasks" role="tabpanel" data-filter-list="card-list-body">
                         <div class="row content-list-head">
                             <div class="col-auto">
-                                <h3>Manage Topics</h3>
+                                <h3>Topic Management</h3>
                                 <button class="btn btn-round" data-toggle="modal" data-target="#topic-add-modal">
                                     <i class="material-icons">add</i>
                                 </button>
@@ -155,6 +155,7 @@
                 <!-- End Edit Topic -->
 
             </div>
+            <!-- end div col -->
         </div>
         <!-- end div row -->
     </div>

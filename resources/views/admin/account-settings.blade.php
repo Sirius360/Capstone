@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+@section('title', 'Account Settings')
+
 @section('content')
 
     <div class="breadcrumb-bar navbar bg-white sticky-top">

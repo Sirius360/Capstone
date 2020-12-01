@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
 
-<a class="navbar-brand" href="{{ url('admin/') }}">
+    <a class="navbar-brand" href="{{ url('admin/') }}">
         <img alt="dtu" src="{{ url('assets/img/duytan-university.svg') }}"/>
     </a>
     <div class="d-flex align-items-center">
@@ -39,7 +39,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('admin/manage-announcements') }}">Manage Announcement</a>
+                            <a class="nav-link" href="{{ url('admin/manage-announcements') }}">Annc. Management</a>
                         </li>
 
                     </ul>
@@ -58,7 +58,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('admin/manage-groups') }}">Manage Groups</a>
+                            <a class="nav-link" href="{{ url('admin/manage-groups') }}">Group Management</a>
                         </li>
 
                     </ul>
@@ -81,7 +81,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('admin/manage-topics') }}">Manage Topics</a>
+                            <a class="nav-link" href="{{ url('admin/manage-topics') }}">Topic Management</a>
                         </li>
 
                     </ul>
@@ -100,7 +100,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('admin/manage-plans') }}">Manage Plans</a>
+                            <a class="nav-link" href="{{ url('admin/manage-plans') }}">Plan Management</a>
                         </li>
 
                     </ul>
@@ -127,7 +127,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('admin/manage-faculties') }}">Manage Faculties</a>
+                            <a class="nav-link" href="{{ url('admin/manage-faculties') }}">Faculty Management</a>
                         </li>
 
                     </ul>
@@ -146,7 +146,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('admin/manage-departments') }}">Manage Departments</a>
+                            <a class="nav-link" href="{{ url('admin/manage-departments') }}">Department Management</a>
                         </li>
 
                     </ul>

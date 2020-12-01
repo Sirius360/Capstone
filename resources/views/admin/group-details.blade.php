@@ -1,5 +1,5 @@
 @extends('layouts.master')
-
+@section('title')
 @section('content')
 
     <div class="breadcrumb-bar navbar bg-white sticky-top">
@@ -9,7 +9,7 @@
                 </li>
                 <li class="breadcrumb-item"><a href="{{ url('manage-groups') }}">Groups</a>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page">Đợt Capstone 1 MIS 2020</li>
+                <li class="breadcrumb-item active" aria-current="page">Almost before we knew it, we had left the ground. #6C757D</li>
             </ol>
         </nav>
 
@@ -32,36 +32,36 @@
     <!-- begin a container -->
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-11 col-xl-10">
+            <div class="col-xl-11">
 
                 <div class="page-header">
-                    <h2>Đợt Capstone 1 MIS 2020</h2>
+                    <h2>Almost before we knew it, we had left the ground. #6C757D</h2>
                     <p class="lead">Write something here...</p>
                     <div class="d-flex align-items-center">
                         <ul class="avatars">
                             <li>
                                 <a href="#" data-toggle="tooltip" data-placement="top" title="Lý Hiện">
-                                    <img alt="Lý Hiện" class="avatar" src="assets/img/avatar-gun.jpg" />
+                                    <img alt="Lý Hiện" class="avatar" src="{{ asset('assets/img/avatar-gun.jpg') }}" />
                                 </a>
                             </li>
                             <li>
                                 <a href="#" data-toggle="tooltip" data-placement="top" title="Ngọc Trinh">
-                                    <img alt="Ngọc Trinh" class="avatar" src="assets/img/avatar-ngoc-trinh.jpg" />
+                                    <img alt="Ngọc Trinh" class="avatar" src="{{ asset('assets/img/avatar-ngoc-trinh.jpg') }}" />
                                 </a>
                             </li>
                             <li>
                                 <a href="#" data-toggle="tooltip" data-placement="top" title="Lý Hiện">
-                                    <img alt="Tống Uy Long" class="avatar" src="assets/img/avatar-tong-uy-long.jpg" />
+                                    <img alt="Tống Uy Long" class="avatar" src="{{ asset('assets/img/avatar-tong-uy-long.jpg') }}" />
                                 </a>
                             </li>
                             <li>
                                 <a href="#" data-toggle="tooltip" data-placement="top" title="Lý Hiện">
-                                    <img alt="Lý Hiện" class="avatar" src="assets/img/avatar-gun.jpg" />
+                                    <img alt="Lý Hiện" class="avatar" src="{{ asset('assets/img/avatar-gun.jpg') }}" />
                                 </a>
                             </li>
                             <li>
                                 <a href="#" data-toggle="tooltip" data-placement="top" title="Lý Hiện">
-                                    <img alt="Sơn Tùng MTP" class="avatar" src="assets/img/avatar-sontung-mtp.jpg" />
+                                    <img alt="Sơn Tùng MTP" class="avatar" src="{{ asset('assets/img/avatar-sontung-mtp.jpg') }}" />
                                 </a>
                             </li>
 
@@ -88,7 +88,7 @@
                         <div class="content-list">
                             <div class="row content-list-head">
                                 <div class="col-auto">
-                                    <h3>Teams</h3>
+                                    <h3>Team list</h3>
                                     <button class="btn btn-round" data-toggle="modal" data-target="#team-new-modal">
                                         <i class="material-icons">add</i>
                                     </button>
@@ -105,83 +105,87 @@
                                 </form>
                             </div>
                             <!-- end of content list head -->
-                            <div class="content-list-body row">
 
-                                <div class="col-lg-6">
-                                    <div class="card card-project">
+                            <div class="table-responsive mt-3">
 
-                                        <div class="progress">
-                                            <div class="progress-bar bg-danger" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-
-                                        <div class="card-body">
-
-                                            <div class="dropdown card-options">
-                                                <button class="btn-options" type="button" id="project-dropdown-button-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <i class="material-icons">more_vert</i>
-                                                </button>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#team-edit-modal">Edit</a>
-                                                    <a class="dropdown-item" href="#">Share</a>
-                                                    <div class="dropdown-divider"></div>
-                                                    <a class="dropdown-item text-chartjs" href="#">Disable Team</a>
-                                                </div>
-                                            </div>
-
-                                            <div class="card-title">
-                                                <a href="#">
-                                                    <h5 data-filter-by="text">New Website</h5>
+                                <table id="team-list" class="stripe" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th class="text-left">Team Name</th>
+                                            <th>Mentor</th>
+                                            <th>Progress</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td class="text-left">Almost before we knew it, we had left the ground. #6C757D</td>
+                                            <td>
+                                                <a href="#" data-toggle="tooltip" data-placement="top" title="Nguyễn Đức Mận">
+                                                    <img alt="Nguyễn Đức Mận" class="avatar" src="{{ asset('assets/img/avatar-man.png') }}" />
                                                 </a>
-                                            </div>
+                                            </td>
+                                            <td>3/7</td>
+                                            <td><a href="#"><span class="text-success"><i class="fad fa-check"></i></span></a></td>
+                                            <td>
+                                                <a href="#" data-toggle="modal" data-target="#group-edit-modal"><span class="ic-dark"><i class="fad fa-pencil"></i></span></a>
+                                                <a href="#"><span class="ic-dark"><i class="fad fa-trash-alt"></i></span></a>
+                                                <a href="{{ url('admin/group-details') }}"><span class="ic-dark"><i class="fad fa-eye"></i></span></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td class="text-left">Almost before we knew it, we had left the ground. #6C757D</td>
+                                            <td>
+                                                <a href="#" data-toggle="tooltip" data-placement="top" title="Nguyễn Đức Mận">
+                                                    <img alt="Nguyễn Đức Mận" class="avatar" src="{{ asset('assets/img/avatar-man.png') }}" />
+                                                </a>
+                                            </td>
+                                            <td>3/7</td>
+                                            <td><a href="#"><span class="text-warning"><i class="fad fa-exclamation"></i></span></a></td>
+                                            <td>
+                                                <a href="#"><span class="ic-dark"><i class="fad fa-pencil"></i></span></a>
+                                                <a href="#"><span class="ic-dark"><i class="fad fa-trash-alt"></i></span></a>
+                                                <a href="#"><span class="ic-dark"><i class="fad fa-eye"></i></span></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td class="text-left">Almost before we knew it, we had left the ground. #6C757D</td>
+                                            <td>
+                                                <a href="#" data-toggle="tooltip" data-placement="top" title="Nguyễn Đức Mận">
+                                                    <img alt="Nguyễn Đức Mận" class="avatar" src="{{ asset('assets/img/avatar-man.png') }}" />
+                                                </a>
+                                            </td>
+                                            <td>3/7</td>
+                                            <td><a href="#"><span class="text-danger"><i class="fad fa-times"></i></span></a></td>
+                                            <td>
+                                                <a href="#"><span class="ic-dark"><i class="fad fa-pencil"></i></span></a>
+                                                <a href="#"><span class="ic-dark"><i class="fad fa-trash-alt"></i></span></a>
+                                                <a href="#"><span class="ic-dark"><i class="fad fa-eye"></i></span></a>
+                                            </td>
+                                        </tr>
 
-                                            <ul class="avatars">
-
-                                                <li>
-                                                    <a href="#" data-toggle="tooltip" data-placement="top" title="Lý Hiện">
-                                                        <img alt="Lý Hiện" class="avatar" src="assets/img/avatar-gun.jpg" />
-                                                    </a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="#" data-toggle="tooltip" data-placement="top" title="Ngọc Trinh">
-                                                        <img alt="Ngọc Trinh" class="avatar" src="assets/img/avatar-ngoc-trinh.jpg" />
-                                                    </a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="#" data-toggle="tooltip" data-placement="top" title="Tống Uy Long">
-                                                        <img alt="Tống Uy Long" class="avatar" src="assets/img/avatar-tong-uy-long.jpg" />
-                                                    </a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="#" data-toggle="tooltip" data-placement="top" title="Sơn Tùng MTP">
-                                                        <img alt="Sơn Tùng MTP" class="avatar" src="assets/img/avatar-sontung-mtp.jpg" />
-                                                    </a>
-                                                </li>
-
-                                            </ul>
-
-                                            <div class="card-meta d-flex justify-content-between">
-                                                <div class="d-flex align-items-center">
-                                                    <i class="material-icons mr-1">playlist_add_check</i>
-                                                    <span class="text-small">6/10</span>
-                                                </div>
-                                                <span class="text-small" data-filter-by="text">Due 4 days</span>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <!-- end card project -->
-                                </div>
-                                <!-- end col-lg-6 -->
-
-                                <!-- new card put here -->
-
-
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th></th>
+                                            <th class="text-left">Team Name</th>
+                                            <th>Mentor</th>
+                                            <th>Progress</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
 
                             </div>
-                            <!--end of content list body-->
+                            <!-- end div table responsive -->
+
+
                         </div>
                         <!--end of content list-->
                     </div>
@@ -190,56 +194,57 @@
                     <!-- content list member section -->
                     <div class="tab-pane fade" id="members" role="tabpanel" data-filter-list="content-list-body">
                         <div class="content-list">
+
                             <div class="row content-list-head">
                                 <div class="col-auto">
                                     <h3>Members</h3>
-                                    <button class="btn btn-round" data-toggle="modal" data-target="#member-add-modal">
-                                        <i class="material-icons">add</i>
-                                    </button>
                                 </div>
-                                <form class="col-md-auto">
-                                    <div class="input-group input-group-round">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">
-                                                <i class="material-icons">filter_list</i>
-                                            </span>
-                                        </div>
-                                        <input type="search" class="form-control filter-list-input" placeholder="Filter members" aria-label="Filter Members">
-                                    </div>
-                                </form>
                             </div>
                             <!--end of content list head-->
-                            <div class="content-list-body row">
+                            <div class="row justify-content-center">
+                                <div class="table-responsive mt-3">
 
-                                <div class="col-6">
-                                    <a class="media media-member" href="#">
-                                        <img alt="Tống Uy Long" src="assets/img/avatar-tong-uy-long.jpg" class="avatar avatar-lg" />
-                                        <div class="media-body">
-                                            <h6 class="mb-0" data-filter-by="text">Tống Uy Long</h6>
-                                            <span data-filter-by="text" class="text-body">Administrator</span>
-                                        </div>
-                                    </a>
+                                    <table id="show-group-members" class="stripe" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th class="text-left">Full name</th>
+                                                <th class="text-left">Email</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <tr>
+                                                <td></td>
+                                                <td class="text-left">Nguyễn Văn Quỳnh</td>
+                                                <td class="text-left">qnv164@gmail.com</td>
+                                                <td>
+                                                    <a href="#"><span class="ic-dark"><i class="fad fa-trash-alt"></i></span></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th></th>
+                                                <th class="text-left">Full name</th>
+                                                <th class="text-left">Email</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+
                                 </div>
-
-                                <div class="col-6">
-                                    <a class="media media-member" href="#">
-                                        <img alt="Lý Hiện" src="assets/img/avatar-gun.jpg" class="avatar avatar-lg" />
-                                        <div class="media-body">
-                                            <h6 class="mb-0" data-filter-by="text">Lý Hiện</h6>
-                                            <span data-filter-by="text" class="text-body">Mentor</span>
-                                        </div>
-                                    </a>
-                                </div>
-
-
-
+                                <!-- end div table responsive -->
                             </div>
+                            <!-- end div row -->
+
                         </div>
                         <!--end of content list-->
                     </div>
                 </div>
 
-                <!-- Add Member -->
+                <!-- Add Group Member -->
                 <form class="modal fade" id="member-add-modal" tabindex="-1" aria-hidden="true">
                     <div class="modal-dialog modal-lg" role="document">
                         <div class="modal-content">
@@ -272,51 +277,42 @@
                                 <hr>
                                 <h6>Member info</h6>
                                 <div class="row justify-content-center">
-                                    <div class="col mt-2">
-                                        <ul class="list-inline custom-pointer mb-0">
-                                            <li><span class="badge badge-primary check"><i class="fad fa-check"></i>All</span></li>
-                                            <li><span class="badge badge-warning uncheck">None</span></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-5">
-                                        <div class="input-group input-group-round">
-                                            <div class="input-group-prepend">
+                                    <div class="table-responsive mt-3">
 
-                                                <span class="input-group-text">
-                                                    <i class="material-icons">filter_list</i>
-                                                </span>
-                                            </div>
-                                            <input type="search" class="form-control filter-list-input" placeholder="Filter members" aria-label="Filter Members">
-                                        </div>
+                                        <table id="add-members-popup" class="stripe" style="width:100%">
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th class="text-left">Full name</th>
+                                                    <th class="text-left">Email</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                <tr>
+                                                    <td></td>
+                                                    <td class="text-left">Nguyễn Văn Quỳnh</td>
+                                                    <td class="text-left">qnv164@gmail.com</td>
+                                                    <td>
+                                                        <a href="#"><span class="ic-dark"><i class="fad fa-trash-alt"></i></span></a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <th></th>
+                                                    <th class="text-left">Full name</th>
+                                                    <th class="text-left">Email</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+
                                     </div>
+                                    <!-- end div table responsive -->
                                 </div>
-
-                                <div class="form-group-users">
-
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="user-1" checked>
-                                        <label class="custom-control-label" for="user-12">
-                                            <span class="d-flex align-items-center">
-                                                <img alt="Tống Uy Long" src="assets/img/avatar-tong-uy-long.jpg" class="avatar mr-2" />
-                                                <span class="h6 mb-0 mr-1" data-filter-by="text">Tống Uy Long</span>
-                                                <span class="h6 mb-0 text-secondary" data-filter-by="text">(tonguylong@duytan.edu.vn)</span>
-                                            </span>
-                                        </label>
-                                    </div>
-
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="user-2" checked>
-                                        <label class="custom-control-label" for="user-11">
-                                            <span class="d-flex align-items-center">
-                                                <img alt="Lý Hiện" src="assets/img/avatar-gun.jpg" class="avatar mr-2" />
-                                                <span class="h6 mb-0 mr-1" data-filter-by="text">Lý Hiện</span>
-                                                <span class="h6 mb-0 text-secondary" data-filter-by="text">(lyhien@gmail.com)</span>
-
-                                            </span>
-                                        </label>
-                                    </div>
-
-                                </div>
+                                <!-- end div row -->
 
                             </div>
                             <!--end of modal body-->
@@ -418,66 +414,71 @@
                                             <ul class="avatars text-center">
                                                 <li>
                                                     <a href="#" data-toggle="tooltip" data-placement="top" title="Lý Hiện">
-                                                        <img alt="Lý Hiện" class="avatar" src="assets/img/avatar-gun.jpg" />
+                                                        <img alt="Lý Hiện" class="avatar" src="{{ asset('assets/img/avatar-gun.jpg') }}" />
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="#" data-toggle="tooltip" data-placement="top" title="Ngọc Trinh">
-                                                        <img alt="Ngọc Trinh" class="avatar" src="assets/img/avatar-ngoc-trinh.jpg" />
+                                                        <img alt="Ngọc Trinh" class="avatar" src="{{ asset('assets/img/avatar-ngoc-trinh.jpg') }}" />
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="#" data-toggle="tooltip" data-placement="top" title="Lý Hiện">
-                                                        <img alt="Tống Uy Long" class="avatar" src="assets/img/avatar-tong-uy-long.jpg" />
+                                                        <img alt="Tống Uy Long" class="avatar" src="{{ asset('assets/img/avatar-tong-uy-long.jpg') }}" />
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="#" data-toggle="tooltip" data-placement="top" title="Lý Hiện">
-                                                        <img alt="Lý Hiện" class="avatar" src="assets/img/avatar-gun.jpg" />
+                                                        <img alt="Lý Hiện" class="avatar" src="{{ asset('assets/img/avatar-gun.jpg') }}" />
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="#" data-toggle="tooltip" data-placement="top" title="Lý Hiện">
-                                                        <img alt="Sơn Tùng MTP" class="avatar" src="assets/img/avatar-sontung-mtp.jpg" />
+                                                        <img alt="Sơn Tùng MTP" class="avatar" src="{{ asset('assets/img/avatar-sontung-mtp.jpg') }}" />
                                                     </a>
                                                 </li>
 
                                             </ul>
                                         </div>
+                                        <hr>
+                                        <div class="row justify-content-center">
+                                            <div class="table-responsive mt-3">
 
-                                        <div class="input-group input-group-round">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text">
-                                                    <i class="material-icons">filter_list</i>
-                                                </span>
+                                                <table id="new-team-popup" class="stripe" style="width:100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th></th>
+                                                            <th class="text-left">Full name</th>
+                                                            <th class="text-left">Email</th>
+                                                            <th>Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                        <tr>
+                                                            <td></td>
+                                                            <td class="text-left">Nguyễn Văn Quỳnh</td>
+                                                            <td class="text-left">qnv164@gmail.com</td>
+                                                            <td>
+                                                                <a href="#"><span class="ic-dark"><i class="fad fa-user-plus"></i></span></a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <th></th>
+                                                            <th class="text-left">Full name</th>
+                                                            <th class="text-left">Email</th>
+                                                            <th>Action</th>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+
                                             </div>
-                                            <input type="search" class="form-control filter-list-input" placeholder="Filter members" aria-label="Filter Members">
+                                            <!-- end div table responsive -->
                                         </div>
+                                        <!-- end div row -->
 
-                                        <div class="form-group-users">
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="team-user-11" checked>
-                                                <label class="custom-control-label" for="team-user-11">
-                                                    <span class="d-flex align-items-center">
-                                                        <img alt="Ngọc Trinh" src="assets/img/avatar-ngoc-trinh.jpg" class="avatar mr-2" />
-                                                        <span class="h6 mb-0 mr-1" data-filter-by="text">Ngọc Trinh</span>
-                                                        <span class="h6 mb-0 text-secondary" data-filter-by="text">(ngoctrinh@duytan.edu.vn)</span>
-                                                    </span>
-                                                </label>
-                                            </div>
-
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="team-user-12" checked>
-                                                <label class="custom-control-label" for="team-user-12">
-                                                    <span class="d-flex align-items-center">
-                                                        <img alt="Nguyễn Văn Quỳnh" src="assets/img/avatar-tong-uy-long.jpg" class="avatar mr-2" />
-                                                        <span class="h6 mb-0 mr-1" data-filter-by="text">Tống Uy Long</span>
-                                                        <span class="h6 mb-0 text-secondary" data-filter-by="text">(tonguylong@gmail.com)</span>
-                                                    </span>
-                                                </label>
-                                            </div>
-
-                                        </div>
                                     </div>
                                     </div>
                                 </div>
@@ -582,66 +583,71 @@
                                                 <ul class="avatars text-center">
                                                     <li>
                                                         <a href="#" data-toggle="tooltip" data-placement="top" title="Lý Hiện">
-                                                            <img alt="Lý Hiện" class="avatar" src="assets/img/avatar-gun.jpg" />
+                                                            <img alt="Lý Hiện" class="avatar" src="{{ asset('assets/img/avatar-gun.jpg') }}" />
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="#" data-toggle="tooltip" data-placement="top" title="Ngọc Trinh">
-                                                            <img alt="Ngọc Trinh" class="avatar" src="assets/img/avatar-ngoc-trinh.jpg" />
+                                                            <img alt="Ngọc Trinh" class="avatar" src="{{ asset('assets/img/avatar-ngoc-trinh.jpg') }}" />
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="#" data-toggle="tooltip" data-placement="top" title="Lý Hiện">
-                                                            <img alt="Tống Uy Long" class="avatar" src="assets/img/avatar-tong-uy-long.jpg" />
+                                                            <img alt="Tống Uy Long" class="avatar" src="{{ asset('assets/img/avatar-tong-uy-long.jpg') }}" />
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="#" data-toggle="tooltip" data-placement="top" title="Lý Hiện">
-                                                            <img alt="Lý Hiện" class="avatar" src="assets/img/avatar-gun.jpg" />
+                                                            <img alt="Lý Hiện" class="avatar" src="{{ asset('assets/img/avatar-gun.jpg') }}" />
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="#" data-toggle="tooltip" data-placement="top" title="Lý Hiện">
-                                                            <img alt="Sơn Tùng MTP" class="avatar" src="assets/img/avatar-sontung-mtp.jpg" />
+                                                            <img alt="Sơn Tùng MTP" class="avatar" src="{{ asset('assets/img/avatar-sontung-mtp.jpg') }}" />
                                                         </a>
                                                     </li>
 
                                                 </ul>
                                             </div>
+                                            <hr>
+                                            <div class="row justify-content-center">
+                                                <div class="table-responsive mt-3">
 
-                                            <div class="input-group input-group-round">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text">
-                                                        <i class="material-icons">filter_list</i>
-                                                    </span>
+                                                    <table id="edit-team-popup" class="stripe" style="width:100%">
+                                                        <thead>
+                                                            <tr>
+                                                                <th></th>
+                                                                <th class="text-left">Full name</th>
+                                                                <th class="text-left">Email</th>
+                                                                <th>Action</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+
+                                                            <tr>
+                                                                <td></td>
+                                                                <td class="text-left">Nguyễn Văn Quỳnh</td>
+                                                                <td class="text-left">qnv164@gmail.com</td>
+                                                                <td>
+                                                                    <a href="#"><span class="ic-dark"><i class="fad fa-trash-alt"></i></span></a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                        <tfoot>
+                                                            <tr>
+                                                                <th></th>
+                                                                <th class="text-left">Full name</th>
+                                                                <th class="text-left">Email</th>
+                                                                <th>Action</th>
+                                                            </tr>
+                                                        </tfoot>
+                                                    </table>
+
                                                 </div>
-                                                <input type="search" class="form-control filter-list-input" placeholder="Filter members" aria-label="Filter Members">
+                                                <!-- end div table responsive -->
                                             </div>
+                                            <!-- end div row -->
 
-                                            <div class="form-group-users">
-                                                <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="team-edit-user-11" checked>
-                                                    <label class="custom-control-label" for="team-edit-user-11">
-                                                        <span class="d-flex align-items-center">
-                                                            <img alt="Ngọc Trinh" src="assets/img/avatar-ngoc-trinh.jpg" class="avatar mr-2" />
-                                                            <span class="h6 mb-0 mr-1" data-filter-by="text">Ngọc Trinh</span>
-                                                            <span class="h6 mb-0 text-secondary" data-filter-by="text">(ngoctrinh@duytan.edu.vn)</span>
-                                                        </span>
-                                                    </label>
-                                                </div>
-
-                                                <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="team-edit-user-12" checked>
-                                                    <label class="custom-control-label" for="team-edit-user-12">
-                                                        <span class="d-flex align-items-center">
-                                                            <img alt="Nguyễn Văn Quỳnh" src="assets/img/avatar-tong-uy-long.jpg" class="avatar mr-2" />
-                                                            <span class="h6 mb-0 mr-1" data-filter-by="text">Tống Uy Long</span>
-                                                            <span class="h6 mb-0 text-secondary" data-filter-by="text">(tonguylong@gmail.com)</span>
-                                                        </span>
-                                                    </label>
-                                                </div>
-
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -670,7 +676,7 @@
 
 @section('script')
 
-<script>
+    <script>
         $("#startDate").flatpickr({
             defaultDate: "today",
         });
@@ -682,17 +688,109 @@
     </script>
 
     <script>
-        $(document).ready(function(){
-            $(".check").click(function(){
-                $(".custom-control-input").prop("checked", true);
+
+        $(document).ready(function() {
+            var table = $('#team-list').DataTable({
+                'columnDefs': [
+                    {
+                        'targets': 0,
+                        'checkboxes': {
+                            'selectRow': true
+                        }
+                    }
+                ],
+                'select': {
+                    'style': 'multi'
+                },
+                'order': [[1, 'asc']]
             });
-            $(".uncheck").click(function(){
-                $(".custom-control-input").prop("checked", false);
-            });
+
         });
     </script>
 
+    <script>
 
+        $(document).ready(function() {
+            var table = $('#add-members-popup').DataTable({
+                'columnDefs': [
+                    {
+                        'targets': 0,
+                        'checkboxes': {
+                            'selectRow': true
+                        }
+                    }
+                ],
+                'select': {
+                    'style': 'multi'
+                },
+                'order': [[1, 'asc']]
+            });
+
+        });
+    </script>
+
+    <script>
+
+        $(document).ready(function() {
+            var table = $('#show-group-members').DataTable({
+                'columnDefs': [
+                    {
+                        'targets': 0,
+                        'checkboxes': {
+                            'selectRow': true
+                        }
+                    }
+                ],
+                'select': {
+                    'style': 'multi'
+                },
+                'order': [[1, 'asc']]
+            });
+
+        });
+    </script>
+
+    <script>
+
+        $(document).ready(function() {
+            var table = $('#new-team-popup').DataTable({
+                'columnDefs': [
+                    {
+                        'targets': 0,
+                        'checkboxes': {
+                            'selectRow': true
+                        }
+                    }
+                ],
+                'select': {
+                    'style': 'multi'
+                },
+                'order': [[1, 'asc']]
+            });
+
+        });
+    </script>
+
+    <script>
+
+        $(document).ready(function() {
+            var table = $('#edit-team-popup').DataTable({
+                'columnDefs': [
+                    {
+                        'targets': 0,
+                        'checkboxes': {
+                            'selectRow': true
+                        }
+                    }
+                ],
+                'select': {
+                    'style': 'multi'
+                },
+                'order': [[1, 'asc']]
+            });
+
+        });
+    </script>
 
 @endsection
 

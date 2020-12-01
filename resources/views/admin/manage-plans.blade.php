@@ -1,5 +1,5 @@
 @extends('layouts.master')
-
+@section('title', 'Plan Management')
 @section('content')
 
     <div class="breadcrumb-bar navbar bg-white sticky-top">
@@ -9,7 +9,7 @@
                 </li>
                 <li class="breadcrumb-item"><a href="{{ url('admin') }}">Plans</a>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page">Manage Plans</li>
+                <li class="breadcrumb-item active" aria-current="page">Plan Management</li>
             </ol>
         </nav>
     </div>
@@ -23,7 +23,7 @@
                     <div class="tab-pane fade show active" id="tasks" role="tabpanel" data-filter-list="card-list-body">
                         <div class="row content-list-head">
                             <div class="col-auto">
-                                <h3>Manage Plans</h3>
+                                <h3>Plan Management</h3>
                             </div>
 
                         </div>
@@ -151,6 +151,7 @@
                 <!-- End Edit Topic -->
 
             </div>
+            <!-- end div col -->
         </div>
         <!-- end div row -->
     </div>

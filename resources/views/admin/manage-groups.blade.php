@@ -1,5 +1,5 @@
 @extends('layouts.master')
-
+@section('title', 'Group Management')
 @section('content')
 
     <div class="breadcrumb-bar navbar bg-white sticky-top">
@@ -9,7 +9,7 @@
                 </li>
                 <li class="breadcrumb-item"><a href="{{ url('manage-groups') }}">Groups</a>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page">Manage Group</li>
+                <li class="breadcrumb-item active" aria-current="page">Group Management</li>
             </ol>
         </nav>
 
@@ -25,7 +25,7 @@
                     <div class="tab-pane fade show active" id="tasks" role="tabpanel" data-filter-list="card-list-body">
                         <div class="row content-list-head">
                             <div class="col-auto">
-                                <h3>Manage Groups</h3>
+                                <h3>Group Management</h3>
                                 <button class="btn btn-round" data-toggle="modal" data-target="#topic-add-modal">
                                     <i class="material-icons">add</i>
                                 </button>
@@ -56,6 +56,7 @@
                                         <td>
                                             <a href="#" data-toggle="modal" data-target="#group-edit-modal"><span class="ic-dark"><i class="fad fa-pencil"></i></span></a>
                                             <a href="#"><span class="ic-dark"><i class="fad fa-trash-alt"></i></span></a>
+                                            <a href="{{ url('admin/group-details') }}"><span class="ic-dark"><i class="fad fa-eye"></i></span></a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -67,6 +68,7 @@
                                         <td>
                                             <a href="#"><span class="ic-dark"><i class="fad fa-pencil"></i></span></a>
                                             <a href="#"><span class="ic-dark"><i class="fad fa-trash-alt"></i></span></a>
+                                            <a href="#"><span class="ic-dark"><i class="fad fa-eye"></i></span></a>
                                         </td>
                                     </tr>
 
@@ -273,7 +275,7 @@
                                                     <div class="row justify-content-center">
                                                         <div class="table-responsive mt-3">
 
-                                                            <table id="example" class="stripe" style="width:100%">
+                                                            <table id="popup" class="stripe" style="width:100%">
                                                                 <thead>
                                                                     <tr>
                                                                         <th></th>
@@ -289,7 +291,7 @@
                                                                         <td class="text-left">Nguyễn Văn Quỳnh</td>
                                                                         <td class="text-left">qnv164@gmail.com</td>
                                                                         <td>
-                                                                            <a href="#"><span class="ic-dark"><i class="fas fa-trash-alt"></i></span></a>
+                                                                            <a href="#"><span class="ic-dark"><i class="fad fa-trash-alt"></i></span></a>
                                                                         </td>
                                                                     </tr>
                                                                 </tbody>
@@ -329,8 +331,9 @@
                 </div>
                 <!-- end div row -->
             </div>
-            <!-- end div container -->
+            <!-- end div col -->
         </div>
+        <!-- end div row -->
     </div>
     <!-- end div container -->
 
@@ -358,6 +361,32 @@
 
         $(document).ready(function() {
             var table = $('#example').DataTable({
+                'columnDefs': [
+                    {
+                        'targets': 0,
+                        'checkboxes': {
+                            'selectRow': true
+                        }
+                    }
+                ],
+                'select': {
+                    'style': 'multi'
+                },
+                'order': [[1, 'asc']]
+            });
+
+        });
+    </script>
+
+    <script>
+        // $(document).ready(function() {
+        //     $('#example').DataTable({
+
+        //     });
+        // });
+
+        $(document).ready(function() {
+            var table = $('#popup').DataTable({
                 'columnDefs': [
                     {
                         'targets': 0,
