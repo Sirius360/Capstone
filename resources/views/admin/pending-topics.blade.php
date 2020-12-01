@@ -64,8 +64,8 @@
                                     <tr>
                                         <th></th>
                                         <th class="text-left">Topic Name</th>
-                                        <th>Start Date</th>
-                                        <th>Due Date</th>
+                                        <th>Group</th>
+                                        <th>Team</th>
                                         <th>Confirm</th>
                                         <th>Action</th>
                                     </tr>
