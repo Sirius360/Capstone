@@ -8,7 +8,7 @@
     <meta name="csrf-token" content=" csrf_token() ">
 
     <title>@yield('title', 'Capstone Tracking')</title>
-    <link href="{{asset('assets/img/DTU.ico.css')}}" rel="icon" type="image/x-icon">
+    <link href="{{asset('assets/img/DTU.ico')}}" rel="icon" type="image/x-icon">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Gothic+A1" rel="stylesheet">
     <link href="{{asset('assets/css/all.min.css')}}" rel="stylesheet" type="text/css" media="all" />

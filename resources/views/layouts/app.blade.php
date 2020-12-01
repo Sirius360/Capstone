@@ -7,14 +7,17 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content=" csrf_token() ">
 
-    <title>Title</title>
-    <link href="assets/img/DTU.ico" rel="icon" type="image/x-icon">
+    <title>@yield('title', 'Capstone Tracking')</title>
+    <link href="{{asset('assets/img/DTU.ico')}}" rel="icon" type="image/x-icon">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Gothic+A1" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:100,200,300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
-    <link href="assets/css/all.min.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="assets/css/theme.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="assets/css/custom.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="{{asset('assets/css/all.min.css')}}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{{asset('assets/css/theme.css')}}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{{asset('assets/css/custom.css')}}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{{asset('assets/css/datatables.min.css')}}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{{asset('assets/css/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{{asset('assets/css/dataTables.checkboxes.css')}}" rel="stylesheet" type="text/css" media="all" />
+    @yield('css')
 
 </head>
 
