@@ -45,6 +45,7 @@ Route::group(['prefix'=>'admin','middleware' => ['auth','role:admin']], function
     Route::get('control-panel','AdminController@control_panel');
     Route::get('edit-group','AdminController@edit_group');
     Route::get('edit-team','AdminController@edit_team');
+    Route::get('edit-topic','AdminController@edit_topic');
     Route::get('group-details','AdminController@group_details');
     Route::get('manage-departments','AdminController@manage_departments');
     Route::get('manage-faculties','AdminController@manage_faculties');

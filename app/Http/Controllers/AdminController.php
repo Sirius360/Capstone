@@ -61,6 +61,9 @@ class AdminController extends Controller
     public function edit_team(){
         return view('admin.edit-team');
     }
+    public function edit_topic(){
+        return view('admin.edit-topic');
+    }
     public function group_details(){
         return view('admin.group-details');
     }
