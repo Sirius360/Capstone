@@ -64,13 +64,96 @@ Route::group(['prefix'=>'admin','middleware' => ['auth','role:admin']], function
     Route::get('team-details','AdminController@team_details');
     Route::get('template','AdminController@template');
 
+    //POST=================================================================
+
+     Route::POST('announcement/save-announcement','AdminController@save_announcement');
+    //  Route::POST('save-new-announcement','AdminController@save_new_announcement');
+    //  Route::POST('save-new-faculty','AdminController@save_new_faculty');
+    //  Route::POST('save-new-department','AdminController@save_new_department');
+    //  Route::POST('save-new-topic','AdminController@save_new_topic');
+
+//======================================================================================= announcement_visibility
+// Dẹp, khỏi làm
+    // Route::get('/admin/public-announcement/{announcement_visibility_id}','AdminController@public_announcements');
+    // Route::get('/admin/members-announcement/{announcement_visibility_id}','AdminController@members_announcements');
+    // Route::get('/admin/lock-announcement/{announcement_visibility_id}','AdminController@lock_announcements');
+
+//============================================================================== edit & delete & update
+//Route::get('edit-announcement/{id}','AdminController@edit_announcement');
+Route::get('/announcement/edit-announcement-home/{id}','AdminController@edit_announcement_home');
+//Route::get('delete-announcement/{id}','AdminController@delete_announcement');
+
+Route::get('/announcement/delete-home-announcement/{id}','AdminController@delete_home_announcement');
+
+//Route::post('update-announcement/{id}','AdminController@update_announcement');
+Route::post('/announcement/update-announcement-home/{id}','AdminController@update_announcement_home');
+
+// ===
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 });
-//========================================================================== test layout
-//Route::get('new-announcement','AdminController@new_announcement');
+//==========================================================================
+
 
 
 //==============================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Routes  for mentor
 Route::group(['prefix'=>'mentor','middleware' => ['auth','role:mentor']], function(){
