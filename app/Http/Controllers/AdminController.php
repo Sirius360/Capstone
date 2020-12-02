@@ -152,7 +152,7 @@ public function save_announcement(Request $request){
                 $all_manage_announcements=view('admin.edit-announcement-home')->with('edit_new_announcement', $edit_new_announcement);
 
 
-                return view('layouts.master')->with('admin.edit-announcement--home', $all_manage_announcements);
+                return view('layouts.master')->with('admin.edit-announcement-home', $all_manage_announcements);
             }
 
             // public function update_announcement(Request $request,$id){
@@ -182,7 +182,7 @@ public function save_announcement(Request $request){
                 $data['announcement_visibility']=$request->visibility;// ten cot roi den ten form
                 if($data['title']==null||$data['content']==null){
                     Session::put('message','Cập nhật thất bại');
-                    return  Redirect::to('admin/announcement/edit-announcement-home/'.$id);}
+                    return  Redirect::to('admin/announcement/'.$id.'/edit');}
 
                 else{
 

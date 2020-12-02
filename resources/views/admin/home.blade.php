@@ -36,7 +36,7 @@
                                     Session::put('message',null);
 
                                 }
-                            ?>                            
+                            ?>
                             <!--end of content list head-->
                             <div class="content-list-body">
                             @foreach($manage_announcements as $key => $cate_pro)
@@ -56,8 +56,8 @@
                                                     <i class="material-icons">more_vert</i>
                                              </button>
                                                 <div class="dropdown-menu dropdown-menu-right">
-                                                 <a class="dropdown-item" href="{{URL::to('/admin/announcement/edit-announcement-home/'.$cate_pro->id)}}">Edit</a>
-                                                    <a class="dropdown-item text-danger" onclick="return confirm('Are you sure to delete?')"href="{{URL::to('/admin/announcement/delete-home-announcement/'.$cate_pro->id)}}">Delete</a>
+                                                 <a class="dropdown-item" href="{{URL::to('/admin/announcement/'.$cate_pro->id.'/edit')}}">Edit</a>
+                                                    <a class="dropdown-item text-danger" onclick="return confirm('Are you sure to delete?')"href="{{URL::to('/admin/announcement/'.$cate_pro->id.'/delete')}}">Delete</a>
                                              </div>
                                             </div>
                                         </div>
@@ -65,107 +65,81 @@
                                     <div class="card-body" data-filter-by="text">
                                         <p>{{$cate_pro->content}}</p>
 
+                                        <!--
                                         <div class="media media-attachment">
-                                         <div class="text-primary">
-                                                <i class="material-icons">attach_file</i>
-                                         </div>
+                                            <div class="text-primary">
+                                                    <i class="material-icons">attach_file</i>
+                                            </div>
                                             <div class="media-body">
                                                 <a href="#" data-filter-by="text">Template Proposal.docx</a>
                                              <span data-filter-by="text">24kb Document</span>
-                                            </div>
+                                        </div>
+                                        -->
+
                                      </div>
                                     </div>
                                 </div>
 @endforeach
                             </div>
-                            
+
                         </div>
                     </div>
                     <!--end of tab-->
                 </div>
 
-                        <!-- Tạo Thông báo -->
-                        <form class="modal fade" id="note-add-modal" tabindex="-1" aria-hidden="true" method="POST" action="{{ url('admin/announcement/save-announcement') }}">
-                           {{csrf_field()}}
-                            <div class="modal-dialog modal-lg" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title">Create an Announcement</h5>
-                                        <button type="button" class="close btn btn-round" data-dismiss="modal" aria-label="Close">
-                                            <i class="material-icons">close</i>
-                                        </button>
-                                    </div>
-                                    <!--end of modal head-->
-                                    <div class="modal-body">
-                                        <div class="form-group row align-items-center">
-                                            <label class="col-3">Title</label>
-                                            <input class="form-control col" type="text" placeholder="Title" name="note_name" />
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-3">Content</label>
-                                            <textarea class="form-control col" rows="10" placeholder="Write something here..." name="note_description"></textarea>
-                                        </div>
-                                        <hr>
-                                        <h6>Visibility</h6>
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="custom-control custom-radio">
-                                                    <input type="radio" id="visibility-everyone" name="visibility" class="custom-control-input" checked value="1">
-                                                    <label class="custom-control-label" for="visibility-everyone" >Everyone</label>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="custom-control custom-radio">
-                                                    <input type="radio" id="visibility-members" name="visibility" class="custom-control-input" value="2">
-                                                    <label class="custom-control-label" for="visibility-members"value="2">Members</label>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="custom-control custom-radio">
-                                                    <input type="radio" id="visibility-me" name="visibility" class="custom-control-input"value="3">
-                                                    <label class="custom-control-label" for="visibility-me">Just me</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end of modal body-->
-                                    <div class="modal-footer">
-                                        <button role="button" class="btn btn-primary" type="submit">Post</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                <!-- End Tạo Thông báo -->
-
-                <!-- Chỉnh sửa Thông báo -->
-                <!-- <form class="modal fade" id="note-edit-modal" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
+                <!-- Tạo Thông báo -->
+                <form class="modal fade" id="note-add-modal" tabindex="-1" aria-hidden="true" method="POST" action="{{ url('admin/announcement/save-announcement') }}">
+                    {{csrf_field()}}
+                    <div class="modal-dialog modal-lg" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title">Chỉnh sửa Thông báo</h5>
+                                <h5 class="modal-title">Create an Announcement</h5>
                                 <button type="button" class="close btn btn-round" data-dismiss="modal" aria-label="Close">
                                     <i class="material-icons">close</i>
                                 </button>
                             </div>
-                            
+                            <!--end of modal head-->
                             <div class="modal-body">
                                 <div class="form-group row align-items-center">
-                                    <label class="col-3">Tiêu đề</label>
-                                    <input class="form-control col" type="text" placeholder="Note title" name="note-name" />
+                                    <label class="col-3">Title</label>
+                                    <input class="form-control col" type="text" placeholder="Title" name="note_name" />
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-3">Nội dung</label>
-                                    <textarea class="form-control col" rows="6" placeholder="Body text for note" name="note-description"></textarea>
+                                    <label class="col-3">Content</label>
+                                    <textarea class="form-control col" rows="10" placeholder="Write something here..." name="note_description"></textarea>
+                                </div>
+                                <hr>
+                                <h6>Visibility</h6>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="visibility-everyone" name="visibility" class="custom-control-input" checked value="1">
+                                            <label class="custom-control-label" for="visibility-everyone" >Everyone</label>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="visibility-members" name="visibility" class="custom-control-input" value="2">
+                                            <label class="custom-control-label" for="visibility-members"value="2">Members</label>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="visibility-me" name="visibility" class="custom-control-input"value="3">
+                                            <label class="custom-control-label" for="visibility-me">Just me</label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            
+                            <!--end of modal body-->
                             <div class="modal-footer">
-                                <button role="button" class="btn btn-primary" type="submit">Update</button>
+                                <button role="button" class="btn btn-primary" type="submit">Post</button>
                             </div>
                         </div>
                     </div>
-                </form> -->
-                <!-- End Chỉnh sửa Thông báo -->
+                </form>
+                <!-- End Tạo Thông báo -->
+
             </div>
         </div>
     </div>

@@ -80,13 +80,13 @@ Route::group(['prefix'=>'admin','middleware' => ['auth','role:admin']], function
 
 //============================================================================== edit & delete & update
 //Route::get('edit-announcement/{id}','AdminController@edit_announcement');
-Route::get('/announcement/edit-announcement-home/{id}','AdminController@edit_announcement_home');
+Route::get('/announcement/{id}/edit','AdminController@edit_announcement_home');
 //Route::get('delete-announcement/{id}','AdminController@delete_announcement');
 
-Route::get('/announcement/delete-home-announcement/{id}','AdminController@delete_home_announcement');
+Route::get('/announcement/{id}/delete','AdminController@delete_home_announcement');
 
 //Route::post('update-announcement/{id}','AdminController@update_announcement');
-Route::post('/announcement/update-announcement-home/{id}','AdminController@update_announcement_home');
+Route::post('/announcement/{id}/update','AdminController@update_announcement_home');
 
 // ===
 
