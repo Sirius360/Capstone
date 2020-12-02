@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="main-container">
-    
+
     <div class="breadcrumb-bar navbar bg-white sticky-top">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -29,7 +29,7 @@
         @foreach($edit_new_announcement as $key => $edit_value)
           <div class="col-lg-11 col-xl-10">
 
-            <form class="mt-3" method="POST" action="{{ url('admin/announcement/update-announcement-home/'.$edit_value->id) }}">
+            <form class="mt-3" method="POST" action="{{ url('admin/announcement/'.$edit_value->id.'/update') }}">
             {{csrf_field()}}
 
                 <div class="modal-content">
@@ -75,7 +75,7 @@
                     </div>
                 </div>
             </form>
-           
+
           </div>
         </div>
         @endforeach
