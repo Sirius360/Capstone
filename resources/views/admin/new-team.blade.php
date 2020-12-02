@@ -9,11 +9,14 @@
                 </li>
                 <li class="breadcrumb-item"><a href="#">Groups</a>
                 </li>
-                <li class="breadcrumb-item"><a href="#">{ Tên Group }</a>
+                <li class="breadcrumb-item"><a href="#">Tên Group</a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">New Team</li>
             </ol>
         </nav>
+
+        <h5 class="modal-title"><i class="fad fa-angle-left"></i>Back</h5>
+
     </div>
     <!-- end breadcrumb -->
 
@@ -26,9 +29,6 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title">New Team</h5>
-                            <button type="button" class="close btn btn-round" data-dismiss="modal" aria-label="Close">
-                                <i class="material-icons">close</i>
-                            </button>
                         </div>
                         <!--end of modal head-->
 

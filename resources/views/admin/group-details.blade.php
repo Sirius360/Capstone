@@ -19,6 +19,8 @@
             </button>
             <div class="dropdown-menu dropdown-menu-right">
 
+                <a class="dropdown-item" href="{{ url('admin/new-team') }}">New Team</a>
+                <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="{{ url('edit-group') }}">Edit Group</a>
                 <a class="dropdown-item" href="#">Share</a>
                 <div class="dropdown-divider"></div>
@@ -32,7 +34,7 @@
     <!-- begin a container -->
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-xl-11">
+            <div class="col">
 
                 <div class="page-header">
                     <h2>Almost before we knew it, we had left the ground. #6C757D</h2>
@@ -89,20 +91,8 @@
                             <div class="row content-list-head">
                                 <div class="col-auto">
                                     <h3>Team list</h3>
-                                    <button class="btn btn-round" data-toggle="modal" data-target="#team-new-modal">
-                                        <i class="material-icons">add</i>
-                                    </button>
                                 </div>
-                                <form class="col-md-auto">
-                                    <div class="input-group input-group-round">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">
-                                                <i class="material-icons">filter_list</i>
-                                            </span>
-                                        </div>
-                                        <input type="search" class="form-control filter-list-input" placeholder="Filter teams" aria-label="Filter teams">
-                                    </div>
-                                </form>
+
                             </div>
                             <!-- end of content list head -->
 
@@ -687,6 +677,7 @@
 
     </script>
 
+    <!--Team List-->
     <script>
 
         $(document).ready(function() {
@@ -697,7 +688,16 @@
                         'checkboxes': {
                             'selectRow': true
                         }
-                    }
+                    },
+                    {
+                        'targets': 4,
+                        'orderable': false
+                    },
+                    {
+                        'targets': 5,
+                        'orderable': false
+                    },
+
                 ],
                 'select': {
                     'style': 'multi'
@@ -733,27 +733,6 @@
 
         $(document).ready(function() {
             var table = $('#show-group-members').DataTable({
-                'columnDefs': [
-                    {
-                        'targets': 0,
-                        'checkboxes': {
-                            'selectRow': true
-                        }
-                    }
-                ],
-                'select': {
-                    'style': 'multi'
-                },
-                'order': [[1, 'asc']]
-            });
-
-        });
-    </script>
-
-    <script>
-
-        $(document).ready(function() {
-            var table = $('#new-team-popup').DataTable({
                 'columnDefs': [
                     {
                         'targets': 0,
