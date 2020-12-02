@@ -55,6 +55,7 @@ Route::group(['prefix'=>'admin','middleware' => ['auth','role:admin']], function
     Route::get('new-department','AdminController@new_department');
     Route::get('new-faculty','AdminController@new_faculty');
     Route::get('new-group','AdminController@new_group');
+    Route::get('new-team','AdminController@new_team');
     Route::get('new-task','AdminController@new_task');
     Route::get('new-plan','AdminController@new_plan');
     Route::get('new-topic','AdminController@new_topic');
@@ -62,7 +63,7 @@ Route::group(['prefix'=>'admin','middleware' => ['auth','role:admin']], function
     Route::get('statistics','AdminController@statistics');
     Route::get('team-details','AdminController@team_details');
     Route::get('template','AdminController@template');
-    
+
 
 });
 //========================================================================== test layout

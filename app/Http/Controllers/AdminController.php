@@ -13,31 +13,31 @@ use DB;
 class AdminController extends Controller
 {
     public function index(Request $request){
-       
 
- 
+
+
             $result = DB::table('users')->first();
             if($result){
-     
+
              // Session::put('last_name',$result->last_name);
              Session::put('name',$result->name);
             // Session::put('id',$result->id);
-     
-     
-             
-     
+
+
+
+
             }
-    
-            
-     
+
+
+
          //    echo'<pre>';
          //    print_r ($result);
          //    echo'<\pre>';
-         
-    
+
+
         return view('admin.home');
     }
-    
+
 
     public function new_announcement(){
         return view('admin.new-announcement');
@@ -47,7 +47,7 @@ class AdminController extends Controller
     }
 
 
-    
+
     public function account_settings(){
         return view('admin.account-settings');
     }
@@ -89,6 +89,9 @@ class AdminController extends Controller
     }
     public function new_group(){
         return view('admin.new-group');
+    }
+    public function new_team(){
+        return view('admin.new-team');
     }
     public function new_task(){
         return view('admin.new-task');
