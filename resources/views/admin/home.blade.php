@@ -44,7 +44,7 @@
                                 <div class="card card-note">
                                     <div class="card-header">
                                         <div class="media align-items-center text-break">
-                                            <img alt="Peggy Brown" src="assets/img/avatar-man.png" class="avatar" data-toggle="tooltip" data-title="Nguyễn Đức Mận" data-filter-by="alt" />
+                                            <img alt="Nguyễn Đức Mận" src="assets/img/avatar-man.png" class="avatar" data-toggle="tooltip" data-title="Nguyễn Đức Mận" data-filter-by="alt" />
                                             <div class="media-body">
                                                 <h6 class="mb-0 text-danger" data-filter-by="text">{{$cate_pro->title}}</h6>
                                             </div>
@@ -57,7 +57,7 @@
                                              </button>
                                                 <div class="dropdown-menu dropdown-menu-right">
                                                  <a class="dropdown-item" href="{{URL::to('/admin/announcement/'.$cate_pro->id.'/edit')}}">Edit</a>
-                                                    <a class="dropdown-item text-danger" onclick="return confirm('Are you sure to delete?')"href="{{URL::to('/admin/announcement/'.$cate_pro->id.'/delete')}}">Delete</a>
+                                                    <a class="dropdown-item text-chartjs" onclick="return confirm('Are you sure to delete?')"href="{{URL::to('/admin/announcement/'.$cate_pro->id.'/delete')}}">Delete</a>
                                              </div>
                                             </div>
                                         </div>
