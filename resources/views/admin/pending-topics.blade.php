@@ -7,7 +7,7 @@
             <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ url('admin') }}">Home</a>
             </li>
-            <li class="breadcrumb-item"><a href="{{ url('admin') }}">Topics</a>
+            <li class="breadcrumb-item"><a href="{{ url('admin/topics') }}">Topics</a>
             </li>
             <li class="breadcrumb-item active" aria-current="page">Pending Topics</li>
             </ol>
@@ -160,11 +160,6 @@
     </script>
 
     <script>
-        // $(document).ready(function() {
-        //     $('#example').DataTable({
-
-        //     });
-        // });
 
         $(document).ready(function() {
             var table = $('#example').DataTable({

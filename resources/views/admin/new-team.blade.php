@@ -7,15 +7,15 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ url('admin') }}">Home</a>
                 </li>
-                <li class="breadcrumb-item"><a href="#">Groups</a>
+                <li class="breadcrumb-item"><a href="{{ url('admin/groups') }}">Groups</a>
                 </li>
-                <li class="breadcrumb-item"><a href="#">Tên Group</a>
+                <li class="breadcrumb-item"><a href="{{ url('#') }}">Tên Group</a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">New Team</li>
             </ol>
         </nav>
 
-        <h5 class="modal-title"><i class="fad fa-angle-left"></i>Back</h5>
+        <a href="{{ url('#') }}"><h5 class="modal-title"><i class="fad fa-angle-left"></i>Back</h5></a>
 
     </div>
     <!-- end breadcrumb -->

@@ -10,8 +10,8 @@
                 </li>
                 <li class="breadcrumb-item"><a href="{{ url('admin') }}">Announcements</a>
                 </li>
-                <li class="breadcrumb-item"><a href="{{ url('admin/manage-announcements') }}">Management</a>
-                </li>                
+                <li class="breadcrumb-item"><a href="{{ url('admin/announcements') }}">Management</a>
+                </li>
                 <li class="breadcrumb-item active" aria-current="page">Edit Announcement</li>
             </ol>
         </nav>
@@ -31,7 +31,7 @@
         @foreach($edit_new_announcement as $key => $edit_value)
           <div class="col-lg-11 col-xl-10">
 
-            <form class="mt-3" method="POST" action="{{ url('admin/announcement/management/'.$edit_value->id.'/update') }}">
+            <form class="mt-3" method="POST" action="{{ url('admin/announcement/'.$edit_value->id.'/update') }}">
             {{csrf_field()}}
 
                 <div class="modal-content">

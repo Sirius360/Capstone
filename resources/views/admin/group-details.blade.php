@@ -7,7 +7,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ url('admin') }}">Home</a>
                 </li>
-                <li class="breadcrumb-item"><a href="{{ url('manage-groups') }}">Groups</a>
+                <li class="breadcrumb-item"><a href="{{ url('admin/groups') }}">Groups</a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">Almost before we knew it, we had left the ground. #6C757D</li>
             </ol>
@@ -21,7 +21,7 @@
 
                 <a class="dropdown-item" href="{{ url('admin/new-team') }}">New Team</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{{ url('edit-group') }}">Edit Group</a>
+                <a class="dropdown-item" href="{{ url('admin/groups/edit') }}">Edit Group</a>
                 <a class="dropdown-item" href="#">Share</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item text-chartjs" href="#"><i class="fas fa-lock-alt"></i>Close Group</a>
@@ -690,6 +690,10 @@
                         }
                     },
                     {
+                        'targets': 2,
+                        'orderable': false
+                    },
+                    {
                         'targets': 4,
                         'orderable': false
                     },
@@ -739,7 +743,11 @@
                         'checkboxes': {
                             'selectRow': true
                         }
-                    }
+                    },
+                    {
+                        'targets': 3,
+                        'orderable': false
+                    },
                 ],
                 'select': {
                     'style': 'multi'

@@ -7,13 +7,15 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ url('admin') }}">Home</a>
                 </li>
-                <li class="breadcrumb-item"><a href="{{ url('manage-groups') }}">Groups</a>
+                <li class="breadcrumb-item"><a href="{{ url('admin/groups') }}">Groups</a>
                 </li>
-                <li class="breadcrumb-item"><a href="{{ url('group-details') }}">Đợt Capstone 1 MIS 2020</a>
+                <li class="breadcrumb-item"><a href="{{ url('#') }}">Tên Group</a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">Edit</li>
             </ol>
         </nav>
+
+        <a href="#"><h5 class="modal-title"><i class="fad fa-angle-left"></i>Back</h5></a>
     </div>
     <!-- end breadcrumb -->
 
@@ -227,7 +229,11 @@
                         'checkboxes': {
                             'selectRow': true
                         }
-                    }
+                    },
+                    {
+                        'targets': 3,
+                        'orderable': false
+                    },
                 ],
                 'select': {
                     'style': 'multi'

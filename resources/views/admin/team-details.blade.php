@@ -7,11 +7,11 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ url('admin') }}">Home</a>
                 </li>
-                <li class="breadcrumb-item"><a href="{{ url('manage-groups') }}">Groups</a>
+                <li class="breadcrumb-item"><a href="{{ url('admin/groups') }}">Groups</a>
                 </li>
-                <li class="breadcrumb-item"><a href="{{ url('manage-groups') }}">Almost before we knew it, we had left the ground. #6C757D</a>
+                <li class="breadcrumb-item"><a href="{{ url('#') }}">Tên Group</a>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page">Team 35</li>
+                <li class="breadcrumb-item active" aria-current="page">Tên Team</li>
             </ol>
         </nav>
 
@@ -21,10 +21,10 @@
             </button>
             <div class="dropdown-menu dropdown-menu-right">
 
-                <a class="dropdown-item" href="edit-group.html">Edit Group</a>
-                <a class="dropdown-item" href="#">Share</a>
+                <a class="dropdown-item" href="{{ url('admin/edit-team') }}">Edit Team</a>
+                <a class="dropdown-item" href="{{ url('#') }}">Share</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item text-chartjs" href="#"><i class="fas fa-lock-alt"></i>Close Group</a>
+                <a class="dropdown-item text-chartjs" href="#"><i class="fas fa-lock-alt"></i>Close Team</a>
 
             </div>
         </div>

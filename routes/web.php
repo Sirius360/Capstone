@@ -38,32 +38,41 @@ Route::group(['prefix'=>'admin','middleware' => ['auth','role:admin']], function
 });
 
 Route::group(['prefix'=>'admin','middleware' => ['auth','role:admin']], function(){
-    Route::get('new-announcement','AdminController@new_announcement');
-    Route::get('manage-announcements','AdminController@manage_announcements');
+    Route::get('announcements/new','AdminController@new_announcement');
+    Route::get('announcements','AdminController@manage_announcements');
+
+    Route::get('groups/new','AdminController@new_group');
+    Route::get('groups','AdminController@manage_groups');
+    Route::get('group-details','AdminController@group_details');
+
+    Route::get('teams/new','AdminController@new_team');
+    // Thiếu route quản lý team
+    Route::get('team-details','AdminController@team_details');
+
+    Route::get('topics/new','AdminController@new_topic');
+    Route::get('topics/pending','AdminController@pending_topics');
+    Route::get('topics','AdminController@manage_topics');
+
+    Route::get('plans/new','AdminController@new_plan');
+    Route::get('plans','AdminController@manage_plans');
+
+    Route::get('faculties/new','AdminController@new_faculty');
+    Route::get('faculties','AdminController@manage_faculties');
+
+    Route::get('departments/new','AdminController@new_department');
+    Route::get('departments','AdminController@manage_departments');
+
+    Route::get('statistics','AdminController@statistics');
+
+    Route::get('template','AdminController@template');
 
     Route::get('account-settings','AdminController@account_settings');
     Route::get('control-panel','AdminController@control_panel');
+
     Route::get('edit-group','AdminController@edit_group');
     Route::get('edit-team','AdminController@edit_team');
     Route::get('edit-topic','AdminController@edit_topic');
-    Route::get('group-details','AdminController@group_details');
-    Route::get('manage-departments','AdminController@manage_departments');
-    Route::get('manage-faculties','AdminController@manage_faculties');
-    Route::get('manage-groups','AdminController@manage_groups');
-    Route::get('manage-plans','AdminController@manage_plans');
-    Route::get('manage-tasks','AdminController@manage_tasks');
-    Route::get('manage-topics','AdminController@manage_topics');
-    Route::get('new-department','AdminController@new_department');
-    Route::get('new-faculty','AdminController@new_faculty');
-    Route::get('new-group','AdminController@new_group');
-    Route::get('new-team','AdminController@new_team');
-    Route::get('new-task','AdminController@new_task');
-    Route::get('new-plan','AdminController@new_plan');
-    Route::get('new-topic','AdminController@new_topic');
-    Route::get('pending-topics','AdminController@pending_topics');
-    Route::get('statistics','AdminController@statistics');
-    Route::get('team-details','AdminController@team_details');
-    Route::get('template','AdminController@template');
+
 
     //POST=================================================================
 
@@ -81,10 +90,9 @@ Route::group(['prefix'=>'admin','middleware' => ['auth','role:admin']], function
 
 //============================================================================== edit & delete & update
 Route::get('/announcement/management/{id}/edit','AdminController@edit_announcement');
-
 Route::get('/announcement/{id}/edit','AdminController@edit_announcement_home');
-Route::get('delete-announcement/{id}','AdminController@delete_announcement');
 
+Route::get('delete-announcement/{id}','AdminController@delete_announcement');
 Route::get('/announcement/{id}/delete','AdminController@delete_home_announcement');
 
 Route::post('/announcement/management/{id}/update','AdminController@update_announcement');

@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
 
-    <a class="navbar-brand" href="{{ url('admin/') }}">
+    <a class="navbar-brand" href="{{ url('admin') }}">
         <img alt="dtu" src="{{ url('assets/img/duytan-university.svg') }}"/>
     </a>
     <div class="d-flex align-items-center">
@@ -35,11 +35,11 @@
                     <ul class="nav nav-small flex-column">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('admin/new-announcement') }}">New Announcement</a>
+                            <a class="nav-link" href="{{ url('admin/announcements/new') }}">New Announcement</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('admin/manage-announcements') }}">Annc. Management</a>
+                            <a class="nav-link" href="{{ url('admin/announcements') }}">Annc. Management</a>
                         </li>
 
                     </ul>
@@ -54,11 +54,11 @@
                     <ul class="nav nav-small flex-column">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('admin/new-group') }}">New Group</a>
+                            <a class="nav-link" href="{{ url('admin/groups/new') }}">New Group</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('admin/manage-groups') }}">Group Management</a>
+                            <a class="nav-link" href="{{ url('admin/groups') }}">Group Management</a>
                         </li>
 
                     </ul>
@@ -73,15 +73,15 @@
                     <ul class="nav nav-small flex-column">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('admin/new-topic') }}">New Topic</a>
+                            <a class="nav-link" href="{{ url('admin/topics/new') }}">New Topic</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('admin/pending-topics') }}">Pending Topics</a>
+                            <a class="nav-link" href="{{ url('admin/topics/pending') }}">Pending Topics</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('admin/manage-topics') }}">Topic Management</a>
+                            <a class="nav-link" href="{{ url('admin/topics') }}">Topic Management</a>
                         </li>
 
                     </ul>
@@ -96,11 +96,11 @@
                     <ul class="nav nav-small flex-column">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('admin/new-plan') }}">New Plan</a>
+                            <a class="nav-link" href="{{ url('admin/plans/new') }}">New Plan</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('admin/manage-plans') }}">Plan Management</a>
+                            <a class="nav-link" href="{{ url('admin/plans') }}">Plan Management</a>
                         </li>
 
                     </ul>
@@ -123,11 +123,11 @@
                     <ul class="nav nav-small flex-column">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('admin/new-faculty') }}">New Faculty</a>
+                            <a class="nav-link" href="{{ url('admin/faculties/new') }}">New Faculty</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('admin/manage-faculties') }}">Faculty Management</a>
+                            <a class="nav-link" href="{{ url('admin/faculties') }}">Faculty Management</a>
                         </li>
 
                     </ul>
@@ -142,11 +142,11 @@
                     <ul class="nav nav-small flex-column">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('admin/new-department') }}">New Department</a>
+                            <a class="nav-link" href="{{ url('admin/departments/new') }}">New Department</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('admin/manage-departments') }}">Department Management</a>
+                            <a class="nav-link" href="{{ url('admin/departments') }}">Department Management</a>
                         </li>
 
                     </ul>
@@ -180,13 +180,13 @@
             </a>
             <p class="d-inline-block ml-1 text-light text-break">Welcome, <span class="text-warning">
                 <?php
-                        // $last_name = Session::get('last_name');
-                        // if($last_name){
-                        //     echo $last_name;
-                        $name = Session::get('name');
-                        if($name){
-                            echo $name;
-                        }
+                    // $last_name = Session::get('last_name');
+                    // if($last_name){
+                    //     echo $last_name;
+                    $name = Session::get('name');
+                    if($name){
+                        echo $name;
+                    }
                 ?> </span></p>
             <div class="dropdown-menu text-center">
                 <a href="{{ url('admin/account-settings') }}" class="dropdown-item">Profile</a>

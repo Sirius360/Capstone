@@ -68,8 +68,8 @@
                                             ?>
                                         </td>
                                         <td>
-                                            <a  href="{{URL::to('/admin/announcement/management/'.$cate_pro->id.'/edit')}}"><span class="ic-dark"><i class="fad fa-pencil"></i></span></a>
-                                            <a onclick="return confirm('Are you sure to delete?')"href="{{URL::to('/admin/delete-announcement/'.$cate_pro->id)}}"><span class="ic-dark"><i class="fad fa-trash-alt"></i></span></a>
+                                            <a  href="{{URL::to('/admin/announcement/'.$cate_pro->id.'/edit')}}"><span class="ic-dark"><i class="fad fa-pencil"></i></span></a>
+                                            <a onclick="return confirm('Are you sure to delete?')"href="{{URL::to('/admin/'.$cate_pro->id.'/delete')}}"><span class="ic-dark"><i class="fad fa-trash-alt"></i></span></a>
                                             <a href="#"><span class="ic-dark"><i class="fad fa-eye"></i></span></a>
                                         </td>
                                     </tr>

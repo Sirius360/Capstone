@@ -10,7 +10,9 @@
                 </li>
                 <li class="breadcrumb-item"><a href="{{ url('admin') }}">Announcements</a>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page">Edit Announcement</li>
+                <li class="breadcrumb-item"><a href="{{ url('admin') }}">Tên Thông báo</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Edit</li>
             </ol>
         </nav>
     </div>

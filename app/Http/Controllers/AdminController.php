@@ -47,11 +47,11 @@ class AdminController extends Controller
         $manage_announcements=DB::table('announcements')->orderBy('created_at','desc')->get();
 
         $all_manage_announcements=view('admin.manage-announcements')->with('manage_announcements', $manage_announcements);
-        
+
 
         return view('layouts.master')->with('admin.manage-announcements', $all_manage_announcements);
     }
-    
+
 
 
 
@@ -150,22 +150,21 @@ public function save_announcement(Request $request){
         $data['announcement_visibility']=$request->visibility;// ten cot roi den ten form
         if($data['title']==null||$data['content']==null||$data['announcement_visibility']==null){
             Session::put('message','Them that bai');
-            return  Redirect::to('admin/new-announcement');}
-     
+            return  Redirect::to('admin/announcements/new');}
+
         else{
-            
+
             DB::table('announcements')->insert($data);
             Session::put('message','Them thanh cong');
-            return  Redirect::to('admin/new-announcement');}
-    
-        }    
+            return  Redirect::to('admin/announcements/new');}
+
+        }
 
 
 
     // ======================================================= cái này là function update, edit & delete
-              //======================================================================================= edit & delete & update
-
-              public function edit_announcement($id){
+    //======================================================================================= edit & delete & update
+            public function edit_announcement($id){
                 $edit_new_announcement=DB::table('announcements')->orderBy('created_at','desc')->where('id',$id)->get();
 
                 $all_manage_announcements=view('admin.edit-announcement')->with('edit_new_announcement', $edit_new_announcement);
@@ -191,13 +190,13 @@ public function save_announcement(Request $request){
                 $data['announcement_visibility']=$request->visibility;// ten cot roi den ten form
                 if($data['title']==null||$data['content']==null||$data['announcement_visibility']==null){
                     Session::put('message','Cập nhật thất bại');
-                    return  Redirect::to('admin/announcement/management/'.$id.'/edit');}
+                    return  Redirect::to('admin/announcement/'.$id.'/edit');}
 
                 else{
 
                     DB::table('announcements')->where('id',$id)->update($data);
 
-                    return  Redirect::to('admin/manage-announcements');}
+                    return  Redirect::to('admin/announcements/show');}
 
 
 
@@ -228,7 +227,7 @@ public function save_announcement(Request $request){
                     DB::table('announcements')->where('id',$id)->delete();
                     Session::put('message','Xóa thành công');
 
-                    return  Redirect::to('admin/manage-announcements');
+                    return  Redirect::to('admin/announcements/show');
 
 
 
