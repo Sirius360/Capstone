@@ -59,13 +59,14 @@
 
                                                 }
                                                 else if($cate_pro->announcement_visibility==2){
-                                                    echo '<span class="ic-dark"><i class="fad fa-globe-africa"></i></span>';
+                                                    echo '<span class="ic-dark"><i class="fad fa-user-friends"></i></span>';
                                                     // echo '<p>Members</p>';
                                                 }
                                                 else if($cate_pro->announcement_visibility==3){
-                                                    echo '<span class="ic-dark"><i class="fad fa-globe-africa"></i></span>';
+                                                    echo '<span class="ic-dark"><i class="fad fa-user"></i></span>';
                                                 }
                                             ?>
+                                        </td>
                                         <td>
                                             <a  href="{{URL::to('/admin/announcement/management/'.$cate_pro->id.'/edit')}}"><span class="ic-dark"><i class="fad fa-pencil"></i></span></a>
                                             <a onclick="return confirm('Are you sure to delete?')"href="{{URL::to('/admin/delete-announcement/'.$cate_pro->id)}}"><span class="ic-dark"><i class="fad fa-trash-alt"></i></span></a>
