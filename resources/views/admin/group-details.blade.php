@@ -86,7 +86,7 @@
                 </ul>
 
                 <div class="tab-content">
-                    <div class="tab-pane fade show active" id="projects" role="tabpanel" data-filter-list="content-list-body">
+                    <div class="tab-pane fade show active" id="projects" role="tabpanel">
                         <div class="content-list">
                             <div class="row content-list-head">
                                 <div class="col-auto">
@@ -182,7 +182,7 @@
                     <!--end of tab-->
 
                     <!-- content list member section -->
-                    <div class="tab-pane fade" id="members" role="tabpanel" data-filter-list="content-list-body">
+                    <div class="tab-pane fade" id="members" role="tabpanel">
                         <div class="content-list">
 
                             <div class="row content-list-head">
@@ -399,7 +399,7 @@
                                     </div>
 
                                     <div class="tab-pane fade" id="team-add-members" role="tabpanel">
-                                    <div class="users-manage" data-filter-list="form-group-users">
+                                    <div class="users-manage">
                                         <div class="mb-3">
                                             <ul class="avatars text-center">
                                                 <li>
@@ -568,7 +568,7 @@
                                     </div>
 
                                     <div class="tab-pane fade" id="team-edit-members" role="tabpanel">
-                                        <div class="users-manage" data-filter-list="form-group-users">
+                                        <div class="users-manage">
                                             <div class="mb-3">
                                                 <ul class="avatars text-center">
                                                     <li>
