@@ -51,23 +51,21 @@
                                     <tr>
                                         <td></td>
                                         <td class="text-left">{{$cate_pro->title}}</td>
-                                        <td><a href="#"><span class="ic-dark">
-                                        <?php
-                                          if($cate_pro-> announcement_visibility==1){
-                                             echo '<a href="#"><span class="fad fa-globe" aria-hidden="true" ></span></a>';
-                                              // echo '<p>Public</p>';
+                                        <td>
+                                            <?php
+                                                if($cate_pro->announcement_visibility==1){
+                                                    echo '<span class="ic-dark"><i class="fad fa-globe-africa"></i></span>';
+                                                    // echo '<p>Public</p>';
 
-                                              // <img src="{{ url('assets/img/mode/public.svg') }}" alt="Public" width="16" />;
-                                                 }
-                                             else if($cate_pro-> announcement_visibility==2){
-                                                    echo '<a href="#"><span class="fad fa-users" aria-hidden="true" ></span></a>';
-                                                // echo '<p>Members</p>';
                                                 }
-                                             else if($cate_pro-> announcement_visibility==3){
-                                                    echo '<a href="#"><span class="fad fa-lock-alt" aria-hidden="true" ></span></a>';
+                                                else if($cate_pro->announcement_visibility==2){
+                                                    echo '<span class="ic-dark"><i class="fad fa-globe-africa"></i></span>';
+                                                    // echo '<p>Members</p>';
                                                 }
-                                
-                                        ?>
+                                                else if($cate_pro->announcement_visibility==3){
+                                                    echo '<span class="ic-dark"><i class="fad fa-globe-africa"></i></span>';
+                                                }
+                                            ?>
                                         <td>
                                             <a  href="{{URL::to('/admin/announcement/management/'.$cate_pro->id.'/edit')}}"><span class="ic-dark"><i class="fad fa-pencil"></i></span></a>
                                             <a onclick="return confirm('Are you sure to delete?')"href="{{URL::to('/admin/delete-announcement/'.$cate_pro->id)}}"><span class="ic-dark"><i class="fad fa-trash-alt"></i></span></a>
