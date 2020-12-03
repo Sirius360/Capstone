@@ -51,7 +51,7 @@
                         <div class="row">
                             <div class="col">
                                 <div class="custom-control custom-radio">
-                                    <input type="radio" id="visibility-everyone" name="visibility" class="custom-control-input" checked value="1">
+                                    <input type="radio" id="visibility-everyone" name="visibility" class="custom-control-input"  value="1">
                                     <label class="custom-control-label" for="visibility-everyone">Everyone</label>
                                 </div>
                             </div>

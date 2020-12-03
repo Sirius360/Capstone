@@ -14,7 +14,15 @@
         </nav>
     </div>
     <!-- end breadcrumb -->
+    <!-- Thông báo -->
+    <?php
+         $message= Session ::get('message');
+         if($message){
+             echo '<span class="test-alert">'.$message.'</span>';
+             Session::put('message',null);
 
+            }
+    ?>
     <!-- begin a container -->
     <div class="container">
         <div class="row justify-content-center">
@@ -39,17 +47,34 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                @foreach($manage_announcements as $key => $cate_pro)
                                     <tr>
                                         <td></td>
-                                        <td class="text-left">Almost before we knew it, we had left the ground.</td>
-                                        <td><a href="#"><span class="ic-dark"><i class="fad fa-user-friends"></i></span></a></td>
+                                        <td class="text-left">{{$cate_pro->title}}</td>
+                                        <td><a href="#"><span class="ic-dark">
+                                        <?php
+                                          if($cate_pro-> announcement_visibility==1){
+                                             echo '<a href="#"><span class="fad fa-globe" aria-hidden="true" ></span></a>';
+                                              // echo '<p>Public</p>';
+
+                                              // <img src="{{ url('assets/img/mode/public.svg') }}" alt="Public" width="16" />;
+                                                 }
+                                             else if($cate_pro-> announcement_visibility==2){
+                                                    echo '<a href="#"><span class="fad fa-users" aria-hidden="true" ></span></a>';
+                                                // echo '<p>Members</p>';
+                                                }
+                                             else if($cate_pro-> announcement_visibility==3){
+                                                    echo '<a href="#"><span class="fad fa-lock-alt" aria-hidden="true" ></span></a>';
+                                                }
+                                
+                                        ?>
                                         <td>
-                                            <a href="#"><span class="ic-dark"><i class="fad fa-pencil"></i></span></a>
-                                            <a href="#"><span class="ic-dark"><i class="fad fa-trash-alt"></i></span></a>
+                                            <a  href="{{URL::to('/admin/announcement/management/'.$cate_pro->id.'/edit')}}"><span class="ic-dark"><i class="fad fa-pencil"></i></span></a>
+                                            <a onclick="return confirm('Are you sure to delete?')"href="{{URL::to('/admin/delete-announcement/'.$cate_pro->id)}}"><span class="ic-dark"><i class="fad fa-trash-alt"></i></span></a>
                                             <a href="#"><span class="ic-dark"><i class="fad fa-eye"></i></span></a>
                                         </td>
                                     </tr>
-
+                                    @endforeach
                                 </tbody>
                                 <tfoot>
                                     <tr>
