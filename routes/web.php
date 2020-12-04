@@ -74,20 +74,19 @@ Route::group(['prefix'=>'admin','middleware' => ['auth','role:admin']], function
     Route::get('edit-topic','AdminController@edit_topic');
 
 
-    //POST=================================================================
+    // =========================== POST //
     Route::POST('/announcements/save','AdminController@save_announcement');
     Route::POST('/announcements/home/save','AdminController@save_announcement_home');
     //  Route::POST('save-new-faculty','AdminController@save_new_faculty');
     //  Route::POST('save-new-department','AdminController@save_new_department');
     //  Route::POST('save-new-topic','AdminController@save_new_topic');
 
-    //======================================================================================= announcement_visibility
-    // Dẹp, khỏi làm
-        // Route::get('/admin/public-announcement/{announcement_visibility_id}','AdminController@public_announcements');
-        // Route::get('/admin/members-announcement/{announcement_visibility_id}','AdminController@members_announcements');
-        // Route::get('/admin/lock-announcement/{announcement_visibility_id}','AdminController@lock_announcements');
+    // =========================== Announcement Visibility //
+    // Route::get('/admin/public-announcement/{announcement_visibility_id}','AdminController@public_announcements');
+    // Route::get('/admin/members-announcement/{announcement_visibility_id}','AdminController@members_announcements');
+    // Route::get('/admin/lock-announcement/{announcement_visibility_id}','AdminController@lock_announcements');
 
-    //============================================================================== edit & delete & update
+    //============================ Edit & Delete & Update //
     Route::get('/announcements/management/{id}/edit','AdminController@edit_announcement');
     Route::get('/announcements/{id}/edit','AdminController@edit_announcement_home');
 
