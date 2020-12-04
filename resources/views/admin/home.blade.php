@@ -28,7 +28,9 @@
                                     </div>
                                 </form>
                             </div>
-                            <!-- thong bao  -->
+                            <!-- end of content list head-->
+
+                            <!-- alerts -->
                             <?php
                                 $message= Session ::get('message');
                                 if($message){
@@ -37,54 +39,51 @@
 
                                 }
                             ?>
-                            <!--end of content list head-->
-                            <div class="content-list-body">
                             @foreach($manage_announcements as $key => $cate_pro)
-
-                                <div class="card card-note">
-                                    <div class="card-header">
-                                        <div class="media align-items-center text-break">
-                                            <img alt="Nguyễn Đức Mận" src="assets/img/avatar-man.png" class="avatar" data-toggle="tooltip" data-title="Nguyễn Đức Mận" data-filter-by="alt" />
-                                            <div class="media-body">
-                                                <h6 class="mb-0 text-danger" data-filter-by="text">{{$cate_pro->title}}</h6>
+                                <div class="content-list-body">
+                                    <div class="card card-note">
+                                        <div class="card-header">
+                                            <div class="media align-items-center text-break">
+                                                <img alt="Nguyễn Đức Mận" src="assets/img/avatar-man.png" class="avatar" data-toggle="tooltip" data-title="Nguyễn Đức Mận" data-filter-by="alt" />
+                                                <div class="media-body">
+                                                    <h6 class="mb-0 text-danger" data-filter-by="text">{{ Str::limit($cate_pro->title, 200) }}</h6>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center flex-shrink-0">
+                                                <span data-filter-by="text">{{ Carbon\Carbon::parse($cate_pro->created_at)->diffForHumans() }}</span>
+                                                <div class="ml-1 dropdown card-options">
+                                                    <button class="btn-options" type="button" id="note-dropdown-button-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <i class="material-icons">more_vert</i>
+                                                </button>
+                                                    <div class="dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item" href="{{URL::to('/admin/announcement/'.$cate_pro->id.'/edit')}}">Edit</a>
+                                                        <a class="dropdown-item text-chartjs" onclick="return confirm('Are you sure to delete?')"href="{{URL::to('/admin/announcement/'.$cate_pro->id.'/delete')}}">Delete</a>
+                                                </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="d-flex align-items-center flex-shrink-0">
-                                            <span data-filter-by="text">{{$cate_pro->created_at}}</span>
-                                            <div class="ml-1 dropdown card-options">
-                                                <button class="btn-options" type="button" id="note-dropdown-button-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <i class="material-icons">more_vert</i>
-                                             </button>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                 <a class="dropdown-item" href="{{URL::to('/admin/announcement/'.$cate_pro->id.'/edit')}}">Edit</a>
-                                                    <a class="dropdown-item text-chartjs" onclick="return confirm('Are you sure to delete?')"href="{{URL::to('/admin/announcement/'.$cate_pro->id.'/delete')}}">Delete</a>
-                                             </div>
-                                            </div>
-                                        </div>
-                                 </div>
-                                    <div class="card-body" data-filter-by="text">
-                                        <p>{{$cate_pro->content}}</p>
+                                        <div class="card-body" data-filter-by="text">
+                                            <p>{{$cate_pro->content}}</p>
 
-                                        <!--
-                                        <div class="media media-attachment">
-                                            <div class="text-primary">
-                                                    <i class="material-icons">attach_file</i>
+                                            <!--
+                                            <div class="media media-attachment">
+                                                <div class="text-primary">
+                                                        <i class="material-icons">attach_file</i>
+                                                </div>
+                                                <div class="media-body">
+                                                    <a href="#" data-filter-by="text">Template Proposal.docx</a>
+                                                <span data-filter-by="text">24kb Document</span>
                                             </div>
-                                            <div class="media-body">
-                                                <a href="#" data-filter-by="text">Template Proposal.docx</a>
-                                             <span data-filter-by="text">24kb Document</span>
-                                        </div>
-                                        -->
+                                            -->
 
-                                     </div>
+                                        </div>
                                     </div>
                                 </div>
-@endforeach
-                            </div>
-
+                            @endforeach
                         </div>
+                        <!-- end of content list-->
                     </div>
-                    <!--end of tab-->
+                    <!-- end of tab-->
                 </div>
 
                 <!-- Tạo Thông báo -->
