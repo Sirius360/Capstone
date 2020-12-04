@@ -2,10 +2,6 @@
 @section('title', 'Home Page')
 @section('content')
 
-    @if (session('success_message'))
-
-    @endif
-
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-11 col-xl-10">

@@ -7,6 +7,8 @@ use Session;
 use Illuminate\Support\Facades\Redirect;
 session_start();
 use DB;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 
 
@@ -23,13 +25,6 @@ class AdminController extends Controller
              Session::put('name',$result->name);
             // Session::put('id',$result->id);
         }
-
-
-
-         //    echo'<pre>';
-         //    print_r ($result);
-         //    echo'<\pre>';
-
 
          $manage_announcements=DB::table('announcements')->orderBy('created_at','desc')->get();
 
@@ -129,15 +124,15 @@ class AdminController extends Controller
         $data['content']=$request->description;// ten cot roi den ten form
         $data['announcement_visibility']=$request->visibility;// ten cot roi den ten form
         if($data['title']==null||$data['content']==null||$data['announcement_visibility']==null){
-            Session::put('message','Them that bai');
-            return  Redirect::to('admin/announcements/new');
+            Alert::toast('Đăng thất bại!', 'error');
+            return  redirect('admin/announcements/new');
         }
 
         else{
 
             DB::table('announcements')->insert($data);
-            Session::put('message','Them thanh cong');
-            return  Redirect::to('admin/announcements/new');
+            Alert::toast('Đăng thành công!', 'success');
+            return  redirect('admin/announcements/new');
         }
 
     }
@@ -148,16 +143,16 @@ class AdminController extends Controller
         $data['content']=$request->note_description;// ten cot roi den ten form
         $data['announcement_visibility']=$request->visibility;// ten cot roi den ten form
         if($data['title']==null||$data['content']==null||$data['announcement_visibility']==null){
-            Session::put('message','Them that bai');
-            return  Redirect::to('admin');}
-
+            return redirect('admin');
+        }
         else{
 
             DB::table('announcements')->insert($data);
-            Session::put('message','Them thanh cong');
-            return  Redirect::to('admin');}
+            return redirect('admin');
+        }
 
     }
+
     // =========== update, edit & delete function  ===========
     // =======================================================
     public function edit_announcement($id){
@@ -187,13 +182,13 @@ class AdminController extends Controller
 
             Session::put('message','Cập nhật thất bại');
 
-            return  Redirect::to('admin/announcements/management/'.$id.'/edit');}
+            return  redirect('admin/announcements/management/'.$id.'/edit');}
 
         else{
 
             DB::table('announcements')->where('id',$id)->update($data);
 
-            return  Redirect::to('admin/announcements');
+            return  redirect('admin/announcements');
         }
 
     }
@@ -208,13 +203,13 @@ class AdminController extends Controller
 
             Session::put('message','Cập nhật thất bại');
 
-            return  Redirect::to('admin/announcements/'.$id.'/edit');}
+            return  redirect('admin/announcements/'.$id.'/edit');}
 
         else{
 
             DB::table('announcements')->where('id',$id)->update($data);
 
-            return  Redirect::to('admin');
+            return  redirect('admin');
         }
 
     }
@@ -224,7 +219,7 @@ class AdminController extends Controller
 
         Session::put('message','Xóa thành công');
 
-        return  Redirect::to('admin/announcements');
+        return  redirect('admin/announcements');
 
     }
 
@@ -234,6 +229,6 @@ class AdminController extends Controller
 
         Session::put('message','Xóa thành công');
 
-        return  Redirect::to('admin');
+        return  redirect('admin');
     }
 }

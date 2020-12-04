@@ -2,8 +2,6 @@
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\LogoutController;
-use RealRashid\SweetAlert\Facades\Alert;
-
 
 
 /*
