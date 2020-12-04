@@ -39,8 +39,9 @@
 
                                 }
                             ?>
-                            @foreach($manage_announcements as $key => $cate_pro)
-                                <div class="content-list-body">
+
+                            <div class="content-list-body">
+                                @foreach($manage_announcements as $key => $cate_pro)
                                     <div class="card card-note">
                                         <div class="card-header">
                                             <div class="media align-items-center text-break">
@@ -78,8 +79,9 @@
 
                                         </div>
                                     </div>
-                                </div>
-                            @endforeach
+                                @endforeach
+                            </div>
+
                         </div>
                         <!-- end of content list-->
                     </div>
