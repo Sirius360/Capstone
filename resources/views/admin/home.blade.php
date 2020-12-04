@@ -2,6 +2,10 @@
 @section('title', 'Home Page')
 @section('content')
 
+    @if (session('success_message'))
+
+    @endif
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-11 col-xl-10">
@@ -29,16 +33,6 @@
                                 </form>
                             </div>
                             <!-- end of content list head-->
-
-                            <!-- alerts -->
-                            <?php
-                                $message= Session ::get('message');
-                                if($message){
-                                    echo '<span class="test-alert">'.$message.'</span>';
-                                    Session::put('message',null);
-
-                                }
-                            ?>
 
                             <div class="content-list-body">
                                 @foreach($manage_announcements as $key => $cate_pro)

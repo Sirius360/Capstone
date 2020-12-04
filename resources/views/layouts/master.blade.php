@@ -33,6 +33,7 @@
 
     </div>
 
+    @include('sweetalert::alert')
 
     <!-- Required vendor scripts (Do not remove) -->
     <script type="text/javascript" src="{{asset('assets/js/jquery.min.js')}}"></script>
