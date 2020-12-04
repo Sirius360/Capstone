@@ -52,9 +52,6 @@ class AdminController extends Controller
         return view('layouts.master')->with('admin.manage-announcements', $all_manage_announcements);
     }
 
-
-
-
     public function account_settings(){
         return view('admin.account-settings');
     }
@@ -125,119 +122,118 @@ class AdminController extends Controller
         return view('admin.template');
     }
 
-//INPUT ==========================================
-public function save_announcement(Request $request){
-    $data= array();
-    $data['title']=$request->note_name;// ten cot roi den ten form
-    $data['content']=$request->note_description;// ten cot roi den ten form
-    $data['announcement_visibility']=$request->visibility;// ten cot roi den ten form
-    if($data['title']==null||$data['content']==null||$data['announcement_visibility']==null){
-        Session::put('message','Them that bai');
-        return  Redirect::to('admin');}
-
-    else{
-
-        DB::table('announcements')->insert($data);
-        Session::put('message','Them thanh cong');
-        return  Redirect::to('admin');}
-
-    }
-
-    public function save_new_announcement(Request $request){
+    //INPUT ==========================================
+    public function save_announcement(Request $request){
         $data= array();
         $data['title']=$request->name;// ten cot roi den ten form
         $data['content']=$request->description;// ten cot roi den ten form
         $data['announcement_visibility']=$request->visibility;// ten cot roi den ten form
         if($data['title']==null||$data['content']==null||$data['announcement_visibility']==null){
             Session::put('message','Them that bai');
-            return  Redirect::to('admin/announcements/new');}
+            return  Redirect::to('admin/announcements/new');
+        }
 
         else{
 
             DB::table('announcements')->insert($data);
             Session::put('message','Them thanh cong');
-            return  Redirect::to('admin/announcements/new');}
-
+            return  Redirect::to('admin/announcements/new');
         }
 
+    }
 
+    public function save_announcement_home(Request $request){
+        $data = array();
+        $data['title']=$request->note_name;// ten cot roi den ten form
+        $data['content']=$request->note_description;// ten cot roi den ten form
+        $data['announcement_visibility']=$request->visibility;// ten cot roi den ten form
+        if($data['title']==null||$data['content']==null||$data['announcement_visibility']==null){
+            Session::put('message','Them that bai');
+            return  Redirect::to('admin');}
 
-    // ======================================================= cái này là function update, edit & delete
-    //======================================================================================= edit & delete & update
-            public function edit_announcement($id){
-                $edit_new_announcement=DB::table('announcements')->orderBy('created_at','desc')->where('id',$id)->get();
+        else{
 
-                $all_manage_announcements=view('admin.edit-announcement')->with('edit_new_announcement', $edit_new_announcement);
+            DB::table('announcements')->insert($data);
+            Session::put('message','Them thanh cong');
+            return  Redirect::to('admin');}
 
+    }
+    // =========== update, edit & delete function  ===========
+    // =======================================================
+    public function edit_announcement($id){
+        $edit_new_announcement=DB::table('announcements')->orderBy('created_at','desc')->where('id',$id)->get();
 
-                return view('layouts.master')->with('admin.edit-announcement', $all_manage_announcements);
-            }
+        $all_manage_announcements=view('admin.edit-announcement')->with('edit_new_announcement', $edit_new_announcement);
 
-            public function edit_announcement_home($id){
-                $edit_new_announcement=DB::table('announcements')->where('id',$id)->get();
+        return view('layouts.master')->with('admin.edit-announcement', $all_manage_announcements);
+    }
 
-                $all_manage_announcements=view('admin.edit-announcement-home')->with('edit_new_announcement', $edit_new_announcement);
+    public function edit_announcement_home($id){
+        $edit_new_announcement=DB::table('announcements')->where('id', $id)->get();
 
+        $all_manage_announcements=view('admin.edit-announcement-home')->with('edit_new_announcement', $edit_new_announcement);
 
-                return view('layouts.master')->with('admin.edit-announcement-home', $all_manage_announcements);
-            }
+        return view('layouts.master')->with('admin.edit-announcement-home', $all_manage_announcements);
+    }
 
-            public function update_announcement(Request $request,$id){
+    public function update_announcement(Request $request, $id){
 
-                $data= array();
-                $data['title']=$request->name;// ten cot roi den ten form
-                $data['content']=$request->description;// ten cot roi den ten form
-                $data['announcement_visibility']=$request->visibility;// ten cot roi den ten form
-                if($data['title']==null||$data['content']==null||$data['announcement_visibility']==null){
-                    Session::put('message','Cập nhật thất bại');
-                    return  Redirect::to('admin/announcement/'.$id.'/edit');}
+        $data = array();
+        $data['title']=$request->name;// ten cot roi den ten form
+        $data['content']=$request->description;// ten cot roi den ten form
+        $data['announcement_visibility']=$request->visibility;// ten cot roi den ten form
 
-                else{
+        if($data['title']==null||$data['content']==null||$data['announcement_visibility']==null){
 
-                    DB::table('announcements')->where('id',$id)->update($data);
+            Session::put('message','Cập nhật thất bại');
 
-                    return  Redirect::to('admin/announcements/show');}
+            return  Redirect::to('admin/announcements/management/'.$id.'/edit');}
 
+        else{
 
+            DB::table('announcements')->where('id',$id)->update($data);
 
-            }
-            public function update_announcement_home(Request $request,$id){
+            return  Redirect::to('admin/announcements');
+        }
 
-                $data= array();
-                $data['title']=$request->name;// ten cot roi den ten form
-                $data['content']=$request->description;// ten cot roi den ten form
-                $data['announcement_visibility']=$request->visibility;// ten cot roi den ten form
-                if($data['title']==null||$data['content']==null||$data['announcement_visibility']==null){
-                    Session::put('message','Cập nhật thất bại');
-                    return  Redirect::to('admin/announcement/'.$id.'/edit');}
+    }
+    public function update_announcement_home(Request $request, $id){
 
-                else{
+        $data = array();
+        $data['title']=$request->name;// ten cot roi den ten form
+        $data['content']=$request->description;// ten cot roi den ten form
+        $data['announcement_visibility']=$request->visibility;// ten cot roi den ten form
 
-                    DB::table('announcements')->where('id',$id)->update($data);
+        if($data['title']==null||$data['content']==null||$data['announcement_visibility']==null){
 
-                    return  Redirect::to('admin');}
+            Session::put('message','Cập nhật thất bại');
 
+            return  Redirect::to('admin/announcements/'.$id.'/edit');}
 
+        else{
 
-            }
-            public function delete_announcement(Request $request,$id){
+            DB::table('announcements')->where('id',$id)->update($data);
 
+            return  Redirect::to('admin');
+        }
 
+    }
+    public function delete_announcement(Request $request, $id){
 
-                    DB::table('announcements')->where('id',$id)->delete();
-                    Session::put('message','Xóa thành công');
+        DB::table('announcements')->where('id',$id)->delete();
 
-                    return  Redirect::to('admin/announcements/show');
+        Session::put('message','Xóa thành công');
 
+        return  Redirect::to('admin/announcements');
 
+    }
 
-            }
-            public function delete_home_announcement(Request $request,$id){
+    public function delete_announcement_home(Request $request, $id){
 
+        DB::table('announcements')->where('id',$id)->delete();
 
+        Session::put('message','Xóa thành công');
 
-                DB::table('announcements')->where('id',$id)->delete();
-                Session::put('message','Xóa thành công');
-
-                return  Redirect::to('admin');}
+        return  Redirect::to('admin');
+    }
 }

@@ -48,7 +48,7 @@
                         @foreach($manage_announcements as $key => $cate_pro)
                             <tr>
                                 <td></td>
-                                <td class="text-left">{{$cate_pro->title}}</td>
+                                <td class="text-left">{{ Str::limit($cate_pro->title, 80, '...') }}</td>
                                 <td>
                                     <?php
                                         if($cate_pro->announcement_visibility==1){
@@ -66,8 +66,8 @@
                                     ?>
                                 </td>
                                 <td>
-                                    <a  href="{{URL::to('/admin/announcement/'.$cate_pro->id.'/edit')}}"><span class="ic-dark"><i class="fad fa-pencil"></i></span></a>
-                                    <a onclick="return confirm('Are you sure to delete?')"href="{{URL::to('/admin/'.$cate_pro->id.'/delete')}}"><span class="ic-dark"><i class="fad fa-trash-alt"></i></span></a>
+                                    <a  href="{{URL::to('/admin/announcements/management/'.$cate_pro->id.'/edit')}}"><span class="ic-dark"><i class="fad fa-pencil"></i></span></a>
+                                    <a onclick="return confirm('Are you sure to delete?')"href="{{URL::to('/admin/announcements/management/'.$cate_pro->id.'/delete')}}"><span class="ic-dark"><i class="fad fa-trash-alt"></i></span></a>
                                     <a href="#"><span class="ic-dark"><i class="fad fa-eye"></i></span></a>
                                 </td>
                             </tr>

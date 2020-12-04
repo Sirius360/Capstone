@@ -25,9 +25,9 @@
     <!-- begin a container -->
     <div class="container">
         <div class="row justify-content-center">
-          <div class="col-lg-11 col-xl-10">
+            <div class="col-lg-11 col-xl-10">
 
-          <form class="mt-3" method="POST" action="{{ url('admin/announcements/save') }}">
+            <form class="mt-3" method="POST" action="{{ url('admin/announcements/save') }}">
             {{csrf_field()}}
 
                 <div class="modal-content">

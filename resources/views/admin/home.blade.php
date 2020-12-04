@@ -57,8 +57,8 @@
                                                         <i class="material-icons">more_vert</i>
                                                 </button>
                                                     <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="{{URL::to('/admin/announcement/'.$cate_pro->id.'/edit')}}">Edit</a>
-                                                        <a class="dropdown-item text-chartjs" onclick="return confirm('Are you sure to delete?')"href="{{URL::to('/admin/announcement/'.$cate_pro->id.'/delete')}}">Delete</a>
+                                                    <a class="dropdown-item" href="{{URL::to('/admin/announcements/'.$cate_pro->id.'/edit')}}">Edit</a>
+                                                        <a class="dropdown-item text-chartjs" onclick="return confirm('Are you sure to delete?')"href="{{URL::to('/admin/announcements/'.$cate_pro->id.'/delete')}}">Delete</a>
                                                 </div>
                                                 </div>
                                             </div>
@@ -89,7 +89,7 @@
                 </div>
 
                 <!-- Tạo Thông báo -->
-                <form class="modal fade" id="note-add-modal" tabindex="-1" aria-hidden="true" method="POST" action="{{ url('admin/announcement/save-announcement') }}">
+                <form class="modal fade" id="note-add-modal" tabindex="-1" aria-hidden="true" method="POST" action="{{ url('admin/announcements/home/save') }}">
                     {{csrf_field()}}
                     <div class="modal-dialog modal-lg" role="document">
                         <div class="modal-content">
