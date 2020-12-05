@@ -180,20 +180,38 @@ class AdminController extends Controller
     }
 
     public function save_new_faculty(Request $request){
-// Chưa bắt lỗi trùng dữ liệu 
-        $data= array();
-        $data['name']=$request->faculty_name;// ten cot roi den ten form
-        $data['description']=$request->note_description;// ten cot roi den ten form
 
-        if($data['name']==null||$data['description']==null){
-            Session::put('message','Thêm Thất Bại');
-            return  Redirect::to('/admin/faculties/new');}
+        $validatedData = $request->validate([
+            'name' => 'required|unique:posts|max:255',
+            'description' => 'required',
+        ],
+    [
+       // 'name.required' => 'Designation is required !!',
+        'name.max' => 'Designation should not be greater than 10 characters.',
+        //'description.required' => 'Status is required !!'
+    ]);
+        
+         $validatedData['name']=$request->faculty_name;// ten cot roi den ten form
+         $validatedData['description']=$request->note_description;// ten cot roi den ten form
+    DB::table('faculty')->insert($validatedData);
+    return redirect('/admin/faculties/new');
+
+
+
+
+        // $data= array();
+        // $data['name']=$request->faculty_name;// ten cot roi den ten form
+        // $data['description']=$request->note_description;// ten cot roi den ten form
+
+        // if($data['name']==null||$data['description']==null){
+        //     Session::put('message','Thêm Thất Bại');
+        //     return  Redirect::to('/admin/faculties/new');}
      
-        else{
+        // else{
             
-            DB::table('faculty')->insert($data);
-            Session::put('message','Thêm thành công');
-            return  Redirect::to('/admin/faculties/new');}
+        //     DB::table('faculty')->insert($data);
+        //     Session::put('message','Thêm thành công');
+        //     return  Redirect::to('/admin/faculties/new');}
     
         }  
 

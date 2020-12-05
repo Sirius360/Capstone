@@ -65,18 +65,13 @@
                                 <form>
 
                                     <div class="form-group row align-items-center">
-                                        <label class="col-3">First Name<span class="text-danger">*</span></label>
+                                        <label class="col-3">Full Name<span class="text-danger">*</span></label>
                                         <div class="col">
                                             <input type="text" placeholder="First name" value="Mận" name="profile-first-name" class="form-control" required />
                                         </div>
                                     </div>
 
-                                    <div class="form-group row align-items-center">
-                                        <label class="col-3">Last Name</label>
-                                        <div class="col">
-                                            <input type="text" placeholder="Last name" value="Nguyễn Đức" name="profile-last-name" class="form-control" required />
-                                        </div>
-                                    </div>
+
 
                                     <div class="form-group row align-items-center">
                                         <label class="col-3">Birthday</label>
