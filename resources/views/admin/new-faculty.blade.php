@@ -18,14 +18,15 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-11 col-xl-10">
-    <?php
-         $message= Session ::get('message');
-         if($message){
-             echo '<span class="test-alert">'.$message.'</span>';
-             Session::put('message',null);
-
-            }
-    ?>    
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                     <ul>
+                 @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+             </ul>
+            </div>
+            @endif
                 <form class="mt-3"method="POST" action="{{ url('admin/faculty/new-faculty') }}">
                       {{csrf_field()}}
                     <div class="modal-content">
