@@ -1,13 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
-use App\Http\Requests;
-use Session;
 use DB;
+use Session;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use RealRashid\SweetAlert\Facades\Alert;
-use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Support\Facades\Validator;
+use GrahamCampbell\Markdown\Facades\Markdown;
 
 
 
@@ -16,22 +16,17 @@ class AdminController extends Controller
 {
     public function index(Request $request){
 
+        $result = DB::table('users')->first();
 
-
-            $result = DB::table('users')->first();
-            if($result){
-
-             // Session::put('last_name',$result->last_name);
-             Session::put('name',$result->name);
-            // Session::put('id',$result->id);
+        if($result){
+            Session::put('name',$result->name);
         }
 
-         $manage_announcements=DB::table('announcements')->orderBy('created_at','desc')->get();
+        $manage_announcements=DB::table('announcements')->orderBy('created_at','desc')->get();
 
-         $all_manage_announcements=view('admin.home')->with('manage_announcements', $manage_announcements);
+        $all_manage_announcements=view('admin.home')->with('manage_announcements', $manage_announcements);
 
-
-         return view('layouts.master')->with('admin.home', $all_manage_announcements);
+        return view('layouts.master')->with('admin.home', $all_manage_announcements);
     }
 
 
@@ -39,23 +34,15 @@ class AdminController extends Controller
         return view('admin.new-announcement');
     }
     public function manage_announcements(){
+
         $manage_announcements=DB::table('announcements')->orderBy('created_at','desc')->get();
 
         $all_manage_announcements=view('admin.manage-announcements')->with('manage_announcements', $manage_announcements);
 
-
         return view('layouts.master')->with('admin.manage-announcements', $all_manage_announcements);
+
     }
 
-    public function account_settings(){
-        return view('admin.account-settings');
-    }
-    public function control_panel(){
-        return view('admin.control-panel');
-    }
-    public function edit_group(){
-        return view('admin.edit-group');
-    }
     public function edit_team(){
         return view('admin.edit-team');
     }
@@ -72,8 +59,7 @@ class AdminController extends Controller
         $manage_faculties=DB::table('faculty')->orderBy('created_at','desc')->get();
 
         $all_manage_faculties=view('admin.manage-faculties')->with('manage_faculties', $manage_faculties);
-            
-    
+
         return view('layouts.master')->with('admin.manage-faculties', $all_manage_faculties);
     }
     public function manage_groups(){
@@ -131,7 +117,7 @@ class AdminController extends Controller
 
         if($request->isMethod('post')){
             $validator = Validator::make($request->all(), [
-                'title' => 'required|min:5|max:255|unique:announcements',
+                'title' => 'required|min:5|max:255',
                 'content' => 'required|min:5',
                 'visibility' => 'required'
             ]);
@@ -144,37 +130,28 @@ class AdminController extends Controller
             return redirect('admin/announcements/new')->withSuccess('Post Created Successfully!');
         }
 
-        // $data = array();
-        // $data['title']=$request->name;// ten cot roi den ten form
-        // $data['content']=$request->description;// ten cot roi den ten form
-        // $data['announcement_visibility']=$request->visibility;// ten cot roi den ten form
-        // if($data['title']==null||$data['content']==null||$data['announcement_visibility']==null){
-        //     Alert::toast('Đăng thất bại!', 'error');
-        //     return  redirect('admin/announcements/new');
-        // }
-
-        // else{
-
-        //     DB::table('announcements')->insert($data);
-        //     Alert::toast('Đăng thành công!', 'success');
-        //     return  redirect('admin/announcements/new');
-        // }
-
     }
 
     public function save_announcement_home(Request $request){
-        $data = array();
-        $data['title']=$request->note_name;// ten cot roi den ten form
-        $data['content']=$request->note_description;// ten cot roi den ten form
-        $data['announcement_visibility']=$request->visibility;// ten cot roi den ten form
-        if($data['title']==null||$data['content']==null||$data['announcement_visibility']==null){
-            Alert::toast('Đăng thất bại!', 'error');
-            return redirect('admin');
-        }
-        else{
+
+        $data = [];
+        $data['title'] = $request->input('title');
+        $data['content'] = $request->input('content');
+        $data['announcement_visibility']=$request->input('visibility');
+
+        if($request->isMethod('post')){
+            $validator = Validator::make($request->all(), [
+                'title' => 'required|min:5|max:255',
+                'content' => 'required|min:5',
+                'visibility' => 'required'
+            ]);
+
+            if ($validator->fails()) {
+                return back()->with('toast_error', $validator->messages()->all()[0])->withInput();
+            }
 
             DB::table('announcements')->insert($data);
-            return redirect('admin');
+            return redirect('admin')->withSuccess('Post Created Successfully!');
         }
 
     }
@@ -200,29 +177,12 @@ class AdminController extends Controller
             DB::table('faculty')->insert($data);
             return redirect('/admin/faculties/new')->withSuccess('Post Created Successfully!');
         }
-
-
-
-
-        // $data= array();
-        // $data['name']=$request->faculty_name;// ten cot roi den ten form
-        // $data['description']=$request->note_description;// ten cot roi den ten form
-
-        // if($data['name']==null||$data['description']==null){
-        //     Session::put('message','Thêm Thất Bại');
-        //     return  Redirect::to('/admin/faculties/new');}
-     
-        // else{
-            
-        //     DB::table('faculty')->insert($data);
-        //     Session::put('message','Thêm thành công');
-        //     return  Redirect::to('/admin/faculties/new');}
-    
-        }  
+    }
 
     // =========== update, edit & delete function  ===========
     // =======================================================
-    public function edit_announcement($id){
+    public function edit_announcement(Request $request, $id){
+
         $edit_new_announcement=DB::table('announcements')->orderBy('created_at','desc')->where('id',$id)->get();
 
         $all_manage_announcements=view('admin.edit-announcement')->with('edit_new_announcement', $edit_new_announcement);
@@ -230,7 +190,7 @@ class AdminController extends Controller
         return view('layouts.master')->with('admin.edit-announcement', $all_manage_announcements);
     }
 
-    public function edit_announcement_home($id){
+    public function edit_announcement_home(Request $request, $id){
         $edit_new_announcement=DB::table('announcements')->where('id', $id)->get();
 
         $all_manage_announcements=view('admin.edit-announcement-home')->with('edit_new_announcement', $edit_new_announcement);
@@ -258,23 +218,6 @@ class AdminController extends Controller
             DB::table('announcements')->insert($data);
             return redirect('/admin/announcements')->withSuccess('Post Created Successfully!');
         }
-        // $data = array();
-        // $data['title']=$request->name;// ten cot roi den ten form
-        // $data['content']=$request->description;// ten cot roi den ten form
-        // $data['announcement_visibility']=$request->visibility;// ten cot roi den ten form
-
-        // if($data['title']==null||$data['content']==null||$data['announcement_visibility']==null){
-
-        //     Session::put('message','Cập nhật thất bại');
-
-        //     return  redirect('admin/announcements/management/'.$id.'/edit');}
-
-        // else{
-
-        //     DB::table('announcements')->where('id',$id)->update($data);
-
-        //     return  redirect('admin/announcements');
-        // }
 
     }
     public function update_announcement_home(Request $request, $id){
@@ -301,12 +244,9 @@ class AdminController extends Controller
     }
     public function delete_announcement(Request $request, $id){
 
-        DB::table('announcements')->where('id',$id)->delete();
-
-        Session::put('message','Xóa thành công');
-
+        DB::table('announcements')->where('id', $id)->delete();
+        Alert::success('Success Title', 'Success Message');
         return  redirect('admin/announcements');
-
     }
 
     public function delete_announcement_home(Request $request, $id){
@@ -318,11 +258,11 @@ class AdminController extends Controller
         return  redirect('admin');
     }
     //faculties
-    public function edit_faculties($id){
+    public function edit_faculties(Request $request, $id){
         $edit_new_faculty=DB::table('faculty')->orderBy('created_at','desc')->where('id',$id)->get();
 
         $all_manage_faculty=view('admin.edit-faculty')->with('edit_new_faculty', $edit_new_faculty);
-        
+
 
         return view('layouts.master')->with('admin.edit-faculty', $all_manage_faculty);
     }
@@ -332,30 +272,29 @@ class AdminController extends Controller
         $data= array();
         $data['name']=$request->faculty_name;// ten cot roi den ten form
         $data['description']=$request->note_description;// ten cot roi den ten form
-        
+
         if($data['name']==null||$data['description']==null){
             Session::put('message','Cập nhật thất bại');
-            return  Redirect::to('admin/edit-faculty/'.$id);}
-     
+            return  redirect('admin/edit-faculty/'.$id);}
+
         else{
-            
+
             DB::table('faculty')->where('id',$id)->update($data);
-            
-            return  Redirect::to('admin/faculties');}
-    
-           
+
+            return  redirect('admin/faculties');}
+
+
 
     }
     public function delete_faculties(Request $request,$id){
 
 
-            
             DB::table('faculty')->where('id',$id)->delete();
             Session::put('messages','Xóa thành công');
 
-            return  Redirect::to('admin/faculties');
-    
-           
+            return  redirect('admin/faculties');
+
+
 
     }
 }
