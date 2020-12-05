@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Session;
-use Illuminate\Support\Facades\Redirect;
-session_start();
 use DB;
 use RealRashid\SweetAlert\Facades\Alert;
+use GrahamCampbell\Markdown\Facades\Markdown;
+use Illuminate\Support\Facades\Validator;
 
 
 
@@ -119,21 +119,41 @@ class AdminController extends Controller
 
     //INPUT ==========================================
     public function save_announcement(Request $request){
-        $data= array();
-        $data['title']=$request->name;// ten cot roi den ten form
-        $data['content']=$request->description;// ten cot roi den ten form
-        $data['announcement_visibility']=$request->visibility;// ten cot roi den ten form
-        if($data['title']==null||$data['content']==null||$data['announcement_visibility']==null){
-            Alert::toast('Đăng thất bại!', 'error');
-            return  redirect('admin/announcements/new');
-        }
+        $data = [];
+        $data['title'] = $request->input('title');
+        $data['content'] = $request->input('content');
+        $data['announcement_visibility']=$request->input('visibility');
 
-        else{
+        if($request->isMethod('post')){
+            $validator = Validator::make($request->all(), [
+                'title' => 'required|min:5|max:255|unique:announcements',
+                'content' => 'required|min:5',
+                'visibility' => 'required'
+            ]);
+
+            if ($validator->fails()) {
+                return back()->with('toast_error', $validator->messages()->all()[0])->withInput();
+            }
 
             DB::table('announcements')->insert($data);
-            Alert::toast('Đăng thành công!', 'success');
-            return  redirect('admin/announcements/new');
+            return redirect('admin')->withSuccess('Post Created Successfully!');
         }
+
+        // $data = array();
+        // $data['title']=$request->name;// ten cot roi den ten form
+        // $data['content']=$request->description;// ten cot roi den ten form
+        // $data['announcement_visibility']=$request->visibility;// ten cot roi den ten form
+        // if($data['title']==null||$data['content']==null||$data['announcement_visibility']==null){
+        //     Alert::toast('Đăng thất bại!', 'error');
+        //     return  redirect('admin/announcements/new');
+        // }
+
+        // else{
+
+        //     DB::table('announcements')->insert($data);
+        //     Alert::toast('Đăng thành công!', 'success');
+        //     return  redirect('admin/announcements/new');
+        // }
 
     }
 
@@ -143,6 +163,7 @@ class AdminController extends Controller
         $data['content']=$request->note_description;// ten cot roi den ten form
         $data['announcement_visibility']=$request->visibility;// ten cot roi den ten form
         if($data['title']==null||$data['content']==null||$data['announcement_visibility']==null){
+            Alert::toast('Đăng thất bại!', 'error');
             return redirect('admin');
         }
         else{

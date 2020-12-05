@@ -14,14 +14,9 @@
         </nav>
     </div>
     <!-- end breadcrumb -->
-    <?php
-         $message= Session ::get('message');
-         if($message){
-             echo '<span class="test-alert">'.$message.'</span>';
-             Session::put('message',null);
-
-            }
-    ?>
+    @if (session('success_message'))
+        {{ session('success_message') }}
+    @endif
     <!-- begin a container -->
     <div class="container">
         <div class="row justify-content-center">
@@ -38,11 +33,15 @@
                     <div class="modal-body">
                         <div class="form-group row align-items-center">
                             <label class="col-3">Title</label>
-                            <input class="form-control col" type="text" placeholder="Title" name="name" />
+                            <input class="form-control col" type="text" placeholder="Title" name="title" />
                         </div>
+                        {{-- <div class="form-group row align-items-center">
+                            <label class="col-3"></label>
+                            <small class="col text-danger">{{$errors->first('name')}}</small>
+                        </div> --}}
                         <div class="form-group row">
                             <label class="col-3">Content</label>
-                            <textarea class="form-control col" rows="10" placeholder="Write something here..." name="description"></textarea>
+                            <textarea class="form-control col" rows="10" placeholder="Write something here..." name="content"></textarea>
                         </div>
                         <hr>
                         <h6>Visibility</h6>

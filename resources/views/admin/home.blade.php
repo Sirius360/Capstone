@@ -29,7 +29,9 @@
                                 </form>
                             </div>
                             <!-- end of content list head-->
-
+                            @if (session('success_message'))
+                                {{ session('success_message') }}
+                            @endif
                             <div class="content-list-body">
                                 @foreach($manage_announcements as $key => $cate_pro)
                                     <div class="card card-note">
@@ -54,8 +56,9 @@
                                             </div>
                                         </div>
                                         <div class="card-body" data-filter-by="text">
-                                            <p>{{$cate_pro->content}}</p>
-
+                                            @markdown
+                                            {{ $cate_pro->content }}
+                                            @endmarkdown
                                             <!--
                                             <div class="media media-attachment">
                                                 <div class="text-primary">
