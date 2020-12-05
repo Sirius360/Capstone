@@ -141,7 +141,7 @@ class AdminController extends Controller
             }
 
             DB::table('announcements')->insert($data);
-            return redirect('admin')->withSuccess('Post Created Successfully!');
+            return redirect('admin/announcements/new')->withSuccess('Post Created Successfully!');
         }
 
         // $data = array();
@@ -181,20 +181,25 @@ class AdminController extends Controller
 
     public function save_new_faculty(Request $request){
 
-        $validatedData = $request->validate([
-            'name' => 'required|unique:posts|max:255',
-            'description' => 'required',
-        ],
-    [
-       // 'name.required' => 'Designation is required !!',
-        'name.max' => 'Designation should not be greater than 10 characters.',
-        //'description.required' => 'Status is required !!'
-    ]);
-        
-         $validatedData['name']=$request->faculty_name;// ten cot roi den ten form
-         $validatedData['description']=$request->note_description;// ten cot roi den ten form
-    DB::table('faculty')->insert($validatedData);
-    return redirect('/admin/faculties/new');
+        $data = [];
+        $data['name'] = $request->input('faculty_name');
+        $data['description'] = $request->input('description');
+       // $data['announcement_visibility']=$request->input('visibility');
+
+        if($request->isMethod('post')){
+            $validator = Validator::make($request->all(), [
+                'faculty_name' => 'required|min:5|max:255', //form
+                'description' => 'required|min:5',
+               // 'visibility' => 'required'
+            ]);
+
+            if ($validator->fails()) {
+                return back()->with('toast_error', $validator->messages()->all()[0])->withInput();
+            }
+
+            DB::table('faculty')->insert($data);
+            return redirect('/admin/faculties/new')->withSuccess('Post Created Successfully!');
+        }
 
 
 
@@ -234,46 +239,65 @@ class AdminController extends Controller
     }
 
     public function update_announcement(Request $request, $id){
+        $data = [];
+        $data['title'] = $request->input('title');
+        $data['content'] = $request->input('content');
+        $data['announcement_visibility']=$request->input('visibility');
 
-        $data = array();
-        $data['title']=$request->name;// ten cot roi den ten form
-        $data['content']=$request->description;// ten cot roi den ten form
-        $data['announcement_visibility']=$request->visibility;// ten cot roi den ten form
+        if($request->isMethod('post')){
+            $validator = Validator::make($request->all(), [
+                'title' => 'required|min:5|max:255',
+                'content' => 'required|min:5',
+                'visibility' => 'required'
+            ]);
 
-        if($data['title']==null||$data['content']==null||$data['announcement_visibility']==null){
+            if ($validator->fails()) {
+                return back()->with('toast_error', $validator->messages()->all()[0])->withInput();
+            }
 
-            Session::put('message','Cập nhật thất bại');
-
-            return  redirect('admin/announcements/management/'.$id.'/edit');}
-
-        else{
-
-            DB::table('announcements')->where('id',$id)->update($data);
-
-            return  redirect('admin/announcements');
+            DB::table('announcements')->insert($data);
+            return redirect('/admin/announcements')->withSuccess('Post Created Successfully!');
         }
+        // $data = array();
+        // $data['title']=$request->name;// ten cot roi den ten form
+        // $data['content']=$request->description;// ten cot roi den ten form
+        // $data['announcement_visibility']=$request->visibility;// ten cot roi den ten form
+
+        // if($data['title']==null||$data['content']==null||$data['announcement_visibility']==null){
+
+        //     Session::put('message','Cập nhật thất bại');
+
+        //     return  redirect('admin/announcements/management/'.$id.'/edit');}
+
+        // else{
+
+        //     DB::table('announcements')->where('id',$id)->update($data);
+
+        //     return  redirect('admin/announcements');
+        // }
 
     }
     public function update_announcement_home(Request $request, $id){
 
-        $data = array();
-        $data['title']=$request->name;// ten cot roi den ten form
-        $data['content']=$request->description;// ten cot roi den ten form
-        $data['announcement_visibility']=$request->visibility;// ten cot roi den ten form
+        $data = [];
+        $data['title'] = $request->input('title');
+        $data['content'] = $request->input('content');
+        $data['announcement_visibility']=$request->input('visibility');
 
-        if($data['title']==null||$data['content']==null||$data['announcement_visibility']==null){
+        if($request->isMethod('post')){
+            $validator = Validator::make($request->all(), [
+                'title' => 'required|min:5|max:255',
+                'content' => 'required|min:5',
+                'visibility' => 'required'
+            ]);
 
-            Session::put('message','Cập nhật thất bại');
+            if ($validator->fails()) {
+                return back()->with('toast_error', $validator->messages()->all()[0])->withInput();
+            }
 
-            return  redirect('admin/announcements/'.$id.'/edit');}
-
-        else{
-
-            DB::table('announcements')->where('id',$id)->update($data);
-
-            return  redirect('admin');
+            DB::table('announcements')->insert($data);
+            return redirect('admin')->withSuccess('Post Created Successfully!');
         }
-
     }
     public function delete_announcement(Request $request, $id){
 

@@ -19,36 +19,35 @@
         </nav>
     </div>
     <!-- end breadcrumb -->
-
+    @if (session('success_message'))
+        {{ session('success_message') }}
+    @endif
     <!-- begin a container -->
     <div class="container">
         <div class="row justify-content-center">
         @foreach($edit_new_announcement as $key => $edit_value)
           <div class="col-lg-11 col-xl-10">
- <?php
-         $message= Session ::get('message');
-         if($message){
-             echo '<span class="test-alert">'.$message.'</span>';
-             Session::put('message',null);
 
-            }
-?>
             <form class="mt-3" method="POST" action="{{ url('admin/announcements/'.$edit_value->id.'/update') }}">
-            {{csrf_field()}}
+             {{csrf_field()}}
 
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Edit an Announcement</h5>
+                        <h5 class="modal-title">Create an Announcement</h5>
                     </div>
                     <!--end of modal head-->
                     <div class="modal-body">
                         <div class="form-group row align-items-center">
                             <label class="col-3">Title</label>
-                            <input class="form-control col" type="text" value="{{$edit_value->title}}" placeholder="Title" name="name" />
+                            <input class="form-control col" type="text" placeholder="Title" value="{{$edit_value->title}}" name="title" />
                         </div>
+                        {{-- <div class="form-group row align-items-center">
+                            <label class="col-3"></label>
+                            <small class="col text-danger">{{$errors->first('name')}}</small>
+                        </div> --}}
                         <div class="form-group row">
                             <label class="col-3">Content</label>
-                            <textarea class="form-control col" rows="10"  name="description">{{$edit_value->content}}</textarea>
+                            <textarea class="form-control col" rows="10" placeholder="Write something here..." name="content">{{$edit_value->content}}</textarea>
                         </div>
                         <hr>
                         <h6>Visibility</h6>
@@ -75,7 +74,7 @@
                     </div>
                     <!--end of modal body-->
                     <div class="modal-footer">
-                        <button role="button" class="btn btn-primary" type="submit">Update</button>
+                        <button role="button" class="btn btn-primary" type="submit">Post</button>
                     </div>
                 </div>
             </form>

@@ -13,20 +13,14 @@
             </ol>
         </nav>
     </div>
-
+    @if (session('success_message'))
+        {{ session('success_message') }}
+    @endif
 
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-11 col-xl-10">
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                     <ul>
-                 @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-             </ul>
-            </div>
-            @endif
+
                 <form class="mt-3"method="POST" action="{{ url('admin/faculty/new-faculty') }}">
                       {{csrf_field()}}
                     <div class="modal-content">
@@ -37,11 +31,11 @@
                         <div class="modal-body">
                             <div class="form-group row align-items-center">
                                 <label class="col-2">Faculty</label>
-                                <input class="form-control col" type="text" placeholder="Faculty name" name="faculty_name" required />
+                                <input class="form-control col" type="text" placeholder="Faculty name" name="faculty_name" />
                             </div>
                             <div class="form-group row">
                                 <label class="col-2">Description</label>
-                                <textarea class="form-control col" rows="10" placeholder="Write something here..." name="note_description" required ></textarea>
+                                <textarea class="form-control col" rows="10" placeholder="Write something here..." name="description" ></textarea>
                             </div>
                         
                         </div>
