@@ -36,16 +36,18 @@
                             </tr>
                         </thead>
                         <tbody>
+                        @foreach($manage_faculties as $key => $cate_pro)
+
                             <tr>
                                 <td></td>
-                                <td class="text-left">Almost before we knew it, we had left the ground.</td>
+                                <td class="text-left">{{ Str::limit($cate_pro->name, 100,('...')) }}</td>
                                 <td>
-                                    <a href="#" data-toggle="modal" data-target="#faculty-edit-modal"><span class="ic-dark"><i class="fad fa-pencil"></i></span></a>
-                                    <a href="#"><span class="ic-dark"><i class="fad fa-trash-alt"></i></span></a>
+                                    <a href="{{URL::to('/admin/faculties/management/'.$cate_pro->id.'/edit')}}" ><span class="ic-dark"><i class="fad fa-pencil"></i></span></a>
+                                    <a onclick="return confirm('Are you sure to delete?')"href="{{URL::to('/admin/faculties/management/'.$cate_pro->id.'/delete')}}" ><span class="ic-dark"><i class="fad fa-trash-alt"></i></span></a>
                                     <a href="#"><span class="ic-dark"><i class="fad fa-eye"></i></span></a>
                                 </td>
                             </tr>
-
+                            @endforeach
                         </tbody>
                         <tfoot>
                             <tr>

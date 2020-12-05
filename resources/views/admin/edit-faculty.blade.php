@@ -2,45 +2,53 @@
 
 @section('content')
 
+<div class="main-container">
+    
     <div class="breadcrumb-bar navbar bg-white sticky-top">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ url('admin') }}">Home</a>
                 </li>
-                <li class="breadcrumb-item"><a href="{{ url('admin/faculties') }}">Faculties</a>
+                <li class="breadcrumb-item"><a href="#">Faculties</a>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page">New Faculty</li>
+                @foreach($edit_new_faculty as $key => $edit_value)
+                <li class="breadcrumb-item"><a href="{{ url('admin') }}">{{ Str::limit($edit_value->name, 19,'...') }}</a>
+                </li>
+                @endforeach
+                <li class="breadcrumb-item active" aria-current="page">Edit</li>
             </ol>
         </nav>
     </div>
+    <?php
+         $messages= Session ::get('messages');
+         if($messages){
+             echo '<span class="test-alert">'.$messages.'</span>';
+             Session::put('messages',null);
 
+            }
+    ?>
 
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-11 col-xl-10">
-    <?php
-         $message= Session ::get('message');
-         if($message){
-             echo '<span class="test-alert">'.$message.'</span>';
-             Session::put('message',null);
+        @foreach($edit_new_faculty as $key => $edit_value)
 
-            }
-    ?>    
-                <form class="mt-3"method="POST" action="{{ url('admin/faculty/new-faculty') }}">
+            <div class="col-lg-11 col-xl-10">
+    
+                <form class="mt-3"method="POST" action="{{ url('admin/faculties/management/'.$edit_value->id.'/update') }}">
                       {{csrf_field()}}
                     <div class="modal-content">
                         <div class="modal-header bg-primary">
-                            <h5 class="modal-title">Create a Faculty</h5> 
+                            <h5 class="modal-title">Edit a Faculty</h5> 
                         </div>
                         <!--end of modal head-->
                         <div class="modal-body">
                             <div class="form-group row align-items-center">
                                 <label class="col-2">Faculty</label>
-                                <input class="form-control col" type="text" placeholder="Faculty name" name="faculty_name" required />
+                                <input class="form-control col" type="text" value="{{$edit_value->name}}" name="faculty_name" required />
                             </div>
                             <div class="form-group row">
                                 <label class="col-2">Description</label>
-                                <textarea class="form-control col" rows="10" placeholder="Write something here..." name="note_description" required ></textarea>
+                                <textarea class="form-control col" rows="10"  name="note_description" required >{{$edit_value->description}}</textarea>
                             </div>
                         
                         </div>
@@ -52,9 +60,18 @@
                         </div>
                     </div>
                 </form>
+            
             </div>
+         @endforeach
+
         </div>
     </div>
+
+</div>
+</div>
+
+
+
 
 
 @endsection

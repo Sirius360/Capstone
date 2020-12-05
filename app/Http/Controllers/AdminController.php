@@ -69,7 +69,12 @@ class AdminController extends Controller
         return view('admin.manage-departments');
     }
     public function manage_faculties(){
-        return view('admin.manage-faculties');
+        $manage_faculties=DB::table('faculty')->orderBy('created_at','desc')->get();
+
+        $all_manage_faculties=view('admin.manage-faculties')->with('manage_faculties', $manage_faculties);
+            
+    
+        return view('layouts.master')->with('admin.manage-faculties', $all_manage_faculties);
     }
     public function manage_groups(){
         return view('admin.manage-groups');
@@ -153,6 +158,24 @@ class AdminController extends Controller
 
     }
 
+    public function save_new_faculty(Request $request){
+// Chưa bắt lỗi trùng dữ liệu 
+        $data= array();
+        $data['name']=$request->faculty_name;// ten cot roi den ten form
+        $data['description']=$request->note_description;// ten cot roi den ten form
+
+        if($data['name']==null||$data['description']==null){
+            Session::put('message','Thêm Thất Bại');
+            return  Redirect::to('/admin/faculties/new');}
+     
+        else{
+            
+            DB::table('faculty')->insert($data);
+            Session::put('message','Thêm thành công');
+            return  Redirect::to('/admin/faculties/new');}
+    
+        }  
+
     // =========== update, edit & delete function  ===========
     // =======================================================
     public function edit_announcement($id){
@@ -231,4 +254,46 @@ class AdminController extends Controller
 
         return  redirect('admin');
     }
+    //faculties
+    public function edit_faculties($id){
+        $edit_new_faculty=DB::table('faculty')->orderBy('created_at','desc')->where('id',$id)->get();
+
+        $all_manage_faculty=view('admin.edit-faculty')->with('edit_new_faculty', $edit_new_faculty);
+        
+
+        return view('layouts.master')->with('admin.edit-faculty', $all_manage_faculty);
+    }
+
+    public function update_faculties(Request $request,$id){
+
+        $data= array();
+        $data['name']=$request->faculty_name;// ten cot roi den ten form
+        $data['description']=$request->note_description;// ten cot roi den ten form
+        
+        if($data['name']==null||$data['description']==null){
+            Session::put('message','Cập nhật thất bại');
+            return  Redirect::to('admin/edit-faculty/'.$id);}
+     
+        else{
+            
+            DB::table('faculty')->where('id',$id)->update($data);
+            
+            return  Redirect::to('admin/faculties');}
+    
+           
+
+    }
+    public function delete_faculties(Request $request,$id){
+
+
+            
+            DB::table('faculty')->where('id',$id)->delete();
+            Session::put('messages','Xóa thành công');
+
+            return  Redirect::to('admin/faculties');
+    
+           
+
+    }
 }
+

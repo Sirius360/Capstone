@@ -14,14 +14,7 @@
         </nav>
     </div>
     <!-- end breadcrumb -->
-    <?php
-         $message= Session ::get('message');
-         if($message){
-             echo '<span class="test-alert">'.$message.'</span>';
-             Session::put('message',null);
 
-            }
-    ?>
     <!-- begin a container -->
     <div class="container">
         <div class="row justify-content-center">
