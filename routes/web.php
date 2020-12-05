@@ -76,7 +76,7 @@ Route::group(['prefix'=>'admin','middleware' => ['auth','role:admin']], function
     // =========================== POST //
     Route::POST('/announcements/save','AdminController@save_announcement');
     Route::POST('/announcements/home/save','AdminController@save_announcement_home');
-    //  Route::POST('save-new-faculty','AdminController@save_new_faculty');
+    Route::POST('/faculty/new-faculty','AdminController@save_new_faculty');
     //  Route::POST('save-new-department','AdminController@save_new_department');
     //  Route::POST('save-new-topic','AdminController@save_new_topic');
 
@@ -95,7 +95,11 @@ Route::group(['prefix'=>'admin','middleware' => ['auth','role:admin']], function
     Route::post('/announcements/management/{id}/update','AdminController@update_announcement');
     Route::post('/announcements/{id}/update','AdminController@update_announcement_home');
 
-    // ===
+// === faculties
+    Route::get('/faculties/management/{id}/edit','AdminController@edit_faculties');
+    Route::get('/faculties/management/{id}/delete','AdminController@delete_faculties');
+
+    Route::post('/faculties/management/{id}/update','AdminController@update_faculties');
 
 
 

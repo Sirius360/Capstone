@@ -10,14 +10,23 @@
                 </li>
                 <li class="breadcrumb-item"><a href="{{ url('admin') }}">Announcements</a>
                 </li>
-                <li class="breadcrumb-item"><a href="{{ url('admin/announcements') }}">Management</a>
+                @foreach($edit_new_announcement as $key => $edit_value)
+                <li class="breadcrumb-item"><a href="{{ url('admin/announcements') }}">{{ Str::limit($edit_value->title, 15,'...') }}</a>
                 </li>
+                @endforeach
                 <li class="breadcrumb-item active" aria-current="page">Edit Announcement</li>
             </ol>
         </nav>
     </div>
     <!-- end breadcrumb -->
-    <?php
+
+    <!-- begin a container -->
+    <div class="container">
+        <div class="row justify-content-center">
+        @foreach($edit_new_announcement as $key => $edit_value)
+          <div class="col-lg-11 col-xl-10">
+          
+          <?php
          $message= Session ::get('message');
          if($message){
              echo '<span class="test-alert">'.$message.'</span>';
@@ -25,12 +34,6 @@
 
             }
     ?>
-    <!-- begin a container -->
-    <div class="container">
-        <div class="row justify-content-center">
-        @foreach($edit_new_announcement as $key => $edit_value)
-          <div class="col-lg-11 col-xl-10">
-
             <form class="mt-3" method="POST" action="{{ url('admin/announcements/management/'.$edit_value->id.'/update') }}">
             {{csrf_field()}}
 
