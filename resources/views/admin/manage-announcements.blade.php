@@ -9,27 +9,27 @@
             </li>
             <li class="breadcrumb-item"><a href="{{ url('admin') }}">Announcements</a>
             </li>
-            <li class="breadcrumb-item active" aria-current="page">Annc. Management</li>
+            <li class="breadcrumb-item active" aria-current="page">Anncouncement Management</li>
             </ol>
         </nav>
     </div>
     <!-- end breadcrumb -->
     <!-- Thông báo -->
     <?php
-         $message= Session ::get('message');
-         if($message){
+        $message= Session ::get('message');
+        if($message){
              echo '<span class="test-alert">'.$message.'</span>';
              Session::put('message',null);
 
-            }
+        }
     ?>
     <!-- begin a container -->
-    <div class="container">
+    <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col mt-3">
                 <div class="row content-list-head">
                     <div class="col-auto">
-                        <h3>Announcement Management</h3>
+                        <h4 class="text-table">Announcement Management</h4>
                     </div>
                 </div>
                 <!--end of content list head-->
@@ -40,6 +40,8 @@
                             <tr>
                                 <th></th>
                                 <th class="text-left">Title</th>
+                                <th>Posting Date</th>
+                                <th>Last Edit</th>
                                 <th>Privacy</th>
                                 <th>Action</th>
                             </tr>
@@ -48,20 +50,26 @@
                         @foreach($manage_announcements as $key => $cate_pro)
                             <tr>
                                 <td></td>
-                                <td class="text-left">{{ Str::limit($cate_pro->title, 80, '...') }}</td>
+                                <td class="text-left">{{ $cate_pro->title }}</td>
+                                <td>
+                                    {{ $cate_pro->created_at }}
+                                </td>
+                                <td>
+                                    {{ ($cate_pro->updated_at == "1994-11-11 00:00:00" ? '' : $cate_pro->updated_at) }}
+                                </td>
                                 <td>
                                     <?php
-                                        if($cate_pro->announcement_visibility==1){
+                                        if($cate_pro->visibility==1){
 
                                             echo '<span class="ic-dark"><i class="fad fa-globe-africa"></i></span>';
 
                                         }
-                                        else if($cate_pro->announcement_visibility==2){
+                                        else if($cate_pro->visibility==2){
 
                                             echo '<span class="ic-dark"><i class="fad fa-user-friends"></i></span>';
 
                                         }
-                                        else if($cate_pro->announcement_visibility==3){
+                                        else if($cate_pro->visibility==3){
 
                                             echo '<span class="ic-dark"><i class="fad fa-user"></i></span>';
 
@@ -80,6 +88,8 @@
                             <tr>
                                 <th></th>
                                 <th class="text-left">Title</th>
+                                <th>Posting Date</th>
+                                <th>Last Edit</th>
                                 <th>Privacy</th>
                                 <th>Action</th>
                             </tr>
@@ -109,11 +119,11 @@
                         }
                     },
                     {
-                        'targets': 2,
+                        'targets': 4,
                         'orderable': false
                     },
                     {
-                        'targets': 3,
+                        'targets': 5,
                         'orderable': false
                     },
                 ],

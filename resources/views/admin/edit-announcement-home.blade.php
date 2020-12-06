@@ -41,10 +41,6 @@
                             <label class="col-3">Title</label>
                             <input class="form-control col" type="text" placeholder="Title" value="{{$edit_value->title}}" name="title" />
                         </div>
-                        {{-- <div class="form-group row align-items-center">
-                            <label class="col-3"></label>
-                            <small class="col text-danger">{{$errors->first('name')}}</small>
-                        </div> --}}
                         <div class="form-group row">
                             <label class="col-3">Content</label>
                             <textarea class="form-control col" rows="10" placeholder="Write something here..." name="content">{{$edit_value->content}}</textarea>
