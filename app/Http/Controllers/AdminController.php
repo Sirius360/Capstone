@@ -65,8 +65,16 @@ class AdminController extends Controller
         return view('admin.group-details');
     }
     public function manage_departments(){
-        return view('admin.manage-departments');
+        //return view('admin.new-department');
+        $manage_faculties=DB::table('faculty')->orderBy('created_at','desc')->get();
+
+        $all_manage_faculties=view('admin.new-department')->with('manage_faculties', $manage_faculties);
+            
+    
+        return view('layouts.master')->with('admin.new-department', $all_manage_faculties);
     }
+
+
     public function manage_faculties(){
         $manage_faculties=DB::table('faculty')->orderBy('created_at','desc')->get();
 
@@ -88,8 +96,15 @@ class AdminController extends Controller
         return view('admin.manage-topics');
     }
     public function new_department(){
-        return view('admin.new-department');
-    }
+        //return view('admin.new-department');
+        $manage_faculties=DB::table('faculty')->orderBy('name','asc')->get();
+
+        $all_manage_faculties=view('admin.new-department')->with('manage_faculties', $manage_faculties);
+            
+    
+        return view('layouts.master')->with('admin.new-department', $all_manage_faculties);
+    }    
+
     public function new_faculty(){
         return view('admin.new-faculty');
     }
@@ -218,6 +233,49 @@ class AdminController extends Controller
         //     return  Redirect::to('/admin/faculties/new');}
     
         }  
+
+        public function save_new_department(Request $request){
+
+            $data = [];
+            $data['name'] = $request->input('department_name');
+            $data['description'] = $request->input('description');
+            $data['faculty_id'] = $request->input('abc');
+
+           // $data['announcement_visibility']=$request->input('visibility');
+    
+            if($request->isMethod('post')){
+                $validator = Validator::make($request->all(), [
+                    'department_name' => 'required|min:5|max:255|unique:department,name', //form
+                    'description' => 'required|min:5',
+                   // 'visibility' => 'required'
+                ]);
+    
+                if ($validator->fails()) {
+                    return back()->with('toast_error', $validator->messages()->all()[0])->withInput();
+                }
+    
+                DB::table('department')->insert($data);
+                return redirect('/admin/departments/new')->withSuccess('Post Created Successfully!');
+            }
+    
+               
+            // $data= array();
+            // $data['name']=$request->department_name;// ten cot roi den ten form
+            // $data['description']=$request->note_description;// ten cot roi den ten form
+            // $data['faculty_id']=$request->abc;
+            // $data['faculty']=$request->faculty;
+
+            // if($data['name']==null||$data['description']==null){
+            //     Session::put('message','Them that bai');
+            //     return  Redirect::to('admin/new-department');}
+         
+            // else{
+                
+            //     DB::table('department')->insert($data);
+            //     Session::put('message','Them thanh cong');
+            //     return  Redirect::to('admin/new-department');}
+        
+            }       
 
     // =========== update, edit & delete function  ===========
     // =======================================================
