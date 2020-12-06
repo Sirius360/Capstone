@@ -187,7 +187,7 @@ class AdminController extends Controller
 
         if($request->isMethod('post')){
             $validator = Validator::make($request->all(), [
-                'faculty_name' => 'required|min:5|max:255', //form
+                'faculty_name' => 'required|min:5|max:255|unique:faculty,name', //form
                 'description' => 'required|min:5',
                // 'visibility' => 'required'
             ]);
