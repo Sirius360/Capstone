@@ -56,9 +56,7 @@
                                             </div>
                                         </div>
                                         <div class="card-body" data-filter-by="text">
-                                            @markdown
                                             {{ $cate_pro->content }}
-                                            @endmarkdown
                                             <!--
                                             <div class="media media-attachment">
                                                 <div class="text-primary">
@@ -69,7 +67,6 @@
                                                 <span data-filter-by="text">24kb Document</span>
                                             </div>
                                             -->
-
                                         </div>
                                     </div>
                                 @endforeach
@@ -96,11 +93,11 @@
                             <div class="modal-body">
                                 <div class="form-group row align-items-center">
                                     <label class="col-3">Title</label>
-                                    <input class="form-control col" type="text" placeholder="Title" name="note_name" />
+                                    <input class="form-control col" type="text" placeholder="Title" name="title" />
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-3">Content</label>
-                                    <textarea class="form-control col" rows="10" placeholder="Write something here..." name="note_description"></textarea>
+                                    <textarea class="form-control col" rows="10" placeholder="Write something here..." name="content"></textarea>
                                 </div>
                                 <hr>
                                 <h6>Visibility</h6>

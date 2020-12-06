@@ -178,16 +178,16 @@
             <a href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <img alt="avatar" src="{{ url('assets/img/avatar-man.png') }}" class="avatar" />
             </a>
-            <p class="d-inline-block ml-1 mb-0 text-light">Welcome, <br> <span class="text-warning">
-                <?php
-                    // $last_name = Session::get('last_name');
-                    // if($last_name){
-                    //     echo $last_name;
-                    $name = Session::get('name');
-                    if($name){
-                        echo Str::limit($name, 20, '...');
-                    }
-                ?></span></p>
+            <p class="d-inline-block ml-1 mb-0 text-light">Welcome, <br>
+                <span class="text-warning">
+                    <?php
+                        $full_name = Session::get('full_name');
+                        if($full_name){
+                            echo Str::limit($full_name, 20, '...');
+                        }
+                    ?>
+                </span>
+            </p>
             <div class="dropdown-menu text-center">
                 <a href="{{ url('admin/account-settings') }}" class="dropdown-item">Profile</a>
                 <a href="{{ url('admin/control-panel') }}" class="dropdown-item">Control Panel</a>

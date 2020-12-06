@@ -11,7 +11,7 @@
                 <li class="breadcrumb-item"><a href="{{ url('admin') }}">Announcements</a>
                 </li>
                 @foreach($edit_new_announcement as $key => $edit_value)
-                <li class="breadcrumb-item"><a href="{{ url('admin/announcements') }}">{{ Str::limit($edit_value->title, 15,'...') }}</a>
+                <li class="breadcrumb-item"><a href="{{ url('admin/announcements') }}">{{ Str::limit($edit_value->title, 35,'...') }}</a>
                 </li>
                 @endforeach
                 <li class="breadcrumb-item active" aria-current="page">Edit Announcement</li>
@@ -27,8 +27,8 @@
         <div class="row justify-content-center">
         @foreach($edit_new_announcement as $key => $edit_value)
           <div class="col-lg-11 col-xl-10">
-          
- 
+
+
             <form class="mt-3" method="POST" action="{{ url('admin/announcements/management/'.$edit_value->id.'/update') }}">
               {{csrf_field()}}
 
@@ -42,7 +42,7 @@
                             <label class="col-3">Title</label>
                             <input class="form-control col" type="text" placeholder="Title" value="{{$edit_value->title}}" name="title" />
                         </div>
-                        
+
                         <div class="form-group row">
                             <label class="col-3">Content</label>
                             <textarea class="form-control col" rows="10" placeholder="Write something here..." name="content">{{$edit_value->content}}</textarea>
@@ -53,21 +53,21 @@
                             <div class="col">
                                 <div class="custom-control custom-radio">
                                     <input type="radio" id="visibility-everyone" name="visibility" class="custom-control-input"  value="1"
-                                    {{  ($edit_value->announcement_visibility == 1 ? ' checked' : '') }}>
+                                    {{  ($edit_value->visibility == 1 ? ' checked' : '') }}>
                                     <label class="custom-control-label" for="visibility-everyone">Everyone</label>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="custom-control custom-radio">
                                     <input type="radio" id="visibility-members" name="visibility" class="custom-control-input" value="2"
-                                    {{  ($edit_value->announcement_visibility == 2 ? ' checked' : '') }}>
+                                    {{  ($edit_value->visibility == 2 ? ' checked' : '') }}>
                                     <label class="custom-control-label" for="visibility-members">Members</label>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="custom-control custom-radio">
                                     <input type="radio" id="visibility-me" name="visibility" class="custom-control-input" value="3"
-                                    {{  ($edit_value->announcement_visibility == 3 ? ' checked' : '') }}>
+                                    {{  ($edit_value->visibility == 3 ? ' checked' : '') }}>
                                     <label class="custom-control-label" for="visibility-me">Just me</label>
                                 </div>
                             </div>

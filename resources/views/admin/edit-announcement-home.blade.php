@@ -11,7 +11,7 @@
                 <li class="breadcrumb-item"><a href="{{ url('admin') }}">Announcements</a>
                 </li>
                 @foreach($edit_new_announcement as $key => $edit_value)
-                <li class="breadcrumb-item"><a href="{{ url('admin') }}">{{ Str::limit($edit_value->title, 15,'...') }}</a>
+                <li class="breadcrumb-item"><a href="{{ url('admin') }}">{{ Str::limit($edit_value->title, 35,'...') }}</a>
                 </li>
                 @endforeach
                 <li class="breadcrumb-item active" aria-current="page">Edit</li>
@@ -55,21 +55,21 @@
                             <div class="col">
                                 <div class="custom-control custom-radio">
                                     <input type="radio" id="visibility-everyone" name="visibility" class="custom-control-input"  value="1"
-                                    {{  ($edit_value->announcement_visibility == 1 ? ' checked' : '') }}>
+                                    {{  ($edit_value->visibility == 1 ? ' checked' : '') }}>
                                     <label class="custom-control-label" for="visibility-everyone">Everyone</label>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="custom-control custom-radio">
                                     <input type="radio" id="visibility-members" name="visibility" class="custom-control-input" value="2"
-                                    {{  ($edit_value->announcement_visibility == 2 ? ' checked' : '') }}>
+                                    {{  ($edit_value->visibility == 2 ? ' checked' : '') }}>
                                     <label class="custom-control-label" for="visibility-members">Members</label>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="custom-control custom-radio">
                                     <input type="radio" id="visibility-me" name="visibility" class="custom-control-input" value="3"
-                                    {{  ($edit_value->announcement_visibility == 3 ? ' checked' : '') }}>
+                                    {{  ($edit_value->visibility == 3 ? ' checked' : '') }}>
                                     <label class="custom-control-label" for="visibility-me">Just me</label>
                                 </div>
                             </div>

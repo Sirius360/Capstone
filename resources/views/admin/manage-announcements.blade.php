@@ -52,16 +52,19 @@
                                 <td>
                                     <?php
                                         if($cate_pro->announcement_visibility==1){
+
                                             echo '<span class="ic-dark"><i class="fad fa-globe-africa"></i></span>';
-                                            // echo '<p>Public</p>';
 
                                         }
                                         else if($cate_pro->announcement_visibility==2){
+
                                             echo '<span class="ic-dark"><i class="fad fa-user-friends"></i></span>';
-                                            // echo '<p>Members</p>';
+
                                         }
                                         else if($cate_pro->announcement_visibility==3){
+
                                             echo '<span class="ic-dark"><i class="fad fa-user"></i></span>';
+
                                         }
                                     ?>
                                 </td>
