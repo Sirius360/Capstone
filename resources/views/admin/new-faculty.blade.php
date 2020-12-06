@@ -29,9 +29,12 @@
                         </div>
                         <!--end of modal head-->
                         <div class="modal-body">
-                            <div class="form-group row align-items-center">
+                            <div class="form-group row align-items-center"{{ $errors->get('name') ? 'has-error' : '' }}>
                                 <label class="col-2">Faculty</label>
-                                <input class="form-control col" type="text" placeholder="Faculty name" name="faculty_name" />
+                                <input class="form-control col" type="text" placeholder="Faculty name" name="faculty_name"/>
+                                @foreach($errors->get('name') as $error)
+                                    <span class="help-block">{{ $error }}</span>
+                                @endforeach                                
                             </div>
                             <div class="form-group row">
                                 <label class="col-2">Description</label>
