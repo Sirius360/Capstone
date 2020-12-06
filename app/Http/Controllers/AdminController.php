@@ -8,8 +8,7 @@ use DB;
 use RealRashid\SweetAlert\Facades\Alert;
 use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Support\Facades\Validator;
-
-
+use Redirect;
 
 
 class AdminController extends Controller
@@ -255,7 +254,7 @@ class AdminController extends Controller
                 return back()->with('toast_error', $validator->messages()->all()[0])->withInput();
             }
 
-            DB::table('announcements')->insert($data);
+            DB::table('announcements')->where('id',$id)->update($data);
             return redirect('/admin/announcements')->withSuccess('Post Created Successfully!');
         }
         // $data = array();
@@ -295,7 +294,7 @@ class AdminController extends Controller
                 return back()->with('toast_error', $validator->messages()->all()[0])->withInput();
             }
 
-            DB::table('announcements')->insert($data);
+            DB::table('announcements')->where('id',$id)->update($data);
             return redirect('admin')->withSuccess('Post Created Successfully!');
         }
     }
@@ -328,21 +327,27 @@ class AdminController extends Controller
     }
 
     public function update_faculties(Request $request,$id){
+        $data = [];
+        $data['name'] = $request->input('faculty_name');
+        $data['description'] = $request->input('description');
+       // $data['announcement_visibility']=$request->input('visibility');
 
-        $data= array();
-        $data['name']=$request->faculty_name;// ten cot roi den ten form
-        $data['description']=$request->note_description;// ten cot roi den ten form
-        
-        if($data['name']==null||$data['description']==null){
-            Session::put('message','Cập nhật thất bại');
-            return  Redirect::to('admin/edit-faculty/'.$id);}
-     
-        else{
-            
+        if($request->isMethod('post')){
+            $validator = Validator::make($request->all(), [
+                'faculty_name' => 'required|min:5|max:255', //form
+                'description' => 'required|min:5',
+               // 'visibility' => 'required'
+            ]);
+
+            if ($validator->fails()) {
+                return back()->with('toast_error', $validator->messages()->all()[0])->withInput();
+            }
+
             DB::table('faculty')->where('id',$id)->update($data);
-            
-            return  Redirect::to('admin/faculties');}
-    
+            return redirect('admin/faculties')->withSuccess('Successfully!');
+        }
+
+
            
 
     }

@@ -19,14 +19,9 @@
             </ol>
         </nav>
     </div>
-    <?php
-         $messages= Session ::get('messages');
-         if($messages){
-             echo '<span class="test-alert">'.$messages.'</span>';
-             Session::put('messages',null);
-
-            }
-    ?>
+    @if (session('success_message'))
+        {{ session('success_message') }}
+    @endif
 
     <div class="container">
         <div class="row justify-content-center">
@@ -48,7 +43,7 @@
                             </div>
                             <div class="form-group row">
                                 <label class="col-2">Description</label>
-                                <textarea class="form-control col" rows="10"  name="note_description" required >{{$edit_value->description}}</textarea>
+                                <textarea class="form-control col" rows="10"  name="description" required >{{$edit_value->description}}</textarea>
                             </div>
                         
                         </div>

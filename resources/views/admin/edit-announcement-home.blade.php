@@ -54,19 +54,22 @@
                         <div class="row">
                             <div class="col">
                                 <div class="custom-control custom-radio">
-                                    <input type="radio" id="visibility-everyone" name="visibility" class="custom-control-input"  value="1">
+                                    <input type="radio" id="visibility-everyone" name="visibility" class="custom-control-input"  value="1"
+                                    {{  ($edit_value->announcement_visibility == 1 ? ' checked' : '') }}>
                                     <label class="custom-control-label" for="visibility-everyone">Everyone</label>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="custom-control custom-radio">
-                                    <input type="radio" id="visibility-members" name="visibility" class="custom-control-input" value="2">
+                                    <input type="radio" id="visibility-members" name="visibility" class="custom-control-input" value="2"
+                                    {{  ($edit_value->announcement_visibility == 2 ? ' checked' : '') }}>
                                     <label class="custom-control-label" for="visibility-members">Members</label>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="custom-control custom-radio">
-                                    <input type="radio" id="visibility-me" name="visibility" class="custom-control-input" value="3">
+                                    <input type="radio" id="visibility-me" name="visibility" class="custom-control-input" value="3"
+                                    {{  ($edit_value->announcement_visibility == 3 ? ' checked' : '') }}>
                                     <label class="custom-control-label" for="visibility-me">Just me</label>
                                 </div>
                             </div>
