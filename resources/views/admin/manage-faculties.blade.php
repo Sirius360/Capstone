@@ -40,7 +40,7 @@
 
                             <tr>
                                 <td></td>
-                                <td class="text-left">{{ Str::limit($cate_pro->name, 100,('...')) }}</td>
+                                <td class="text-left">{{ Str::limit($cate_pro->faculty_name, 100,('...')) }}</td>
                                 <td>
                                     <a href="{{URL::to('/admin/faculties/management/'.$cate_pro->id.'/edit')}}" ><span class="ic-dark"><i class="fad fa-pencil"></i></span></a>
                                     <a onclick="return confirm('Are you sure to delete?')"href="{{URL::to('/admin/faculties/management/'.$cate_pro->id.'/delete')}}" ><span class="ic-dark"><i class="fad fa-trash-alt"></i></span></a>

@@ -12,7 +12,7 @@
                 <li class="breadcrumb-item"><a href="#">Faculties</a>
                 </li>
                 @foreach($edit_new_faculty as $key => $edit_value)
-                <li class="breadcrumb-item"><a href="{{ url('admin') }}">{{ Str::limit($edit_value->name, 19,'...') }}</a>
+                <li class="breadcrumb-item"><a href="{{ url('admin') }}">{{ Str::limit($edit_value->faculty_name, 19,'...') }}</a>
                 </li>
                 @endforeach
                 <li class="breadcrumb-item active" aria-current="page">Edit</li>
@@ -39,7 +39,7 @@
                         <div class="modal-body">
                             <div class="form-group row align-items-center">
                                 <label class="col-2">Faculty</label>
-                                <input class="form-control col" type="text" value="{{$edit_value->name}}" name="faculty_name" required />
+                                <input class="form-control col" type="text" value="{{$edit_value->faculty_name}}" name="faculty_name" required />
                             </div>
                             <div class="form-group row">
                                 <label class="col-2">Description</label>

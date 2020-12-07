@@ -85,6 +85,7 @@ class AdminController extends Controller
     }
 
     public function new_department(){
+        //return view('admin.new-department');
 
         $manage_faculties=DB::table('faculties')->orderBy('id','asc')->get();
 
@@ -309,7 +310,7 @@ class AdminController extends Controller
         $data = [];
         $data['department_name'] = $request->input('department_name');
         $data['description'] = $request->input('description');
-        // $data['faculty_name'] = $request->input('abc');
+        $data['faculty_id'] = $request->input('faculty_name');
         /**
          * TODO: Cần sửa chỗ này
          */
@@ -341,7 +342,7 @@ class AdminController extends Controller
 
     public function update_faculties(Request $request,$id){
         $data = [];
-        $data['name'] = $request->input('faculty_name');
+        $data['faculty_name'] = $request->input('faculty_name');
         $data['description'] = $request->input('description');
        // $data['visibility']=$request->input('visibility');
 
