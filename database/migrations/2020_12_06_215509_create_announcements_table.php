@@ -15,11 +15,12 @@ class CreateAnnouncementsTable extends Migration
     {
         Schema::create('announcements', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->default(DB::raw("'1994-11-11 00:00:00' ON UPDATE CURRENT_TIMESTAMP()"));
             $table->string('title');
             $table->text('content');
             $table->tinyInteger('visibility')->default(1);
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->default(DB::raw("'1994-11-11 00:00:00' ON UPDATE CURRENT_TIMESTAMP()"));
+
         });
     }
 
