@@ -29,7 +29,7 @@
                         <!--end of modal head-->
                         <div class="modal-body">
                             
-                            <div class="form-group row align-items-center" {{ $errors->get('name') ? 'has-error' : '' }}>
+                            <div class="form-group row align-items-center"{{ $errors->get('name') ? 'has-error' : '' }}>
                                 <label class="col-2">Department</label>
                                 <input class="form-control col" type="text" placeholder="Department name" name="department_name" />
                                 @foreach($errors->get('name') as $error)
@@ -40,9 +40,9 @@
                             <div class="form-group row align-items-center">
                                 <label class="col-2">Faculty</label>
                                 <select  name="abc" class="form-control col"> 
-                                <!-- @foreach($manage_faculties as $key => $cate_pro) -->
+                                @foreach($manage_faculties as $key => $cate_pro)
                                     <option value="{{$cate_pro->id}}" name="faculty" selected>{{$cate_pro->name}}</option>
-                                <!-- @endforeach -->
+                                @endforeach
                                     
                                 </select>
                             </div>

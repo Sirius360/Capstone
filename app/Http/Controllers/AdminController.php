@@ -55,9 +55,9 @@ class AdminController extends Controller
 
         $manage_faculties=DB::table('faculty')->orderBy('created_at','desc')->get();
 
-        $all_manage_faculties=view('admin.new-department')->with('manage_faculties', $manage_faculties);
+        $all_manage_faculties=view('admin.manage-departments')->with('manage_faculties', $manage_faculties);
 
-        return view('layouts.master')->with('admin.new-department', $all_manage_faculties);
+        return view('layouts.master')->with('admin.manage-departments', $all_manage_faculties);
     }
 
     public function manage_faculties(){
@@ -304,6 +304,7 @@ class AdminController extends Controller
     }
 
     public function save_new_department(Request $request){
+    // Nó không hiển thị thông báo là vì hiện thị faculty trong new-department 
 
         $data = [];
         $data['name'] = $request->input('department_name');
