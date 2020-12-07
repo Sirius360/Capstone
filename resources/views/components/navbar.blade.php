@@ -39,7 +39,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('admin/announcements') }}">Annc. Management</a>
+                            <a class="nav-link" href="{{ url('admin/announcements') }}">Announcement Management</a>
                         </li>
 
                     </ul>

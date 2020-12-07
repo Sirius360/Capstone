@@ -440,3 +440,19 @@ body {
     padding-bottom: -44px;
     min-height: 100vh;
 }
+
+.text-table, .dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_filter,
+.dataTables_wrapper .dataTables_info,
+.dataTables_wrapper .dataTables_processing,
+.dataTables_wrapper .dataTables_paginate, th{
+    color: #505458 !important;
+}
+
+/* fix color table in jquery datatable */
+table.dataTable thead th, table.dataTable thead td {
+    border-bottom: 1px solid #505458 !important;
+}
+table.dataTable tfoot th, table.dataTable tfoot td {
+    border-top: 1px solid #505458 !important;
+}

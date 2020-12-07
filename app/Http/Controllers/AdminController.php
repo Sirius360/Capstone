@@ -15,7 +15,7 @@ class AdminController extends Controller
         $result = DB::table('users')->first();
 
         if($result){
-            Session::put('full_name',$result->name);
+            Session::put('full_name',$result->full_name);
         }
 
         $manage_announcements=DB::table('announcements')->orderBy('created_at','desc')->get();
@@ -53,7 +53,7 @@ class AdminController extends Controller
 
     public function manage_departments(){
 
-        $manage_faculties=DB::table('faculty')->orderBy('created_at','desc')->get();
+        $manage_faculties=DB::table('faculties')->orderBy('created_at','desc')->get();
 
         $all_manage_faculties=view('admin.manage-departments')->with('manage_faculties', $manage_faculties);
 
@@ -61,7 +61,7 @@ class AdminController extends Controller
     }
 
     public function manage_faculties(){
-        $manage_faculties=DB::table('faculty')->orderBy('created_at','desc')->get();
+        $manage_faculties=DB::table('faculties')->orderBy('created_at','desc')->get();
 
         $all_manage_faculties=view('admin.manage-faculties')->with('manage_faculties', $manage_faculties);
 
@@ -86,7 +86,7 @@ class AdminController extends Controller
 
     public function new_department(){
 
-        $manage_faculties=DB::table('faculty')->orderBy('name','asc')->get();
+        $manage_faculties=DB::table('faculties')->orderBy('id','asc')->get();
 
         $all_manage_faculties=view('admin.new-department')->with('manage_faculties', $manage_faculties);
 
@@ -285,20 +285,20 @@ class AdminController extends Controller
     public function save_new_faculty(Request $request){
 
         $data = [];
-        $data['name'] = $request->input('faculty_name');
+        $data['faculty_name'] = $request->input('faculty_name');
         $data['description'] = $request->input('description');
 
         if($request->isMethod('post')){
             $validator = Validator::make($request->all(), [
-                'faculty_name' => 'required|min:5|max:255|unique:faculty,name', //form
-                'description' => 'required|min:5',
+                'faculty_name' => 'required|min:3|max:100|unique:faculties',
+                'description' => 'required|max:500',
             ]);
 
             if ($validator->fails()) {
                 return back()->with('toast_error', $validator->messages()->all()[0])->withInput();
             }
 
-            DB::table('faculty')->insert($data);
+            DB::table('faculties')->insert($data);
             return redirect('/admin/faculties/new')->withSuccess('Post Created Successfully!');
         }
     }
@@ -307,28 +307,31 @@ class AdminController extends Controller
     // Nó không hiển thị thông báo là vì hiện thị faculty trong new-department 
 
         $data = [];
-        $data['name'] = $request->input('department_name');
+        $data['department_name'] = $request->input('department_name');
         $data['description'] = $request->input('description');
-        $data['faculty_id'] = $request->input('abc');
+        // $data['faculty_name'] = $request->input('abc');
+        /**
+         * TODO: Cần sửa chỗ này
+         */
 
         if($request->isMethod('post')){
             $validator = Validator::make($request->all(), [
-                'department_name' => 'required|min:5|max:255|unique:department,name', //form
-                'description' => 'required|min:5',
+                'department_name' => 'required|min:3|max:100|unique:departments',
+                'description' => 'required|max:500',
             ]);
 
             if ($validator->fails()) {
                 return back()->with('toast_error', $validator->messages()->all()[0])->withInput();
             }
 
-            DB::table('department')->insert($data);
+            DB::table('departments')->insert($data);
             return redirect('/admin/departments/new')->withSuccess('Post Created Successfully!');
         }
 
     }
 
     public function edit_faculties(Request $request, $id){
-        $edit_new_faculty=DB::table('faculty')->orderBy('created_at','desc')->where('id',$id)->get();
+        $edit_new_faculty=DB::table('faculties')->orderBy('created_at','desc')->where('id',$id)->get();
 
         $all_manage_faculty=view('admin.edit-faculty')->with('edit_new_faculty', $edit_new_faculty);
 
@@ -344,8 +347,8 @@ class AdminController extends Controller
 
         if($request->isMethod('post')){
             $validator = Validator::make($request->all(), [
-                'faculty_name' => 'required|min:5|max:255', //form
-                'description' => 'required|min:5',
+                'faculty_name' => 'required|min:3|max:100', //form
+                'description' => 'required|max:500',
                // 'visibility' => 'required'
             ]);
 
@@ -353,7 +356,7 @@ class AdminController extends Controller
                 return back()->with('toast_error', $validator->messages()->all()[0])->withInput();
             }
 
-            DB::table('faculty')->where('id',$id)->update($data);
+            DB::table('faculties')->where('id',$id)->update($data);
             return redirect('admin/faculties')->withSuccess('Successfully!');
         }
 
@@ -361,7 +364,7 @@ class AdminController extends Controller
 
     public function delete_faculties(Request $request,$id){
 
-        DB::table('faculty')->where('id',$id)->delete();
+        DB::table('faculties')->where('id',$id)->delete();
         Session::put('messages','Xóa thành công');
 
         return  redirect('admin/faculties');

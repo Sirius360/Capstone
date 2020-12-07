@@ -33,7 +33,7 @@
                     <div class="modal-body">
                         <div class="form-group row align-items-center">
                             <label class="col-3">Title</label>
-                            <input class="form-control col" type="text" placeholder="Title" name="title" />
+                            <input class="form-control col" type="text" placeholder="Title" name="title" autofocus/>
                         </div>
                         {{-- <div class="form-group row align-items-center">
                             <label class="col-3"></label>
