@@ -49,11 +49,13 @@ class AdminController extends Controller
 
     public function manage_departments(){
 
-        $manage_faculties=DB::table('faculties')->orderBy('created_at','desc')->get();
+        $manage_departments=DB::table('departments')
+        ->join('faculties','faculties.id','=','departments.faculty_id')
+        ->orderBy('departments.created_at','desc')->get();
 
-        $all_manage_faculties=view('admin.manage-departments')->with('manage_faculties', $manage_faculties);
+        $all_manage_departments=view('admin.manage-departments')->with('manage_departments', $manage_departments);
 
-        return view('layouts.master')->with('admin.manage-departments', $all_manage_faculties);
+        return view('layouts.master')->with('admin.manage-departments', $all_manage_departments);
     }
 
     public function manage_faculties(){
@@ -368,5 +370,54 @@ class AdminController extends Controller
 
     }
 
+   //==================================department
+    public function edit_department($id){
+
+             
+        $manage_faculties=DB::table('faculty')->get();
+        $edit_new_department=DB::table('department')->orderBy('created_at','desc')->where('id',$id)->get();
+
+        //$all_manage_faculties=view('admin.edit-department')
+        $all_manage_department=view('admin.edit-department')->with('edit_new_department', $edit_new_department)->with('manage_faculties', $manage_faculties);
+        
+
+        return view('layouts.master')->with('admin.edit-department', $all_manage_department );
+    }
+
+    public function update_department(Request $request,$id){
+
+        $data= array();
+        $data['name']=$request->department_name;// ten cot roi den ten form
+        $data['description']=$request->note_description;// ten cot roi den ten form
+        $data['faculty_id']=$request->abc;
+        $data['faculty']=$request->faculty;
+
+        if($data['name']==null||$data['description']==null){
+            Session::put('message','Cập nhật thất bại');
+            return  Redirect::to('admin/edit-department/'.$id);}
+     
+        else{
+            
+            DB::table('department')->where('id',$id)->update($data);
+            
+            return  Redirect::to('admin/manage-departments');}
+    
+           
+
+    }
+    public function delete_department(Request $request,$id){
+
+
+            
+            DB::table('department')->where('id',$id)->delete();
+            Session::put('messages','Xóa thành công');
+
+            return  Redirect::to('admin/manage-departments');
+    
+           
+
+    }
 }
+
+
 

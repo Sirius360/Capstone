@@ -100,6 +100,12 @@ Route::group(['prefix'=>'admin','middleware' => ['auth','role:admin']], function
     Route::get('/faculties/management/{id}/delete','AdminController@delete_faculties');
 
     Route::post('/faculties/management/{id}/update','AdminController@update_faculties');
+//======department
+
+    Route::get('/departments/management/{id}/edit','AdminController@edit_department');
+    Route::get('/departments/management/{id}/delete','AdminController@delete_department');
+    Route::post('/departments/management/{id}/update','AdminController@update_department');
+//======
 
 
 
