@@ -14,9 +14,10 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
+
             $table->bigIncrements('id');
             $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->default(DB::raw("'1994-11-11 00:00:00' ON UPDATE CURRENT_TIMESTAMP()"));
+            $table->timestamp('updated_at')->default(DB::raw("CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP()"));
             $table->tinyInteger('role_id')->nullable()->default(3);
             $table->string('email')->unique();
             $table->string('password');
@@ -29,10 +30,14 @@ class CreateUsersTable extends Migration
             $table->string('department')->nullable();
             $table->string('faculty')->nullable();
             $table->text('about_me')->nullable();
-            $table->string('profile_picture_path')->nullable();
+            $table->string('avatar_path')->nullable();
             $table->boolean('is_active')->default(1);
             $table->boolean('is_email_confirmed')->default(0);
-            // $table->rememberToken();
+
+            $table->engine = 'InnoDB';
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_unicode_ci';
+
         });
     }
 

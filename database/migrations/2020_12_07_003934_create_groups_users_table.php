@@ -14,8 +14,18 @@ class CreateGroupsUsersTable extends Migration
     public function up()
     {
         Schema::create('groups_users', function (Blueprint $table) {
+
             $table->bigIncrements('id');
-            $table->timestamps();
+            $table->bigInteger('group_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->default(DB::raw("CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP()"));
+            $table->foreign('group_id')->references('id')->on('groups')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+
+            $table->engine = 'InnoDB';
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_unicode_ci';
         });
     }
 

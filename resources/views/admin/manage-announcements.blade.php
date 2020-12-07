@@ -55,7 +55,7 @@
                                     {{ $cate_pro->created_at }}
                                 </td>
                                 <td>
-                                    {{ ($cate_pro->updated_at == "1994-11-11 00:00:00" ? '' : $cate_pro->updated_at) }}
+                                    {{ ($cate_pro->updated_at == $cate_pro->created_at ? '' : $cate_pro->updated_at) }}
                                 </td>
                                 <td>
                                     <?php
