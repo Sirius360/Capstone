@@ -12,11 +12,7 @@ class AdminController extends Controller
 {
     public function index(Request $request){
 
-        $result = DB::table('users')->first();
-
-        if($result){
-            Session::put('full_name',$result->full_name);
-        }
+  
 
         $manage_announcements=DB::table('announcements')->orderBy('created_at','desc')->get();
 
