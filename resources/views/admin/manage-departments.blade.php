@@ -37,10 +37,12 @@
                             </tr>
                         </thead>
                         <tbody>
+                        @foreach($manage_departments as $key =>$value)
+
                             <tr>
                                 <td></td>
-                                <td class="text-left">Almost before we knew it, we had left the ground.</td>
-                                <td class="text-left">Almost before we knew it, we had left the ground.</td>
+                                <td class="text-left">{{$value->department_name}}</td>
+                                <td class="text-left">{{$value->faculty_name}}</td>
 
                                 <td>
                                     <a href="#" data-toggle="modal" data-target="#department-edit-modal"><span class="ic-dark"><i class="fad fa-pencil"></i></span></a>
@@ -48,6 +50,7 @@
                                     <a href="#"><span class="ic-dark"><i class="fad fa-eye"></i></span></a>
                                 </td>
                             </tr>
+                            @endforeach
 
                         </tbody>
                         <tfoot>
