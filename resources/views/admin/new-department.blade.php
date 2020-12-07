@@ -42,9 +42,9 @@
                                 <select  name="faculty_name" class="form-control col">
                                     <option value="" selected>Select a Faculty</option>
 
-                                    {{-- @foreach($manage_faculties as $key => $cate_pro)
-                                        <option value="{{$cate_pro->id}}">{{$cate_pro->name}}</option>
-                                    @endforeach --}}
+                                    @foreach($manage_faculties as $key => $cate_pro)
+                                        <option value="{{$cate_pro->id}}">{{$cate_pro->faculty_name}}</option>
+                                    @endforeach
 
                                 </select>
                             </div>

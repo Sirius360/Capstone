@@ -12,11 +12,7 @@ class AdminController extends Controller
 {
     public function index(Request $request){
 
-        $result = DB::table('users')->first();
-
-        if($result){
-            Session::put('full_name',$result->full_name);
-        }
+  
 
         $manage_announcements=DB::table('announcements')->orderBy('created_at','desc')->get();
 
@@ -55,9 +51,9 @@ class AdminController extends Controller
 
         $manage_faculties=DB::table('faculties')->orderBy('created_at','desc')->get();
 
-        $all_manage_faculties=view('admin.new-department')->with('manage_faculties', $manage_faculties);
+        $all_manage_faculties=view('admin.manage-departments')->with('manage_faculties', $manage_faculties);
 
-        return view('layouts.master')->with('admin.new-department', $all_manage_faculties);
+        return view('layouts.master')->with('admin.manage-departments', $all_manage_faculties);
     }
 
     public function manage_faculties(){
@@ -85,6 +81,7 @@ class AdminController extends Controller
     }
 
     public function new_department(){
+        //return view('admin.new-department');
 
         $manage_faculties=DB::table('faculties')->orderBy('id','asc')->get();
 
@@ -304,11 +301,12 @@ class AdminController extends Controller
     }
 
     public function save_new_department(Request $request){
+    // Nó không hiển thị thông báo là vì hiện thị faculty trong new-department 
 
         $data = [];
         $data['department_name'] = $request->input('department_name');
         $data['description'] = $request->input('description');
-        // $data['faculty_name'] = $request->input('abc');
+        $data['faculty_id'] = $request->input('faculty_name');
         /**
          * TODO: Cần sửa chỗ này
          */
@@ -340,7 +338,7 @@ class AdminController extends Controller
 
     public function update_faculties(Request $request,$id){
         $data = [];
-        $data['name'] = $request->input('faculty_name');
+        $data['faculty_name'] = $request->input('faculty_name');
         $data['description'] = $request->input('description');
        // $data['visibility']=$request->input('visibility');
 

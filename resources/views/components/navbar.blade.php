@@ -180,12 +180,8 @@
             </a>
             <p class="d-inline-block ml-1 mb-0 text-light">Welcome, <br>
                 <span class="text-warning">
-                    <?php
-                        $full_name = Session::get('full_name');
-                        if($full_name){
-                            echo Str::limit($full_name, 20, '...');
-                        }
-                    ?>
+                {{  Str::limit(Auth::user()->full_name, 20, '...')}} 
+
                 </span>
             </p>
             <div class="dropdown-menu text-center">
