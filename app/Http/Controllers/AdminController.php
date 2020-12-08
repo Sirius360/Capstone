@@ -12,7 +12,7 @@ class AdminController extends Controller
 {
     public function index(Request $request){
 
-  
+
 
         $manage_announcements=DB::table('announcements')->orderBy('created_at','desc')->get();
 
@@ -303,7 +303,7 @@ class AdminController extends Controller
     }
 
     public function save_new_department(Request $request){
-    // Nó không hiển thị thông báo là vì hiện thị faculty trong new-department 
+    // Nó không hiển thị thông báo là vì hiện thị faculty trong new-department
 
         $data = [];
         $data['department_name'] = $request->input('department_name');
@@ -373,13 +373,13 @@ class AdminController extends Controller
    //==================================department
     public function edit_department($id){
 
-             
+
         $manage_faculties=DB::table('faculty')->get();
         $edit_new_department=DB::table('department')->orderBy('created_at','desc')->where('id',$id)->get();
 
         //$all_manage_faculties=view('admin.edit-department')
         $all_manage_department=view('admin.edit-department')->with('edit_new_department', $edit_new_department)->with('manage_faculties', $manage_faculties);
-        
+
 
         return view('layouts.master')->with('admin.edit-department', $all_manage_department );
     }
@@ -394,27 +394,27 @@ class AdminController extends Controller
 
         if($data['name']==null||$data['description']==null){
             Session::put('message','Cập nhật thất bại');
-            return  Redirect::to('admin/edit-department/'.$id);}
-     
+            return  redirect('admin/edit-department/'.$id);}
+
         else{
-            
+
             DB::table('department')->where('id',$id)->update($data);
-            
-            return  Redirect::to('admin/manage-departments');}
-    
-           
+
+            return  redirect('admin/manage-departments');}
+
+
 
     }
     public function delete_department(Request $request,$id){
 
 
-            
+
             DB::table('department')->where('id',$id)->delete();
             Session::put('messages','Xóa thành công');
 
-            return  Redirect::to('admin/manage-departments');
-    
-           
+            return  redirect('admin/manage-departments');
+
+
 
     }
 }
