@@ -31,7 +31,7 @@
 
                             <div class="form-group row align-items-center" {{ $errors->get('name') ? 'has-error' : '' }}>
                                 <label class="col-2">Department</label>
-                                <input class="form-control col" type="text" placeholder="Department name" name="department_name" />
+                                <input class="form-control col" type="text" placeholder="Department name" name="department_name" required/>
                                 @foreach($errors->get('name') as $error)
                                     <span class="help-block">{{ $error }}</span>
                                 @endforeach
@@ -39,7 +39,7 @@
 
                             <div class="form-group row align-items-center">
                                 <label class="col-2">Faculty</label>
-                                <select  name="faculty_name" class="form-control col">
+                                <select  name="faculty_name" class="form-control col" required>
                                     <option value="" selected>Select a Faculty</option>
 
                                     @foreach($manage_faculties as $key => $cate_pro)
@@ -51,7 +51,7 @@
 
                             <div class="form-group row">
                                 <label class="col-2">Description</label>
-                                <textarea class="form-control col" rows="10" placeholder="Write something here..." name="description"  ></textarea>
+                                <textarea class="form-control col" rows="10" placeholder="Write something here..." name="description" required  ></textarea>
                             </div>
 
                         </div>
