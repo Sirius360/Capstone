@@ -7,12 +7,12 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Validator;
-Use Redirect;
+
 class AdminController extends Controller
 {
     public function index(Request $request){
 
-  
+
 
         $manage_announcements=DB::table('announcements')->orderBy('created_at','desc')->get();
 
@@ -106,7 +106,7 @@ class AdminController extends Controller
     public function manage_departments(){
 
         $manage_departments=DB::table('departments')
-        
+
         ->join('faculties','faculties.id','=','departments.faculty_id')
         ->select('departments.id','faculties.faculty_name','departments.faculty_id','departments.department_name')
         ->orderBy('departments.created_at','desc')->get();
@@ -188,6 +188,18 @@ class AdminController extends Controller
 
     public function template(){
         return view('admin.template');
+    }
+
+    public function control_panel(){
+        return view('admin.control-panel');
+    }
+
+    public function add_user(){
+        return view('admin.add-user');
+    }
+
+    public function account_settings(){
+        return view('admin.account-settings');
     }
     // =====================================================
 
@@ -361,7 +373,7 @@ class AdminController extends Controller
     }
 
     public function save_new_department(Request $request){
-    // Nó không hiển thị thông báo là vì hiện thị faculty trong new-department 
+    // Nó không hiển thị thông báo là vì hiện thị faculty trong new-department
 
         $data = [];
         $data['department_name'] = $request->input('department_name');
@@ -444,12 +456,12 @@ class AdminController extends Controller
 
 
         // ->orderBy('departments.created_at','desc')->where('departments.id',$id)->get();
-        
+
 
         // $all_manage_departments=view('admin.edit-departments')->with('edit_departments', $manage_departments);
         // return view('layouts.master')->with('admin.edit-departments', $all_manage_departments );
 
-        
+
 
     }
 
@@ -462,28 +474,28 @@ class AdminController extends Controller
 
         if($data['department_name']==null||$data['description']==null){
             Session::put('message','Cập nhật thất bại');
-            return  Redirect::to('/admin/departments/management/'.$id.'/edit');
+            return  redirect('/admin/departments/management/'.$id.'/edit');
             }
-     
+
         else{
-            
+
             DB::table('departments')->where('id',$id)->update($data);
-            
-            return  Redirect::to('/admin/departments');}
-    
-           
+
+            return  redirect('/admin/departments');}
+
+
 
     }
-    public function delete_department(Request $request,$id){ 
+    public function delete_department(Request $request,$id){
 
 
-            
+
             DB::table('departments')->where('id',$id)->delete();
             Session::put('messages','Xóa thành công');
 
-            return  Redirect::to('/admin/departments');
-    
-           
+            return  redirect('/admin/departments');
+
+
 
     }
 }

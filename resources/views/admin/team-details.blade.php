@@ -36,8 +36,6 @@
 
 @section('script')
 
-
-
     <script>
         $("#startDate").flatpickr({
             defaultDate: "today",
