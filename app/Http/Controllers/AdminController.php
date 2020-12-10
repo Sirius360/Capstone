@@ -23,10 +23,6 @@ class AdminController extends Controller
 
 
 //account
-    public function control_panel(){
-        
-        return view('admin.control-panel');
-    }
 
     public function account_settings(Request $request, $id){
         $departments=DB::table('departments')->orderBy('id','desc')->get();
@@ -198,9 +194,6 @@ class AdminController extends Controller
         return view('admin.add-user');
     }
 
-    public function account_settings(){
-        return view('admin.account-settings');
-    }
     // =====================================================
 
 
