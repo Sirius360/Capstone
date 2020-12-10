@@ -65,14 +65,14 @@ Route::group(['prefix'=>'admin','middleware' => ['auth','role:admin']], function
 
     Route::get('template','AdminController@template');
 
-    Route::get('account-settings/{id}/update','AdminController@account_settings');
-    Route::post('account/{id}/update','AdminController@account_update');
+    Route::get('profile/{id}/update','AdminController@account_settings');
+    Route::post('profile/{id}/update','AdminController@account_update');
 
-    Route::get('control-panel','AdminController@control_panel');
+   //Route::get('control-panel','AdminController@control_panel');
 
     // Route::get('account-settings','AdminController@account_settings');
-    // Route::get('control/users','AdminController@control_panel');
-    // Route::get('control/users/add','AdminController@add_user');
+    Route::get('control/users','AdminController@control_panel');
+    Route::get('control/users/add','AdminController@add_user');
 
     Route::get('edit-group','AdminController@edit_group');
     Route::get('edit-team','AdminController@edit_team');
