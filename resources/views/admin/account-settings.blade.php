@@ -55,7 +55,7 @@
                                             <input type="file" class="custom-file-input d-none" id="avatar-file">
                                             <label class="custom-file-label position-relative" for="avatar-file">
                                                 <form class="dropzone" action="{{ url('admin/upload') }}">
-                                                    <span class="dz-message">Drop files here or click here to upload</span>
+                                                <span class="btn btn-primary">Upload avatar</span>
                                                 </form> 
                                                 <!-- <span class="btn btn-primary">Upload avatar</span> -->
 
@@ -68,7 +68,7 @@
                                 <!--end of avatar-->
                                 @foreach($users as $key => $cate_pro)
 
-                                <form method="POST" action="{{ url('admin/account/'.$cate_pro->id.'/update') }}">
+                                <form method="POST" action="{{ url('admin/profile/'.$cate_pro->id.'/update') }}">
                                   {{csrf_field()}}
 
                                     <div class="form-group row align-items-center">
