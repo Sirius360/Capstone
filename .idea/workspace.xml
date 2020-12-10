@@ -2,24 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba2ed21f-fedb-4f99-a860-764cb4da4eb2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Capstone.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/phpunit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-    </list>
-    <list id="6b3c19c6-f0e7-4c77-b913-944c53a23860" name="Changes by thach" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/account-settings.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/account-settings.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/control-panel.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/control-panel.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/edit-department.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/edit-departments.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/manage-departments.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/manage-departments.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/new-department.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/new-department.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -141,6 +135,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin/edit-announcement.blade.php" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/resources/views/admin/edit-announcement.blade.php" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -162,6 +157,8 @@
       <workItem from="1607528851394" duration="86000" />
       <workItem from="1607528975007" duration="31000" />
       <workItem from="1607529031417" duration="4110000" />
+      <workItem from="1607535370684" duration="21000" />
+      <workItem from="1607581070968" duration="328000" />
     </task>
     <servers />
   </component>
@@ -178,5 +175,9 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

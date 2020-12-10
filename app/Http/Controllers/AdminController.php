@@ -50,7 +50,9 @@ class AdminController extends Controller
     public function manage_departments(){
 
         $manage_departments=DB::table('departments')
+
         ->join('faculties','faculties.id','=','departments.faculty_id')
+        ->select('departments.id','faculties.faculty_name','departments.faculty_id','departments.department_name')
         ->orderBy('departments.created_at','desc')->get();
 
         $all_manage_departments=view('admin.manage-departments')->with('manage_departments', $manage_departments);
@@ -373,34 +375,45 @@ class AdminController extends Controller
    //==================================department
     public function edit_department($id){
 
+        $edit_departments=DB::table('departments')->orderBy('id','desc')->where('departments.id',$id)->get();
+        $faculties=DB::table('faculties')->orderBy('id','desc')->get();
+        $all_department = view('admin.edit-departments')->with('edit_departments',$edit_departments)
+        ->with('faculties',$faculties);
+         return view('layouts.master')->with('admin.edit-departments', $all_department );
 
-        $manage_faculties=DB::table('faculty')->get();
-        $edit_new_department=DB::table('department')->orderBy('created_at','desc')->where('id',$id)->get();
+        // $manage_departments=DB::table('departments')
 
-        //$all_manage_faculties=view('admin.edit-department')
-        $all_manage_department=view('admin.edit-department')->with('edit_new_department', $edit_new_department)->with('manage_faculties', $manage_faculties);
+        // ->join('faculties','faculties.id','=','departments.faculty_id')
+        // ->select('departments.id','faculties.faculty_name','departments.faculty_id','departments.department_name','departments.description')
 
 
-        return view('layouts.master')->with('admin.edit-department', $all_manage_department );
+        // ->orderBy('departments.created_at','desc')->where('departments.id',$id)->get();
+
+
+        // $all_manage_departments=view('admin.edit-departments')->with('edit_departments', $manage_departments);
+        // return view('layouts.master')->with('admin.edit-departments', $all_manage_departments );
+
+
+
     }
 
     public function update_department(Request $request,$id){
 
-        $data= array();
-        $data['name']=$request->department_name;// ten cot roi den ten form
-        $data['description']=$request->note_description;// ten cot roi den ten form
-        $data['faculty_id']=$request->abc;
-        $data['faculty']=$request->faculty;
+        $data = [];
+        $data['department_name'] = $request->input('department_name');
+        $data['description'] = $request->input('description');
+        $data['faculty_id'] = $request->input('faculty_id');
 
-        if($data['name']==null||$data['description']==null){
+        if($data['department_name']==null||$data['description']==null){
             Session::put('message','Cập nhật thất bại');
-            return  redirect('admin/edit-department/'.$id);}
+            return  redirect('/admin/departments/management/'.$id.'/edit');
+            }
 
         else{
 
-            DB::table('department')->where('id',$id)->update($data);
+            DB::table('departments')->where('id',$id)->update($data);
 
-            return  redirect('admin/manage-departments');}
+            return  redirect('/admin/departments');}
 
 
 
@@ -409,10 +422,10 @@ class AdminController extends Controller
 
 
 
-            DB::table('department')->where('id',$id)->delete();
+            DB::table('departments')->where('id',$id)->delete();
             Session::put('messages','Xóa thành công');
 
-            return  redirect('admin/manage-departments');
+            return  redirect('/admin/departments');
 
 
 
