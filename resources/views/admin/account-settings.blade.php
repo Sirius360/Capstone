@@ -54,20 +54,27 @@
                                         <div class="custom-file custom-file-naked d-block mb-1">
                                             <input type="file" class="custom-file-input d-none" id="avatar-file">
                                             <label class="custom-file-label position-relative" for="avatar-file">
-                                                <span class="btn btn-primary">Upload avatar</span>
+                                                <form class="dropzone" action="{{ url('admin/upload') }}">
+                                                    <span class="dz-message">Drop files here or click here to upload</span>
+                                                </form> 
+                                                <!-- <span class="btn btn-primary">Upload avatar</span> -->
+
+                                            </form>
                                             </label>
                                         </div>
                                         <small>For best results, use an image at least 256px by 256px in either .jpg or .png format</small>
                                     </div>
                                 </div>
                                 <!--end of avatar-->
+                                @foreach($users as $key => $cate_pro)
 
-                                <form>
+                                <form method="POST" action="{{ url('admin/account/'.$cate_pro->id.'/update') }}">
+                                  {{csrf_field()}}
 
                                     <div class="form-group row align-items-center">
                                         <label class="col-3">Full Name<span class="text-danger">*</span></label>
                                         <div class="col">
-                                            <input type="text" placeholder="First name" value="Mận" name="profile-first-name" class="form-control" required />
+                                            <input type="text"  value="{{$cate_pro->full_name}}" name="full-name" class="form-control" required />
                                         </div>
                                     </div>
 
@@ -76,17 +83,17 @@
                                     <div class="form-group row align-items-center">
                                         <label class="col-3">Birthday</label>
                                         <div class="col">
-                                            <input class="form-control" type="text" placeholder="Select a Date" data-flatpickr data-alt-input="true" data-max-date="today" required>
+                                            <input class="form-control" value="{{$cate_pro->birthday}}"  name="birthday" type="text" placeholder="Select a Date" data-flatpickr data-alt-input="true" data-max-date="today" required>
                                         </div>
                                     </div>
 
                                     <div class="form-group row align-items-center">
                                         <label class="col-3">Gender</label>
                                         <div class="col">
-                                            <select name="profile-gender" class="form-control" required>
-                                                <option>Male</option>
-                                                <option>Female</option>
-                                                <option>Others</option>
+                                            <select name="gender" class="form-control" >
+                                                <option value=1  {{  ($cate_pro->gender == 1 ? ' selected' : '') }}>Male</option>
+                                                <option value=2 {{  ($cate_pro->gender == 2 ? ' selected' : '') }}>Female</option>
+                                                <option value=3 {{  ($cate_pro->gender == 3 ? ' selected' : '') }}>Others</option>
                                             </select>
                                         </div>
                                     </div>
@@ -94,28 +101,28 @@
                                     <div class="form-group row align-items-center">
                                         <label class="col-3">Email</label>
                                         <div class="col">
-                                            <input type="email" placeholder="Enter your email address" value="mannd@duytan.edu.vn" name="profile-email" class="form-control" readonly />
+                                            <input type="email" placeholder="Enter your email address" value="{{$cate_pro->email}}"  name="profile-email" class="form-control" readonly />
                                         </div>
                                     </div>
 
                                     <div class="form-group row align-items-center">
                                         <label class="col-3">Phone</label>
                                         <div class="col">
-                                            <input type="text" placeholder="Enter your phone number" name="profile-phone-number" class="form-control" required />
+                                            <input type="text" placeholder="Enter your phone number" name="profile-phone-number" class="form-control" value="{{$cate_pro->phone}}" required />
                                         </div>
                                     </div>
 
                                     <div class="form-group row align-items-center">
-                                        <label class="col-3">Student ID</label>
+                                        <label class="col-3"   >Student ID</label>
                                         <div class="col">
-                                            <input type="text" placeholder="Enter your student ID" name="profile-student-id" class="form-control" required />
+                                            <input type="text" placeholder="Ignore if you are an officer" value="{{$cate_pro->student_id}}" name="student_id" class="form-control" required />
                                         </div>
                                     </div>
 
                                     <div class="form-group row align-items-center">
                                         <label class="col-3">Class</label>
                                         <div class="col">
-                                            <input type="text" placeholder="Enter your class" name="profile-class" class="form-control" required />
+                                            <input type="text" placeholder="Enter your class" name="profile-class" value="{{$cate_pro->class}}"  class="form-control" required />
                                         </div>
                                     </div>
 
@@ -123,9 +130,14 @@
                                         <label class="col-3">Faculty</label>
                                         <div class="col">
                                             <select name="profile-faculty" class="form-control" required>
-                                                <option selected>International School</option>
-                                                <option>CSE Center</option>
-                                                <option>IT Faculty</option>
+                                                
+                                            @foreach($faculties as $key => $value)
+                                                @if($value->id == $cate_pro->faculty)
+                                                    <option  value="{{$value->id}}"selected>{{$value->faculty_name}}</option>
+                                                 @else
+                                                     <option value="{{$value->id}}">{{$value->faculty_name}}</option>
+                                                @endif
+                                            @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -134,8 +146,13 @@
                                         <label class="col-3">Department</label>
                                         <div class="col">
                                             <select name="profile-department" class="form-control">
-                                                <option selected>CMU</option>
-                                                <option>PSU</option>
+                                            @foreach($departments as $key => $value)
+                                                @if($value->id == $cate_pro->department)
+                                                    <option  value="{{$value->id}}"selected>{{$value->department_name}}</option>
+                                                 @else
+                                                     <option value="{{$value->id}}">{{$value->department_name}}</option>
+                                                @endif
+                                            @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -144,8 +161,8 @@
                                         <label class="col-3">Language</label>
                                         <div class="col">
                                             <select name="profile-language" class="form-control">
-                                                <option selected>Vietnamese</option>
-                                                <option>English</option>
+                                                <option value=1  {{  ($cate_pro->language == 1 ? ' selected' : '') }}>Vietnamese</option>
+                                                <option value=2  {{  ($cate_pro->language == 2 ? ' selected' : '') }}>English</option>
                                             </select>
                                         </div>
                                     </div>
@@ -153,7 +170,7 @@
                                     <div class="form-group row">
                                         <label class="col-3">Bio</label>
                                         <div class="col">
-                                            <textarea placeholder="Tell us a little about yourself" name="profile-bio" class="form-control" rows="4"></textarea>
+                                            <textarea placeholder="Tell us a little about yourself" name="profile-bio" class="form-control" rows="4">{{$cate_pro->about_me}}</textarea>
                                             <small><span class="font-weight-bold text-danger-2">You will take a F point for this course if the above information is NOT true</span></small>
                                         </div>
                                     </div>
@@ -163,7 +180,7 @@
                                     </div>
 
                                 </form>
-
+                                @endforeach
                             </div>
 
                             <!-- ### Here is for tabs #### -->

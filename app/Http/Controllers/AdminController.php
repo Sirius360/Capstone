@@ -21,6 +21,62 @@ class AdminController extends Controller
         return view('layouts.master')->with('admin.home', $all_manage_announcements);
     }
 
+
+//account
+    public function control_panel(){
+        
+        return view('admin.control-panel');
+    }
+
+    public function account_settings(Request $request, $id){
+        $departments=DB::table('departments')->orderBy('id','desc')->get();
+        $faculties=DB::table('faculties')->orderBy('id','desc')->get();
+        $users=DB::table('users')->where('users.id',$id)->get();
+
+        $account_settings = view('admin.account-settings')
+        ->with('departments',$departments)
+        ->with('faculties',$faculties)
+        ->with('users',$users);
+
+         return view('layouts.master')->with('admin.account-settings', $account_settings );
+        return view('admin.');
+    }
+    public function account_update(Request $request,$id){
+
+        $data = [];
+        $data['full_name'] = $request->input('full-name');
+        $data['gender'] = $request->input('gender');
+        $data['email'] = $request->input('profile-email');
+        $data['phone'] = $request->input('profile-phone-number');
+        $data['student_id'] = $request->input('student_id');
+        $data['class'] = $request->input('profile-class');
+        $data['faculty'] = $request->input('profile-faculty');
+        $data['department'] = $request->input('profile-department');
+        $data['language'] = $request->input('profile-language');
+        $data['about_me'] = $request->input('profile-bio');
+        $data['birthday'] = $request->input('birthday');
+        $get_image = $request ->file();
+        if($request->isMethod('post')){
+            $validator = Validator::make($request->all(), [
+            'student_id' => 'required|max:20|unique:users',// thôi kệ unique:users| nó cứ lỗi 
+            'profile-phone-number' => 'required|min:9|max:11|',
+            'profile-class' => 'required|min:3|max:20|',
+        //'student_id' => ['required','max:20', ''],
+        // 'phone' => ['required','max:11', 'unique:users'],
+
+
+           ]);
+
+        if ($validator->fails()) {
+            
+        return back()->with('toast_error', $validator->messages()->all()[0])->withInput();
+        }
+
+        DB::table('users')->where('id',$id)->update($data);
+        return redirect::to('admin/account-settings/'.$id.'/update')->withSuccess('Update Successfully!');
+    
+             }
+    }       
     public function new_announcement(){
         return view('admin.new-announcement');
     }
@@ -348,7 +404,7 @@ class AdminController extends Controller
 
         if($request->isMethod('post')){
             $validator = Validator::make($request->all(), [
-                'faculty_name' => 'required|min:3|max:100', //form
+                'faculty_name' => 'required|min:3|max:100|unique:faculties', //form
                 'description' => 'required|max:500',
                // 'visibility' => 'required'
             ]);
