@@ -184,19 +184,14 @@
 
                 </span>
             </p>
-            
+
             <div class="dropdown-menu text-center">
-<<<<<<< HEAD
-            
+
 
                 <a href="{{ url('admin/account-settings/'.Auth::user()->id).'/update' }}" class="dropdown-item">Profile</a>
 
                 <a href="{{ url('admin/control-panel') }}" class="dropdown-item">Control Panel</a>
 
-=======
-                <a href="{{ url('admin/account-settings') }}" class="dropdown-item">Profile</a>
-                <a href="{{ url('admin/control/users') }}" class="dropdown-item">Control Panel</a>
->>>>>>> 74f4fed25ba05a3dce8ea492b97406a6e5d103e4
                 <a href="{{ url('logout') }}" class="dropdown-item">Log Out</a>
             </div>
         </div>
