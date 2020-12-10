@@ -184,9 +184,8 @@
 
                 </span>
             </p>
-            
+
             <div class="dropdown-menu text-center">
-            
 
                 <a href="{{ url('admin/profile/'.Auth::user()->id).'/update' }}" class="dropdown-item">Profile</a>
 

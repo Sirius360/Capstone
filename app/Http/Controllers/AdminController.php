@@ -54,7 +54,7 @@ class AdminController extends Controller
         $get_image = $request ->file();
         if($request->isMethod('post')){
             $validator = Validator::make($request->all(), [
-            'student_id' => 'required|max:20|unique:users',// thôi kệ unique:users| nó cứ lỗi 
+            'student_id' => 'required|max:20|unique:users',// thôi kệ unique:users| nó cứ lỗi
             'profile-phone-number' => 'required|min:9|max:11|',
             'profile-class' => 'required|min:3|max:20|',
         //'student_id' => ['required','max:20', ''],
@@ -64,15 +64,14 @@ class AdminController extends Controller
            ]);
 
         if ($validator->fails()) {
-            
+
         return back()->with('toast_error', $validator->messages()->all()[0])->withInput();
         }
 
         DB::table('users')->where('id',$id)->update($data);
         return redirect('admin/account-settings/'.$id.'/update')->withSuccess('Update Successfully!');
-    
              }
-    }       
+    }
     public function new_announcement(){
         return view('admin.new-announcement');
     }
