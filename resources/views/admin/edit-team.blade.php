@@ -18,7 +18,7 @@
             </ol>
         </nav>
 
-        <a href="#"><h5 class="modal-title"><i class="fad fa-angle-left"></i>Back</h5></a>
+        <a href="{{ url('#') }}"><h6 class="modal-title text-table"><i class="fad fa-angle-left"></i>Back</h6></a>
 
     </div>
     <!-- end breadcrumb -->

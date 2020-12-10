@@ -16,7 +16,7 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right text-center">
                     <a href="{{ url('admin/account-settings') }}" class="dropdown-item">Profile</a>
-                    <a href="{{ url('admin/control-panel') }}" class="dropdown-item">Control Panel</a>
+                    <a href="{{ url('admin/control/users') }}" class="dropdown-item">Control Panel</a>
                 <a href="{{ url('logout') }}" class="dropdown-item">Log Out</a>
                 </div>
             </div>
@@ -180,13 +180,13 @@
             </a>
             <p class="d-inline-block ml-1 mb-0 text-light">Welcome, <br>
                 <span class="text-warning">
-                {{  Str::limit(Auth::user()->full_name, 20, '...')}} 
+                {{  Str::limit(Auth::user()->full_name, 20, '...')}}
 
                 </span>
             </p>
             <div class="dropdown-menu text-center">
                 <a href="{{ url('admin/account-settings') }}" class="dropdown-item">Profile</a>
-                <a href="{{ url('admin/control-panel') }}" class="dropdown-item">Control Panel</a>
+                <a href="{{ url('admin/control/users') }}" class="dropdown-item">Control Panel</a>
                 <a href="{{ url('logout') }}" class="dropdown-item">Log Out</a>
             </div>
         </div>

@@ -133,6 +133,18 @@ class AdminController extends Controller
     public function template(){
         return view('admin.template');
     }
+
+    public function control_panel(){
+        return view('admin.control-panel');
+    }
+
+    public function add_user(){
+        return view('admin.add-user');
+    }
+
+    public function account_settings(){
+        return view('admin.account-settings');
+    }
     // =====================================================
 
 

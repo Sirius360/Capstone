@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba2ed21f-fedb-4f99-a860-764cb4da4eb2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/add-user.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/edit-department.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/edit-departments.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/manage-departments.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/manage-departments.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/new-department.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/new-department.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/control-panel.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/control-panel.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/edit-group.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/edit-group.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/edit-team.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/edit-team.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/edit-topic.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/edit-topic.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/navbar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,6 +127,9 @@
       <path value="$PROJECT_DIR$/vendor/mockery/mockery" />
     </include_path>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
+  </component>
   <component name="ProjectId" id="1lQUXNiyIb3e8nJzOYPBTzrk0X0" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -134,11 +141,16 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin/edit-announcement.blade.php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/errors" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/resources/views/admin/edit-announcement.blade.php" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\clone\demo-capstone\Capstone\resources\views\errors" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -158,7 +170,7 @@
       <workItem from="1607528975007" duration="31000" />
       <workItem from="1607529031417" duration="4110000" />
       <workItem from="1607535370684" duration="21000" />
-      <workItem from="1607581070968" duration="328000" />
+      <workItem from="1607581070968" duration="10042000" />
     </task>
     <servers />
   </component>
@@ -179,5 +191,16 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/admin/control-panel.blade.php</url>
+          <line>25</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
