@@ -34,6 +34,7 @@ class CreateUsersTable extends Migration
             $table->string('avatar_path')->nullable();
             $table->boolean('is_active')->default(1);
             $table->boolean('is_email_confirmed')->default(0);
+            $table->rememberToken();
 
             $table->engine = 'InnoDB';
             $table->charset = 'utf8mb4';

@@ -13,8 +13,6 @@ class AdminController extends Controller
 {
     public function index(Request $request){
 
-
-
         $manage_announcements=DB::table('announcements')->orderBy('created_at','desc')->get();
 
         $all_manage_announcements=view('admin.home')->with('manage_announcements', $manage_announcements);

@@ -58,6 +58,7 @@
                                             <label class="custom-file-label position-relative" for="avatar-file" accept="image/*">
                                                 <span class="btn btn-primary">Upload avatar</span>
                                             </label>
+
                                         </div>
                                         <small>For best results, use an image at least 256px by 256px in either .jpg or .png format</small>
                                     </div>
