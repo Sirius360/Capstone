@@ -55,11 +55,10 @@
                                             <input type="file" class="custom-file-input d-none" id="avatar-file">
                                             <label class="custom-file-label position-relative" for="avatar-file">
                                                 <form class="dropzone" action="{{ url('admin/upload') }}">
-                                                <span class="btn btn-primary">Upload avatar</span>
+                                                    <span class="btn btn-primary">Upload avatar</span>
                                                 </form>
                                                 <!-- <span class="btn btn-primary">Upload avatar</span> -->
 
-                                            </form>
                                             </label>
                                         </div>
                                         <small>For best results, use an image at least 256px by 256px in either .jpg or .png format</small>
