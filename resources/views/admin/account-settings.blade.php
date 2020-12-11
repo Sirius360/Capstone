@@ -128,7 +128,7 @@
                                         <label class="col-3">Faculty</label>
                                         <div class="col">
                                             <select name="profile-faculty" class="form-control" required>
-                                                
+
                                             @foreach($faculties as $key => $value)
                                                 @if($value->id == $cate_pro->faculty)
                                                     <option  value="{{$value->id}}"selected>{{$value->faculty_name}}</option>

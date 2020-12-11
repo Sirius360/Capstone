@@ -29,6 +29,7 @@ class CreateUsersTable extends Migration
             $table->string('class', 20)->nullable();
             $table->string('department')->nullable();
             $table->string('faculty')->nullable();
+            $table->string('language')->nullable();
             $table->text('about_me')->nullable();
             $table->string('avatar_path')->nullable();
             $table->boolean('is_active')->default(1);
