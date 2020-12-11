@@ -2,6 +2,7 @@
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\FileController;
 
 
 /*
@@ -194,3 +195,5 @@ Route::group(['prefix'=>'users','middleware' => ['auth','role:users']], function
 // });
 });
 Route::get("forgot",[ForgotPasswordController::class,'forgot_password']);
+//avatar
+Route::post('/img-upload','FileController@img_upload');

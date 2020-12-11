@@ -52,7 +52,14 @@ class AdminController extends Controller
         $data['language'] = $request->input('profile-language');
         $data['about_me'] = $request->input('profile-bio');
         $data['birthday'] = $request->input('birthday');
-        $get_image = $request ->file();
+        $get_image = $request ->file('avatar_path');
+        if($get_image){
+            $get_name_image = $get_image->getClientOriginalName();
+            $name_image = current(explode('.',$get_name_image));
+            $new_image = $name_image.rand(0,99).'.'.$get_image->getClientOriginalExtension();
+            $get_image->move('public/uploads/',$new_image);
+            $data['avatar_path'] = $new_image;
+        }
         if($request->isMethod('post')){
             $validator = Validator::make($request->all(), [
             // 'student_id' => [

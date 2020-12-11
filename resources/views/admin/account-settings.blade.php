@@ -25,7 +25,6 @@
         </div>
     </div>
 
-
     <div class="container">
         <div class="row justify-content-center mt-5">
             <div class="col-lg-3 mb-3">
@@ -47,27 +46,26 @@
                     <div class="card-body">
                         <div class="tab-content">
                             <div class="tab-pane fade show active" role="tabpanel" id="profile">
-
+                            @foreach($users as $key => $cate_pro)
+                            <form method="POST" action="{{ url('admin/profile/'.$cate_pro->id.'/update') }}" enctype="multipart/form-data">
+                                  {{csrf_field()}}
                                 <div class="media mb-4">
-                                    <img id="img-avatar" alt="Image" src="{{ url('assets/img/avatar-man.png') }}"class="avatar avatar-lg" />
+                                    <img id="img-avatar" alt="Image" src="{{ URL::to('public/uploads/'.$cate_pro->avatar_path) }}"class="avatar avatar-lg" />
                                     <div class="media-body ml-3">
                                         <div class="custom-file custom-file-naked d-block mb-1">
-                                                                                 
-                                            <input  onchange="readURL(this);" type="file" class="custom-file-input d-none" id="avatar-file" accept="image/*">
+
+                                            <input name="avatar_path"  onchange="readURL(this);" type="file" class="custom-file-input d-none" id="avatar-file" accept="image/*">
                                             <label class="custom-file-label position-relative" for="avatar-file" accept="image/*">
                                                 <span class="btn btn-primary">Upload avatar</span>
-                                                 
-
                                             </label>
                                         </div>
                                         <small>For best results, use an image at least 256px by 256px in either .jpg or .png format</small>
                                     </div>
                                 </div>
                                 <!--end of avatar-->
-                                @foreach($users as $key => $cate_pro)
+                               
 
-                                <form method="POST" action="{{ url('admin/profile/'.$cate_pro->id.'/update') }}">
-                                  {{csrf_field()}}
+
 
                                     <div class="form-group row align-items-center">
                                         <label class="col-3">Full Name<span class="text-danger">*</span></label>
@@ -223,7 +221,7 @@
         </div>
     </div>
 
- 
+
 
 
  @endsection
@@ -239,17 +237,17 @@
                                     };
 
                                     reader.readAsDataURL(input.files[0]);
-                                    var file_data = $('#sortpicture').prop('files')[0];   
-                                    // var form_data = new FormData();                  
+                                    var file_data = $('#sortpicture').prop('files')[0];
+                                    // var form_data = new FormData();
                                     // form_data.append('file', file_data);
-                                    // alert(form_data);                             
+                                    // alert(form_data);
                                     // $.ajax({
-                                    //     url: 'upload.php', // point to server-side PHP script 
+                                    //     url: 'upload.php', // point to server-side PHP script
                                     //     dataType: 'text',  // what to expect back from the PHP script, if anything
                                     //     cache: false,
                                     //     contentType: false,
                                     //     processData: false,
-                                    //     data: form_data,                         
+                                    //     data: form_data,
                                     //     type: 'post',
                                     //     success: function(php_script_response){
                                     //         alert(php_script_response); // display response from the PHP script, if any
