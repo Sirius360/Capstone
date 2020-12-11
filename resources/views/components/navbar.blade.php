@@ -12,7 +12,7 @@
         <div class="d-block d-lg-none ml-2">
             <div class="dropdown">
                 <a href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img alt="Image" src="{{ url('assets/img/avatar-man.png') }}" class="avatar" />
+                    <img alt="Image" src="{{ URL::to('public/uploads/'.Auth::user()->avatar_path) }}" class="avatar" />
                 </a>
                 <div class="dropdown-menu dropdown-menu-right text-center">
                     <a href="{{ url('admin/account-settings') }}" class="dropdown-item">Profile</a>
@@ -176,7 +176,7 @@
         <!-- already Logged in -->
         <div class="dropup media align-items-center">
             <a href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img alt="avatar" src="{{ url('assets/img/avatar-man.png') }}" class="avatar" />
+                <img alt="avatar" src="{{ URL::to('public/uploads/'.Auth::user()->avatar_path) }}"  class="avatar" />
             </a>
             <p class="d-inline-block ml-1 mb-0 text-light">Welcome, <br>
                 <span class="text-warning">

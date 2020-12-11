@@ -37,7 +37,7 @@
                                     <div class="card card-note">
                                         <div class="card-header">
                                             <div class="media align-items-center text-break">
-                                                <img alt="Nguyễn Đức Mận" src="assets/img/avatar-man.png" class="avatar" data-toggle="tooltip" data-title="Nguyễn Đức Mận" data-filter-by="alt" />
+                                                <img alt="Nguyễn Đức Mận" src="{{ URL::to('public/uploads/'.Auth::user()->avatar_path) }}" class="avatar" data-toggle="tooltip" data-title={{ Auth::user()->full_name}} data-filter-by="alt" />
                                                 <div class="media-body">
                                                     <h6 class="mb-0 text-danger" data-filter-by="text">{{ Str::limit($cate_pro->title, 200) }}</h6>
                                                 </div>
