@@ -3,7 +3,7 @@
 @section('content')
 <div class="main-container">
 
-    <div class="breadcrumb-bar navbar bg-white sticky-top">
+     <div class="breadcrumb-bar navbar bg-white sticky-top">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ url('admin') }}">Home</a>

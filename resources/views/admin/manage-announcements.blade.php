@@ -106,8 +106,8 @@
 
 @endsection
 
-@section('script')
-    <script>
+@section('script')    
+<script>
 
         $(document).ready(function() {
             var table = $('#example').DataTable({
