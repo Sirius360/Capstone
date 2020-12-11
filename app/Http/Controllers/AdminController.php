@@ -69,7 +69,7 @@ class AdminController extends Controller
         }
 
         DB::table('users')->where('id',$id)->update($data);
-        return redirect('admin/account-settings/'.$id.'/update')->withSuccess('Update Successfully!');
+        return redirect('admin/profile/'.$id.'/update')->withSuccess('Update Successfully!');
              }
     }
     public function new_announcement(){

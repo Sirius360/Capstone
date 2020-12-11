@@ -49,17 +49,15 @@
                             <div class="tab-pane fade show active" role="tabpanel" id="profile">
 
                                 <div class="media mb-4">
-                                    <img alt="Image" src="{{ url('assets/img/avatar-man.png') }}"class="avatar avatar-lg" />
+                                    <img id="img-avatar" alt="Image" src="{{ url('assets/img/avatar-man.png') }}"class="avatar avatar-lg" />
                                     <div class="media-body ml-3">
                                         <div class="custom-file custom-file-naked d-block mb-1">
-                                            <input type="file" class="custom-file-input d-none" id="avatar-file">
-                                            <label class="custom-file-label position-relative" for="avatar-file">
-                                                <form class="dropzone" action="{{ url('admin/upload') }}">
+                                                                                 
+                                            <input  onchange="readURL(this);" type="file" class="custom-file-input d-none" id="avatar-file" accept="image/*">
+                                            <label class="custom-file-label position-relative" for="avatar-file" accept="image/*">
                                                 <span class="btn btn-primary">Upload avatar</span>
-                                                </form> 
-                                                <!-- <span class="btn btn-primary">Upload avatar</span> -->
+                                                 
 
-                                            </form>
                                             </label>
                                         </div>
                                         <small>For best results, use an image at least 256px by 256px in either .jpg or .png format</small>
@@ -225,4 +223,39 @@
         </div>
     </div>
 
+ 
+
+
  @endsection
+ @section('script')
+
+            <script>
+                            function readURL(input) {
+                                if (input.files && input.files[0]) {
+                                    var reader = new FileReader();
+
+                                    reader.onload = function (e) {
+                                        $('#img-avatar').attr('src', e.target.result);
+                                    };
+
+                                    reader.readAsDataURL(input.files[0]);
+                                    var file_data = $('#sortpicture').prop('files')[0];   
+                                    // var form_data = new FormData();                  
+                                    // form_data.append('file', file_data);
+                                    // alert(form_data);                             
+                                    // $.ajax({
+                                    //     url: 'upload.php', // point to server-side PHP script 
+                                    //     dataType: 'text',  // what to expect back from the PHP script, if anything
+                                    //     cache: false,
+                                    //     contentType: false,
+                                    //     processData: false,
+                                    //     data: form_data,                         
+                                    //     type: 'post',
+                                    //     success: function(php_script_response){
+                                    //         alert(php_script_response); // display response from the PHP script, if any
+                                    //     }
+                                    // });
+                                }
+                            }
+            </script>
+@endsection
