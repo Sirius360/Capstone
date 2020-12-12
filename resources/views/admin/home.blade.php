@@ -37,7 +37,7 @@
                                     <div class="card card-note">
                                         <div class="card-header">
                                             <div class="media align-items-center text-break">
-                                                <img alt="Nguyễn Đức Mận" src="{{ URL::to('public/uploads/'.Auth::user()->avatar_path) }}" class="avatar" data-toggle="tooltip" data-title={{ Auth::user()->full_name}} data-filter-by="alt" />
+                                                <img alt="Nguyễn Đức Mận" src="{{ URL::to('public/uploads/'.Auth::user()->avatar_path) }}" class="avatar" data-toggle="tooltip" data-title="{{ (Auth::user()-> full_name)}}" data-filter-by="alt" />
                                                 <div class="media-body">
                                                     <h6 class="mb-0 text-danger" data-filter-by="text">{{ Str::limit($cate_pro->title, 200) }}</h6>
                                                 </div>
@@ -79,9 +79,9 @@
                 </div>
 
                 <!-- Tạo Thông báo -->
-                <form class="modal fade" id="note-add-modal" tabindex="-1" aria-hidden="true" method="POST" action="{{ url('admin/announcements/home/save') }}">
+                <form class="modal fade" id="note-add-modal" tabindex="-1" aria-hidden="true" method="POST" action="{{ url('admin/announcements/home/save/'.Auth::user()->id) }}">
                     {{csrf_field()}}
-                    <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-dialog modal-lg" role="document" >
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title">Create an Announcement</h5>
@@ -111,7 +111,7 @@
                                     <div class="col">
                                         <div class="custom-control custom-radio">
                                             <input type="radio" id="visibility-members" name="visibility" class="custom-control-input" value="2">
-                                            <label class="custom-control-label" for="visibility-members"value="2">Members</label>
+                                            <label class="custom-control-label" for="visibility-members" value="2">Members</label>
                                         </div>
                                     </div>
                                     <div class="col">

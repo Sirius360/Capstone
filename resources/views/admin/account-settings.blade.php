@@ -119,14 +119,14 @@
                                     <div class="form-group row align-items-center">
                                         <label class="col-3">Class</label>
                                         <div class="col">
-                                            <input type="text" placeholder="Enter your class" name="profile-class" value="{{$cate_pro->class}}"  class="form-control" required />
+                                            <input type="text" placeholder="Enter your class" name="profile-class" value="{{$cate_pro->class}}"  class="form-control"  />
                                         </div>
                                     </div>
 
                                     <div class="form-group row align-items-center">
                                         <label class="col-3">Faculty</label>
                                         <div class="col">
-                                            <select name="profile-faculty" class="form-control" required>
+                                            <select name="profile-faculty" class="form-control" >
 
                                             @foreach($faculties as $key => $value)
                                                 @if($value->id == $cate_pro->faculty)

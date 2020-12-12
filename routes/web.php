@@ -82,7 +82,7 @@ Route::group(['prefix'=>'admin','middleware' => ['auth','role:admin']], function
 
     // =========================== POST //
     Route::POST('/announcements/save','AdminController@save_announcement');
-    Route::POST('/announcements/home/save','AdminController@save_announcement_home');
+    Route::POST('/announcements/home/save/{id}','AdminController@save_announcement_home');
     Route::POST('/faculty/new-faculty','AdminController@save_new_faculty');
     Route::POST('/department/new-department','AdminController@save_new_department');
     //  Route::POST('save-new-topic','AdminController@save_new_topic');
