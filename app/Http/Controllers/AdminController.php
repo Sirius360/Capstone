@@ -213,11 +213,12 @@ class AdminController extends Controller
      * @param Request $request
      * @return void
      */
-    public function save_announcement(Request $request){
+    public function save_announcement(Request $request, $id){
         $data = [];
         $data['title'] = $request->input('title');
         $data['content'] = $request->input('content');
         $data['visibility']=$request->input('visibility');
+        $data['user_id']=$id;
 
         if($request->isMethod('post')){
             $validator = Validator::make($request->all(), [
